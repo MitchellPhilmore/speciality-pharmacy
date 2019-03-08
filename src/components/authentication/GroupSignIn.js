@@ -45,7 +45,7 @@ const styles = theme => ({
     }
 });
 
-function SignIn(props) {
+function GroupSignIn(props) {
     const {classes} = props;
      return (
         <div>
@@ -64,8 +64,8 @@ function SignIn(props) {
                     <form className={classes.form}>
 
                         <FormControl margin="normal" required fullWidth>
-                            <InputLabel htmlFor="email">Username</InputLabel>
-                            <Input id="username" name="username" autoComplete="email" autoFocus/>
+                            <InputLabel htmlFor="text">Group Name</InputLabel>
+                            <Input id="groupname" name="groupname"  autoFocus/>
                         </FormControl>
 
                         <FormControl margin="normal" required fullWidth>
@@ -78,10 +78,6 @@ function SignIn(props) {
                         </FormControl>
                         <br/>
                         <br/>
-                        <Link to="/info">Not a member? Join now</Link>
-                        <br/>
-                        <br/>
-                        <Link to="/group">Group member? Login here</Link>
                         <Button
                             type="submit"
                             fullWidth
@@ -98,8 +94,8 @@ function SignIn(props) {
     );
 }
 
-SignIn.propTypes = {
+GroupSignIn.propTypes = {
     classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(SignIn);
+export default withStyles(styles)(GroupSignIn);

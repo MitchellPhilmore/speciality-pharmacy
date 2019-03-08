@@ -7,6 +7,7 @@ import Acquire from './containers/Acquire'
 import Explorer from './containers/Explorer'
 import AppContext from  './AppData'
 import ManageUsers from './components/ManageUsers'
+import GroupLogin from './components/authentication/GroupSignIn'
 
 class App extends Component {
   static contextType = AppContext
@@ -20,6 +21,7 @@ class App extends Component {
           <div className="App">
         
             <Route exact path="/" component={Login} />
+            <Route exact path="/group" component={GroupLogin} />
             <Route exact path="/info" component={Info}/>
             <Route exact path="/acquire" component={Acquire}/>
             <Route exact path="/explorer" component={Explorer}/>

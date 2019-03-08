@@ -1,0 +1,194 @@
+import React, { Component } from "react";
+import Navbar from "../components/Navbar";
+import PropTypes from "prop-types";
+import { withStyles } from "@material-ui/core/styles";
+import Tier from "../components/Tiers";
+import BasicTier from "../components/basicTier";
+import ProTier from "../components/ProTier";
+import Loader from "../components/Loaders";
+import TierData from "../components/tierData";
+import {
+  TableBody,
+  TableCell,
+  TableHead,
+  TableRow,
+  Paper,
+  Grid,
+  Table,
+  Typography
+} from "@material-ui/core";
+
+const styles = theme => ({
+  root: {
+    width: "100%",
+    marginTop: theme.spacing.unit * 3,
+    overflowX: "auto"
+  },
+
+  table: {
+    minWidth: 700
+  },
+  bold: {
+    fontWeight: "bold"
+  },
+  navBar: {
+    width: "100%"
+  }
+});
+
+class Info extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isLoading: true
+    };
+  }
+
+  isLoading = () => {
+    this.setState({
+      isLoading: false
+    });
+  };
+  componentWillMount() {
+    setTimeout(this.isLoading, 4000);
+  }
+
+  render() {
+    const { classes } = this.props;
+    const loaderStyle = {
+      width: "80%",
+      margin: "0 auto"
+    };
+    return (
+      <div>
+        <Navbar className={classes.navBar} name="Detailed Info and Plans" />
+        <Paper className={classes.root}>
+          <TierData />
+          <br />
+        </Paper>
+
+        <Grid container spacing={24}>
+          {this.state.isLoading ? (
+            <Grid item xs={12}>
+              <div style={loaderStyle}>
+                <Loader />
+              </div>
+            </Grid>
+          ) : (
+            <BasicTier />
+          )}
+          <br />
+          <br />
+
+          {this.state.isLoading ? (
+            <Grid container>
+              <div style={loaderStyle}>
+                <Loader />
+              </div>
+            </Grid>
+          ) : (
+            <Grid container spacing={24}>
+              <br />
+              <br />
+              <ProTier />
+              {/* <Grid item xs={2} /> */}
+              <Grid item xs={3}>
+                <Tier
+                  className={classes.card}
+                  cost={100}
+                  avatar="Basic"
+                  name="Basic"
+                  duration="7 Days"
+                  tierType="Single"
+                />
+              </Grid>
+              {/* <Grid item xs={2} /> */}
+              <Grid item xs={3}>
+                <Tier
+                  className={classes.card}
+                  cost={149}
+                  avatar="Pro"
+                  name="Pro"
+                  duration = "7 Days"
+                  tierType="Single"
+                />
+              </Grid>
+
+              {/* <Grid item xs={2} /> */}
+              <Grid item xs={3}>
+                <Tier
+                  className={classes.card}
+                  cost={500}
+                  avatar="Basic"
+                  name="Basic"
+                  duration = "1 Month" 
+                  tierType="Single"
+                />
+              </Grid>
+              {/* <Grid item xs={2}/> */}
+              <Grid item xs={3}>
+                <Tier
+                  className={classes.card}
+                  cost={1000}
+                  avatar="Pro"
+                  name="Pro"
+                  duration = "1 Month" 
+                  teirType="Single"
+                />
+              </Grid>
+              <Grid item xs={3}>
+                <Tier
+                  className={classes.card}
+                  cost={1250}
+                  avatar="Basic"
+                  name="Basic"
+                   duration = "12 Months" 
+                   tierType="Single"
+                />
+              </Grid>
+              <Grid item xs={3}>
+                <Tier
+                  className={classes.card}
+                  cost={3500}
+                  avatar="Pro"
+                  name="Pro"
+                  duration = "12 Months" 
+                  tierType="Single"
+                />
+              </Grid>
+              <Grid item xs={3}>
+                <Tier
+                  className={classes.card}
+                  cost={250}
+                  avatar="Basic"
+                  name="Basic Multi-Users"
+                   duration = "7 Days"
+                   tierType="Multiple Users"
+                />
+              </Grid>
+              <Grid item xs={3}>
+                <Tier
+                  className={classes.card}
+                  cost={750}
+                  avatar="Pro"
+                  name="Pro Multi-Users"
+                  duration = "7 Days"
+                  tierType="Multiple Users"
+                />
+              </Grid>
+            </Grid>
+          )}
+        </Grid>
+
+        <div />
+      </div>
+    );
+  }
+}
+
+Info.propTypes = {
+  classes: PropTypes.object.isRequired
+};
+
+export default withStyles(styles)(Info);

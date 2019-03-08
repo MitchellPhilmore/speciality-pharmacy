@@ -35,7 +35,7 @@ const styles = theme => ({
     },
     submitBtn: {
        position:'relative',
-       left:'20%',
+       left:'15%',
        width:'500px'
     },
     inputs: {

@@ -8,6 +8,12 @@ import Loader from "./Loaders";
 const header = {
   textAlign:'center'
 }
+
+const linkColumn = {
+  width:'500%',
+
+
+}
 const columns = [
   {
     name: "access",
@@ -70,7 +76,7 @@ const columns = [
 const data = [
   {  
     access: 
-    <Link to={{pathname:"/acquire",
+    <Link style={linkColumn} to={{pathname:"/acquire",
     state:{tierName:'Basic',
     cost:'100',
     userType:'Single',

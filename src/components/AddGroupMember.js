@@ -2,6 +2,7 @@ import MaterialUIForm from "react-material-ui-form";
 import Grid from "@material-ui/core/Grid";
 import Icon from "@material-ui/core/Icon";
 import React,{Component} from 'react'
+import JssProvider from "react-jss/lib/JssProvider";
 
 import {
     withStyles,
@@ -65,9 +66,31 @@ const styles = theme => ({
     constructor(props){
         super(props)
 
+        this.state = {
+            first1:'',
+            last1:'',
+            email1:'',
+            groupName:'',
+            password1:'',
+            passwordConfirm:'',
+            companyName1:'',
+            jobTitle:'',
+            yoie:''
+            
+
+        }
+     
     }
+     inputChange = (e)=>{
+        this.setState({
+            [e.target.name]:e.target.value
+        })
+     }
+
 
     render(){
+        
+
         const {classes} = this.props;
 
         return(
@@ -78,11 +101,12 @@ const styles = theme => ({
     className={classes.inputs}
     label="First Name"
     type="text"
-    name="first"
-    value=""
+    name="first1"
+    value={this.state.first1}
     fullWidth
     data-validators="isRequired"
-    onChange={this.customInputHandler}/>
+    onChange={this.inputChange}
+    />
     </Grid>
 <Grid item={6}>
 <Icon className={classes.icon}>account_circle</Icon>
@@ -90,10 +114,11 @@ const styles = theme => ({
     className={classes.inputs}
     label="Last Name"
     type="text"
-    name="last"
-    value=""
+    name="last1"
+    value={this.state.last1}
     data-validators="isRequired"
-    onChange={this.customInputHandler}/>
+    onChange={this.inputChange}
+    />
 </Grid>
 <br/>
 <br/>
@@ -105,10 +130,10 @@ const styles = theme => ({
     className={classes.inputs}
     label="Email"
     type="email"
-    name="email"
-    value=""
+    name="email1"
+    value={this.state.email1}
     data-validators="isRequired,isEmail"
-    onChange={this.customInputHandler}/>
+    onChange={this.inputChange}/>
 
 </Grid>
 <br/>
@@ -120,10 +145,10 @@ const styles = theme => ({
     className={classes.inputs}
     label="Group Name"
     type="text"
-    name="last"
-    value=""
+    name="groupName"
+    value={this.groupName}
     data-validators="isRequired"
-    onChange={this.customInputHandler}/>
+    onChange={this.inputChange}/>
 </Grid>
 <br/>
 <br/>
@@ -134,8 +159,8 @@ const styles = theme => ({
     className={classes.inputs}
     label="Password"
     type="password"
-    name="password"
-    value=""
+    name="password1"
+    value={this.password1}
     data-validators={[
     {
         isLength: {
@@ -145,7 +170,7 @@ const styles = theme => ({
     },
     'isAlias'
 ]}
-    onChange={this.customInputHandler}/>
+    onChange={this.inputChange}/>
 </Grid>
 <Grid item={6}>
  <Icon className={classes.icon}>lock</Icon>
@@ -154,7 +179,7 @@ const styles = theme => ({
     label="Confirm Password"
     type="password"
     name="passwordConfirm"
-    value=""
+    value={this.passwordConfirm}
     data-validators={[
     {
         isLength: {
@@ -171,10 +196,10 @@ const styles = theme => ({
     className={classes.inputs}
     label="Company Name"
     type="text"
-    name="companyName"
-    value=""
+    name="companyName1"
+    value={this.state.companyName1}
     data-validators="isRequired"
-    onChange={this.customInputHandler}/>
+    onChange={this.inputChange}/>
 </Grid>
 <Grid item={6}>
 <TextField
@@ -182,19 +207,19 @@ const styles = theme => ({
     label="Job Title"
     type="text"
     name="jobTitle"
-    value=""
+    value={this.state.jobTitle}
     data-validators="isRequired"
-    onChange={this.customInputHandler}/>
+    onChange={this.inputChange}/>
 </Grid>
 <Grid item={6}>
 <TextField
     className={classes.inputs}
     label="Years Of Industry Experience"
     type="text"
-    name="jobTitle"
-    value=""
+    name="yoie"
+    value={this.state.yoie}
     data-validators="isRequired"
-    onChange={this.customInputHandler}/>
+    onChange={this.inputChange}/>
 </Grid>
 </Grid>
         )

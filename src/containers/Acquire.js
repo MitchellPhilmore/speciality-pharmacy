@@ -125,10 +125,7 @@ class RegistrationForm extends Component {
 
     };
 
-    customInputHandler = (value, {
-        first,
-        last
-    }, event) => {
+    customInputHandler = (value, {first,last,first1}, event) => {
  
     };
 
@@ -210,7 +207,7 @@ class RegistrationForm extends Component {
                                 className={classes.inputs}
                                 label="User Name"
                                 type="text"
-                                name="last"
+                                name="userName"
                                 value=""
                                 data-validators="isRequired"
                                 onChange={this.customInputHandler}/>

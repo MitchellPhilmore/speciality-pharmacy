@@ -156,9 +156,11 @@ export default class ManageUsers extends React.PureComponent {
       rows, columns, tableColumnExtensions, editingRowIds, rowChanges, addedRows,
     } = this.state;
 
+    
+
     return (
       <div>
-      <NavBar/>
+      <NavBar remainingSubscriptionTime="21 Days" subscription="Pro" loggedIn={true} username="Mitch" edit="Explorer"/>
       <Paper>
         <Grid
           rows={rows}

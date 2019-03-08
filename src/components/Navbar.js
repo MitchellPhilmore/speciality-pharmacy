@@ -62,7 +62,8 @@ const styles = {
   admin:{
     color:"white",
     textDecoration:'none',
-    fontSize:'150%'
+    fontSize:'150%',
+    margin:'10px'
     
     
   }
@@ -112,6 +113,10 @@ class  ButtonAppBar extends Component{
                    <br/>
                    <br/>
                     <Link className={classes.admin} to={{pathname:"/manageusers",state:{manageUsers:'Manage Users'}}} component={ManageUsers}>User Maintainence</Link>
+                   </Grid>
+
+                   <Grid>
+                        <Link className={classes.admin} to="explorer">{this.props.edit}</Link>
                    </Grid>
               </Typography>
              

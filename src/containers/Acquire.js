@@ -110,7 +110,7 @@ class RegistrationForm extends Component {
             subscription:{
                 duration:this.props.location.state.duration,
                 price:this.props.location.state.cost,
-                userType:this.props.location.state.tierType
+                userType:this.props.location.state.userType
             }
         })
         console.log(this.props.location.state.tierName)

@@ -7,16 +7,7 @@ import BasicTier from "../components/basicTier";
 import ProTier from "../components/ProTier";
 import Loader from "../components/Loaders";
 import TierData from "../components/tierData";
-import {
-  TableBody,
-  TableCell,
-  TableHead,
-  TableRow,
-  Paper,
-  Grid,
-  Table,
-  Typography
-} from "@material-ui/core";
+import { Paper, Grid } from "@material-ui/core";
 
 const styles = theme => ({
   root: {
@@ -92,9 +83,8 @@ class Info extends Component {
             <Grid container spacing={24}>
               <br />
               <br />
-              <BasicTier/>
-              
-             
+              <BasicTier />
+
               {/* <Grid item xs={2} /> */}
               <Grid item xs={3}>
                 <Tier
@@ -113,7 +103,7 @@ class Info extends Component {
                   cost={149}
                   avatar="Pro"
                   name="Pro"
-                  duration = "7 Days"
+                  duration="7 Days"
                   tierType="Single"
                 />
               </Grid>
@@ -125,7 +115,7 @@ class Info extends Component {
                   cost={500}
                   avatar="Basic"
                   name="Basic"
-                  duration = "1 Month" 
+                  duration="1 Month"
                   tierType="Single"
                 />
               </Grid>
@@ -136,7 +126,7 @@ class Info extends Component {
                   cost={1000}
                   avatar="Pro"
                   name="Pro"
-                  duration = "1 Month" 
+                  duration="1 Month"
                   teirType="Single"
                 />
               </Grid>
@@ -146,8 +136,8 @@ class Info extends Component {
                   cost={1250}
                   avatar="Basic"
                   name="Basic"
-                   duration = "12 Months" 
-                   tierType="Single"
+                  duration="12 Months"
+                  tierType="Single"
                 />
               </Grid>
               <Grid item xs={3}>
@@ -156,7 +146,7 @@ class Info extends Component {
                   cost={3500}
                   avatar="Pro"
                   name="Pro"
-                  duration = "12 Months" 
+                  duration="12 Months"
                   tierType="Single"
                 />
               </Grid>
@@ -166,8 +156,8 @@ class Info extends Component {
                   cost={250}
                   avatar="Basic"
                   name="Basic Multi-Users"
-                   duration = "7 Days"
-                   tierType="Multiple Users"
+                  duration="7 Days"
+                  tierType="Multiple Users"
                 />
               </Grid>
               <Grid item xs={3}>
@@ -176,7 +166,7 @@ class Info extends Component {
                   cost={750}
                   avatar="Pro"
                   name="Pro Multi-Users"
-                  duration = "7 Days"
+                  duration="7 Days"
                   tierType="Multiple Users"
                 />
               </Grid>

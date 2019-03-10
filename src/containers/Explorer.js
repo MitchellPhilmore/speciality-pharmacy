@@ -346,10 +346,10 @@ const data = [
 
 const options = {
   filterType: "checkbox",
-  pagination:false,
-  print:false,
-  pagination:false,
-  download:false,
+  pagination: false,
+  print: false,
+  pagination: false,
+  download: false
 };
 
 const centerLoader = {
@@ -390,7 +390,12 @@ export default class Explorer extends Component {
       </div>
     ) : (
       <div>
-        <Navbar remainingSubscriptionTime="21 Days" subscription="Pro" loggedIn={true} username="Mitch" />
+        <Navbar
+          remainingSubscriptionTime="21 Days"
+          subscription="Pro"
+          loggedIn={true}
+          username="Mitch"
+        />
 
         <div style={tableContainer}>
           <br />

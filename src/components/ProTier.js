@@ -1,27 +1,18 @@
 import React, { Component } from "react";
-import Navbar from "./Navbar";
-import {Typography,withStyles,Grid} from '@material-ui/core'
+import { Typography, withStyles, Grid } from "@material-ui/core";
 import MUIDataTable from "mui-datatables";
-import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
-import Loader from "./Loaders";
-
-
-
-
+import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
 
 const styles = theme => ({
-   pro:{
-     color:'red'
-     
-   },
-   header:{
-    position:'relative',
-    left:'480px',
-     color:'white'
-   }
-})
-
-
+  pro: {
+    color: "red"
+  },
+  header: {
+    position: "relative",
+    left: "480px",
+    color: "white"
+  }
+});
 
 const columns = [
   {
@@ -168,9 +159,8 @@ const columns = [
     label: "Limted Distribution Drugs",
     options: {
       filter: true,
-      sort: false,
-        
-     }
+      sort: false
+    }
   }
 ];
 
@@ -283,75 +273,77 @@ const data = [
 
 const options = {
   selectableRows: false,
-  print:false,
-  pagination:false,
-  fixedHeader:true,
-  download:false,
-  checkbox:false,
-  reponsive:'stacked',
-  onRowClick(){
-    alert('works')
+  print: false,
+  pagination: false,
+  fixedHeader: true,
+  download: false,
+  checkbox: false,
+  reponsive: "stacked",
+  onRowClick() {
+    alert("works");
   }
 };
-
 
 const tableContainer = {
   width: "3000px",
   margin: "0 auto"
 };
 
- class ProTier extends Component {
+class ProTier extends Component {
   constructor(props) {
     super(props);
   }
   //Style themes
-  getMuiTheme = () => createMuiTheme({
-  overrides: {
-    MUIDataTableToolbar:{
-      root:{
-        background:'#424242',
-        color:'white',
-       
-      },
-      actions:{
-        position:'absolute',
-       },
-       
-    },
-    MuiSvgIcon:{
-      root:{
-         color:'white'
+  getMuiTheme = () =>
+    createMuiTheme({
+      overrides: {
+        MUIDataTableToolbar: {
+          root: {
+            background: "#424242",
+            color: "white"
+          },
+          actions: {
+            position: "absolute"
+          }
+        },
+        MuiSvgIcon: {
+          root: {
+            color: "white"
+          }
+        },
+
+        MUIDataTableBodyCell: {
+          root: {
+            padding: "30px",
+            width: "10px",
+            maxWidth: "200px"
+          }
+        }
       }
-    },
-   
-    MUIDataTableBodyCell: {
-      root: {
-        padding:'30px',
-        width:'10px',
-        maxWidth:'200px'
-      }
-    }
-  }
-})
+    });
 
   render() {
-    let {classes} = this.props
+    let { classes } = this.props;
     return (
       <MuiThemeProvider theme={this.getMuiTheme()}>
-      <MUIDataTable
-        title={  
-        <Typography  className={classes.header} component="h4" variant="h4" gutterBottom>
-         Sample: Pro Tier
-      </Typography>} 
-        data={data}
-        columns={columns}
-        options={options}
-      />
-       </MuiThemeProvider>
-    
-      
+        <MUIDataTable
+          title={
+            <Typography
+              className={classes.header}
+              component="h4"
+              variant="h4"
+              gutterBottom
+            >
+              Sample: Pro Tier
+            </Typography>
+          }
+          data={data}
+          columns={columns}
+          options={options}
+        />
+      </MuiThemeProvider>
     );
   }
 }
 
- export default withStyles(styles)(ProTier);
+export default withStyles(styles)(ProTier);

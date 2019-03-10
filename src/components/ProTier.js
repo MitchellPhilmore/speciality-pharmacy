@@ -1,8 +1,12 @@
 import React, { Component } from "react";
 import Navbar from "./Navbar";
-import {Typography,withStyles} from '@material-ui/core'
+import {Typography,withStyles,Grid} from '@material-ui/core'
 import MUIDataTable from "mui-datatables";
+import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 import Loader from "./Loaders";
+
+
+
 
 
 const styles = theme => ({
@@ -11,7 +15,9 @@ const styles = theme => ({
      
    },
    header:{
-     textAlign:'center'
+    position:'relative',
+    left:'480px',
+     color:'white'
    }
 })
 
@@ -279,6 +285,7 @@ const options = {
   selectableRows: false,
   print:false,
   pagination:false,
+  fixedHeader:true,
   download:false,
   checkbox:false,
   reponsive:'stacked',
@@ -287,12 +294,6 @@ const options = {
   }
 };
 
-const centerLoader = {
-  width: "30%",
-  position: "absolute",
-  top: "25%",
-  left: "20%"
-};
 
 const tableContainer = {
   width: "3000px",
@@ -303,10 +304,40 @@ const tableContainer = {
   constructor(props) {
     super(props);
   }
+  //Style themes
+  getMuiTheme = () => createMuiTheme({
+  overrides: {
+    MUIDataTableToolbar:{
+      root:{
+        background:'#424242',
+        color:'white',
+       
+      },
+      actions:{
+        position:'absolute',
+       },
+       
+    },
+    MuiSvgIcon:{
+      root:{
+         color:'white'
+      }
+    },
+   
+    MUIDataTableBodyCell: {
+      root: {
+        padding:'30px',
+        width:'10px',
+        maxWidth:'200px'
+      }
+    }
+  }
+})
 
   render() {
     let {classes} = this.props
     return (
+      <MuiThemeProvider theme={this.getMuiTheme()}>
       <MUIDataTable
         title={  
         <Typography  className={classes.header} component="h4" variant="h4" gutterBottom>
@@ -316,6 +347,9 @@ const tableContainer = {
         columns={columns}
         options={options}
       />
+       </MuiThemeProvider>
+    
+      
     );
   }
 }

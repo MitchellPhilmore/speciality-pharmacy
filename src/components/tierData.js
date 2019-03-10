@@ -1,12 +1,14 @@
 import React, { Component } from "react";   
-import Navbar from "../components/Navbar";
-import {Typography}  from '@material-ui/core'
+import PropTypes from 'prop-types';
+import {Typography,withStyles}  from '@material-ui/core'
 import {Link } from "react-router-dom"
 import MUIDataTable from "mui-datatables";
-import Loader from "./Loaders";
+import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 
 const header = {
-  textAlign:'center'
+  position:'relative',
+    left:'480px',
+     color:'white'
 }
 
 const linkColumn = {
@@ -279,22 +281,62 @@ const options = {
    console.log(rowData)
   }
 };
-export default class TeirData extends Component {
+
+const styles = {
+  action:{
+    background:'blue'
+  }
+}
+
+
+  class TeirData extends Component {
   constructor(props) {
     super(props);
-  }
+}
+
+  //Style themes
+  getMuiTheme = () => createMuiTheme({
+    overrides: {
+      MUIDataTableToolbar:{
+        root:{
+          background:'#424242',
+          color:'white',
+         
+        },
+        actions:{
+          position:'absolute',
+         },
+         
+      },
+      MuiSvgIcon:{
+        root:{
+           color:'white'
+        }
+      },
+     
+      MUIDataTableBodyCell: {
+        root: {
+          padding:'30px',
+          width:'10px',
+          maxWidth:'200px'
+        }
+      }
+    }
+  })
 
   render() {
+  const  {classes} = this.props
     return (
-      <MUIDataTable title={ 
+  <MuiThemeProvider theme={this.getMuiTheme()}>
+  <MUIDataTable  title={ 
       <Typography style={header} component="h3" variant="h3" gutterBottom>
       Tier Plans
     </Typography>} 
     data={data} columns={columns} options={options}/>
+    </MuiThemeProvider>
+   
     );
   }
 }
      
-                  
-                 
-               
+export default withStyles(styles)(TeirData);

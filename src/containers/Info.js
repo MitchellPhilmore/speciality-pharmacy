@@ -41,7 +41,8 @@ class Info extends Component {
     super(props);
 
     this.state = {
-      isLoading: true
+      //Turned off loader
+      isLoading: false
     };
   }
 
@@ -76,7 +77,7 @@ class Info extends Component {
               </div>
             </Grid>
           ) : (
-            <BasicTier />
+            <ProTier />
           )}
           <br />
           <br />
@@ -91,7 +92,9 @@ class Info extends Component {
             <Grid container spacing={24}>
               <br />
               <br />
-              <ProTier />
+              <BasicTier/>
+              
+             
               {/* <Grid item xs={2} /> */}
               <Grid item xs={3}>
                 <Tier

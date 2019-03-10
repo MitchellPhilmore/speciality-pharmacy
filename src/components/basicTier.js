@@ -3,9 +3,9 @@ import Navbar from '../components/Navbar'
 import {Typography} from '@material-ui/core'
 import MUIDataTable from "mui-datatables";
 import Loader from './Loaders'
+import { createMuiTheme, MuiThemeProvider,withStyles } from '@material-ui/core/styles';
 
 
- 
 
             const columns = [
                 {
@@ -148,36 +148,71 @@ import Loader from './Loaders'
                   }
                 };
  
-  export default class ProTier extends Component {
+  class BasicTier extends Component {
     constructor(props){
       super(props)
-  
-      
+   }
+
+   //Style themes
+  getMuiTheme = () => createMuiTheme({
+    overrides: {
+      MUIDataTableToolbar:{
+        root:{
+          background:'#424242',
+          color:'white',
+         
+        },
+        actions:{
+          position:'absolute',
+         },
+         
+      },
+      MuiSvgIcon:{
+        root:{
+           color:'white'
+        }
+      },
+     
+      MUIDataTableBodyCell: {
+        root: {
+          padding:'30px',
+        
+         
+        }
+      },
+      MuiTypography:{
+        root:{
+          color:'white'
+        }
+      }
     }
-  
-  
+  })
+
     render() {
       const header = {
-        textAlign:'center'
+        position:'relative',
+        left:'480px',
+        color:'white',
+        textAlign:'left'
       }
    
       return (
-      
-  <MUIDataTable 
+        <MuiThemeProvider theme={this.getMuiTheme()}>
+            <MUIDataTable 
     
     title={ 
     <Typography style={header} component="h4" variant="h4" gutterBottom>
     Sample:  Basic Teir
- </Typography>} 
-    data={data}
-    columns={columns}
-    options={options}
-  />
-  
-      )
+      </Typography>} 
+          data={data}
+          columns={columns}
+          options={options}
+        />
+  </MuiThemeProvider>
+   )
     }
   }
                
-                  
+  export default  BasicTier           
                  
-               
+          

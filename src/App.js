@@ -8,6 +8,7 @@ import Explorer from './containers/Explorer'
 import AppContext from  './AppData'
 import ManageUsers from './components/ManageUsers'
 import GroupLogin from './components/authentication/GroupSignIn'
+import CSS from './App.css'
 
 class App extends Component {
   static contextType = AppContext

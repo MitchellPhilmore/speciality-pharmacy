@@ -46,7 +46,13 @@ const styles = theme => ({
   addIcon: {
     fontSize: "20px",
     margin: "5px"
-  }
+  },
+  hr: {
+    height: "2px",
+    border: "none",
+    color: "gray",
+    backgroundColor: "gray"
+  },
 });
 
 class AddGroupMember extends Component {
@@ -208,6 +214,7 @@ class AddGroupMember extends Component {
             onChange={this.inputChange}
           />
         </Grid>
+        <hr className={classes.hr}/>
       </Grid>
     );
   }

@@ -9,6 +9,7 @@ import AddGroupMember from "../components/AddGroupMember";
 import ReactAuthorizeForm from "../components/React-Authorize.js";
 //Material UI Components
 import { withStyles, Button, TextField } from "@material-ui/core";
+import { EditorFormatLineSpacing } from "material-ui/svg-icons";
 
 const styles = theme => ({
   root: {
@@ -83,7 +84,8 @@ class RegistrationForm extends Component {
         cost: 0,
         userType: ""
       },
-      addUser: false
+      addUser: false,
+      userCount:[]
     };
   }
 
@@ -111,13 +113,16 @@ class RegistrationForm extends Component {
 
   addUser = () => {
     this.setState({
-      addUser: true
+      addUser: true,
+      userCount:[...this.state.userCount,<AddGroupMember/>]
     });
+
+    
   };
 
   render() {
     const { classes, pageInfo } = this.props;
-
+  
     return (
       <div>
         <Navbar
@@ -243,6 +248,39 @@ class RegistrationForm extends Component {
                     onChange={this.customInputHandler}
                   />
                 </Grid>
+                <Grid item={6}>
+          <TextField
+            className={classes.inputs}
+            label="Company Name"
+            type="text"
+            name="companyName1"
+            value={this.state.companyName1}
+            data-validators="isRequired"
+            onChange={this.inputChange}
+          />
+        </Grid>
+        <Grid item={6}>
+          <TextField
+            className={classes.inputs}
+            label="Job Title"
+            type="text"
+            name="jobTitle"
+            value={this.state.jobTitle}
+            data-validators="isRequired"
+            onChange={this.inputChange}
+          />
+        </Grid>
+        <Grid item={6}>
+          <TextField
+            className={classes.inputs}
+            label="Years Of Industry Experience"
+            type="text"
+            name="yoie"
+            value={this.state.yoie}
+            data-validators="isRequired"
+            onChange={this.inputChange}
+          />
+        </Grid>
               </Grid>
               <br />
               <br />
@@ -255,22 +293,14 @@ class RegistrationForm extends Component {
                 false
               )}
               {this.state.addUser === true ? (
-                <div>
-                  <AddGroupMember />
-                  <hr className={classes.hr} />
-                  <AddGroupMember />
-                  <hr className={classes.hr} />
-                  <AddGroupMember />
-                  <hr className={classes.hr} />
-                  <AddGroupMember />
-                  <hr className={classes.hr} />
-                  <AddGroupMember />
-                  <hr className={classes.hr} />
-                  <br />
-                  <br />
+                  <div>
+                    {this.state.userCount.map(user=>user)}
+                    <hr className={classes.hr} />
+                
                 </div>
+                
               ) : (
-                false
+              false
               )}
 
               <br />

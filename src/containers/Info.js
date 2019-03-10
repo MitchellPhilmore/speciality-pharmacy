@@ -72,6 +72,7 @@ class Info extends Component {
           )}
           <br />
           <br />
+      
 
           {this.state.isLoading ? (
             <Grid container>
@@ -81,6 +82,8 @@ class Info extends Component {
             </Grid>
           ) : (
             <Grid container spacing={24}>
+              <br />
+              <br />
               <br />
               <br />
               <BasicTier />

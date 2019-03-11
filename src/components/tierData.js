@@ -395,12 +395,23 @@ class TeirData extends Component {
         },
         MuiPaper:{
           root:{
-            maxWidth:'85vw',
+            maxWidth:'80vw',
             margin:'0 auto',
             overflow:'hidden',
-            marginBottom:'20px'
+            marginBottom:'50px',
+           
+           
+          },
+          elevation2:{
+            '27':{
+              boxShadow:'none',
+              overflowX:'hidden',
+            
+            }
           }
-        },
+         
+          },
+          
         MuiSvgIcon: {
           root: {
             color: "white"

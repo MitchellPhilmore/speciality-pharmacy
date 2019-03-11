@@ -178,7 +178,9 @@ class BasicTier extends Component {
             maxWidth:'85vw',
             margin:'0 auto',
             overflow:'hidden',
-            overflowY:'hidden'
+            overflowY:'hidden',
+            marginTop:'50px',
+            marginBottom:'50px'
           }
         },
         MuiSvgIcon: {

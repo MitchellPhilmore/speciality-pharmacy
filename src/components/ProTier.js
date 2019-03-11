@@ -299,7 +299,7 @@ class ProTier extends Component {
       overrides: {
         MUIDataTable:{
           root:{
-            width:'1000px'
+            // width:'1000px'
           }
       
         },
@@ -308,7 +308,14 @@ class ProTier extends Component {
             maxWidth:'85vw',
             margin:'0 auto',
             overflowX:'scroll',
-            marginBottom:'30px'
+            marginBottom:'50px'
+          },
+          elevation2:{
+            '27':{
+              boxShadow:'none',
+              overflowX:'hidden',
+            
+            }
           }
         },
         MUIDataTableToolbar: {

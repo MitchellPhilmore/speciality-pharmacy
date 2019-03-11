@@ -213,8 +213,10 @@ class AddGroupMember extends Component {
             data-validators="isRequired"
             onChange={this.inputChange}
           />
+        
+         
         </Grid>
-        <hr className={classes.hr}/>
+     
       </Grid>
     );
   }

@@ -173,15 +173,24 @@ class BasicTier extends Component {
             position: "absolute"
           }
         },
+        MuiPaper:{
+          root:{
+            maxWidth:'85vw',
+            margin:'0 auto',
+            overflow:'hidden',
+            overflowY:'hidden'
+          }
+        },
         MuiSvgIcon: {
           root: {
             color: "white"
           }
         },
+      
 
         MUIDataTableBodyCell: {
           root: {
-            padding: "30px"
+            padding: "10px"
           }
         },
         MuiTypography: {

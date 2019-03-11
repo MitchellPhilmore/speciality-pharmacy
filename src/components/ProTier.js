@@ -297,11 +297,27 @@ class ProTier extends Component {
   getMuiTheme = () =>
     createMuiTheme({
       overrides: {
+        MUIDataTable:{
+          root:{
+            width:'1000px'
+          }
+      
+        },
+        MuiPaper:{
+          root:{
+            maxWidth:'85vw',
+            margin:'0 auto',
+            overflowX:'scroll',
+            marginBottom:'30px'
+          }
+        },
         MUIDataTableToolbar: {
           root: {
             background: "#424242",
             color: "white"
           },
+         
+       
           actions: {
             position: "absolute"
           }
@@ -315,7 +331,7 @@ class ProTier extends Component {
         MUIDataTableBodyCell: {
           root: {
             padding: "30px",
-            width: "10px",
+            width: "5px",
             maxWidth: "200px"
           }
         }

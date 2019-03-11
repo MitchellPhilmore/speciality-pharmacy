@@ -285,7 +285,7 @@ class RegistrationForm extends Component {
               <br />
               <br />
               {this.state.subscription.userType === "Multi" ? (
-                <Button onClick={this.addUser} className={classes.addUserBtn}>
+                <Button variant="contained" size="large" color="secondary" onClick={this.addUser} className={classes.addUserBtn}>
                   <Icon className={classes.addIcon}>group_add</Icon>
                   Add Users
                 </Button>
@@ -295,7 +295,7 @@ class RegistrationForm extends Component {
               {this.state.addUser === true ? (
                   <div>
                     {this.state.userCount.map(user=>user)}
-                    <hr className={classes.hr} />
+                   
                 
                 </div>
                 

@@ -393,6 +393,14 @@ class TeirData extends Component {
             position: "absolute"
           }
         },
+        MuiPaper:{
+          root:{
+            maxWidth:'85vw',
+            margin:'0 auto',
+            overflow:'hidden',
+            marginBottom:'20px'
+          }
+        },
         MuiSvgIcon: {
           root: {
             color: "white"
@@ -401,9 +409,8 @@ class TeirData extends Component {
 
         MUIDataTableBodyCell: {
           root: {
-            padding: "30px",
-            width: "10px",
-            maxWidth: "200px"
+            padding: "5px",
+           
           }
         }
       }

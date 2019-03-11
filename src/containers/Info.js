@@ -68,7 +68,7 @@ class Info extends Component {
               </div>
             </Grid>
           ) : (
-            <BasicTier />
+            <ProTier />
           )}
           <br />
           <br />
@@ -86,7 +86,7 @@ class Info extends Component {
               <br />
               <br />
               <br />
-              <ProTier/>
+              <BasicTier/>
 
               {/* <Grid item xs={2} /> */}
               <Grid item xs={3}>

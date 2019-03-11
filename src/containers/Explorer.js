@@ -2,6 +2,22 @@ import React, { Component } from "react";
 import Navbar from "../components/Navbar";
 import MUIDataTable from "mui-datatables";
 import Loader from "../components/Loaders";
+import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
+import { Typography, withStyles, Grid } from "@material-ui/core";
+
+
+
+const styles = theme => ({
+  pro: {
+    color: "red"
+  },
+  header: {
+    position: "relative",
+    left: "480px",
+    color: "white"
+  }
+});
+
 
 const columns = [
   {
@@ -364,7 +380,7 @@ const tableContainer = {
   margin: "0 auto"
 };
 
-export default class Explorer extends Component {
+ class Explorer extends Component {
   constructor(props) {
     super(props);
 
@@ -383,30 +399,96 @@ export default class Explorer extends Component {
     setTimeout(this.isLoading, 4000);
   }
 
-  render() {
-    return this.state.isLoading ? (
-      <div style={centerLoader}>
-        <Loader />
-      </div>
-    ) : (
-      <div>
-        <Navbar
-          remainingSubscriptionTime="21 Days"
-          subscription="Pro"
-          loggedIn={true}
-          username="Mitch"
-        />
+  getMuiTheme = () =>
+  createMuiTheme({
+    overrides: {
+      MUIDataTable:{
+        root:{
+          // width:'1000px'
+        }
+    
+      },
+      MuiPaper:{
+        root:{
+          maxWidth:'80vw',
+          marginLeft:'100px',
+          overflowX:'scroll',
+          marginBottom:'50px'
+        },
+        elevation2:{
+          '27':{
+            boxShadow:'none',
+            overflowX:'hidden',
+          
+          }
+        }
+      },
+      MUIDataTableToolbar: {
+        root: {
+          background: "#424242",
+          color: "white",
 
-        <div style={tableContainer}>
-          <br />
-          <MUIDataTable
-            title={"Pharmacy Data"}
-            data={data}
-            columns={columns}
-            options={options}
-          />
+        },
+       
+     
+        actions: {
+          position: "absolute"
+        }
+      },
+      MuiSvgIcon: {
+        root: {
+          color: "white"
+        }
+      },
+
+      MUIDataTableBodyCell: {
+        root: {
+          padding: "30px",
+          width: "5px",
+          maxWidth: "200px",
+          marginLeft:'50px'
+        }
+      }
+    }
+  });
+
+  render() {
+    let { classes } = this.props;
+    return (
+      this.state.isLoading ? (
+        <div style={centerLoader}>
+          <Loader />
         </div>
+      ) : (
+        <div>
+          <Navbar
+            remainingSubscriptionTime="21 Days"
+            subscription="Pro"
+            loggedIn={true}
+            username="Mitch"
+          />
+          <br/>
+          <br/>
+      <MuiThemeProvider theme={this.getMuiTheme()}>
+        <MUIDataTable
+          title={
+            <Typography
+              className={classes.header}
+              component="h4"
+              variant="h4"
+              gutterBottom
+            >
+              Sample: Pro Tier
+            </Typography>
+          }
+          data={data}
+          columns={columns}
+          options={options}
+        />
+      </MuiThemeProvider>
       </div>
-    );
+    )
+    )
   }
 }
+export default withStyles(styles)(Explorer);

@@ -6,7 +6,8 @@ import {
   Toolbar,
   Typography,
   IconButton,
-  Grid
+  Grid,
+  Button
 } from "@material-ui/core";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Info from "../containers/Info";
@@ -137,9 +138,11 @@ class ButtonAppBar extends Component {
             )}
 
             <br />
-            <Link className={classes.links} to="info">
-              {this.props.info}
-            </Link>
+                
+                  <Link className={classes.links} to="info">
+                    {this.props.info}
+                  </Link>
+               
 
             <Link className={classes.links} to="/">
               <Icon className={classes.icon}>account_circle</Icon>

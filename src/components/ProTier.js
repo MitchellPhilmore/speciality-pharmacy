@@ -305,7 +305,7 @@ class ProTier extends Component {
         },
         MuiPaper:{
           root:{
-            maxWidth:'85vw',
+            maxWidth:'80vw',
             margin:'0 auto',
             overflowX:'scroll',
             marginBottom:'50px'

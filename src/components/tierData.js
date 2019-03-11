@@ -387,7 +387,8 @@ class TeirData extends Component {
         MUIDataTableToolbar: {
           root: {
             background: "#424242",
-            color: "white"
+            color: "white",
+            width:'100%'
           },
           actions: {
             position: "absolute"
@@ -398,7 +399,7 @@ class TeirData extends Component {
             maxWidth:'80vw',
             margin:'0 auto',
             overflow:'hidden',
-            marginBottom:'50px',
+            marginBottom:'20px',
            
            
           },
@@ -406,6 +407,7 @@ class TeirData extends Component {
             '27':{
               boxShadow:'none',
               overflowX:'hidden',
+              marginBottom:'30px'
             
             }
           }

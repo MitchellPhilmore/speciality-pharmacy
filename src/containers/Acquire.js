@@ -285,7 +285,7 @@ class RegistrationForm extends Component {
               <br />
               <br />
               {this.state.subscription.userType === "Multi" ? (
-                <Button variant="contained" size="large" color="secondary" onClick={this.addUser} className={classes.addUserBtn}>
+                <Button variant="outlined" size="large" color="primary" onClick={this.addUser} className={classes.addUserBtn}>
                   <Icon className={classes.addIcon}>group_add</Icon>
                   Add Users
                 </Button>

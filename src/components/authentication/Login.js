@@ -9,7 +9,8 @@ import {
   Paper,
   Typography,
   withStyles,
-  Icon
+  Icon,
+
 } from "@material-ui/core";
 import Navbar from "../Navbar";
 import { Link } from "react-router-dom";

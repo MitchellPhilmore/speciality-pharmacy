@@ -175,7 +175,7 @@ class BasicTier extends Component {
         },
         MuiPaper:{
           root:{
-            maxWidth:'85vw',
+            maxWidth:'80vw',
             margin:'0 auto',
             overflow:'hidden',
             overflowY:'hidden',

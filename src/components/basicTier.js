@@ -206,7 +206,7 @@ class BasicTier extends Component {
   render() {
     const header = {
       position: "relative",
-      left: "480px",
+      left: "380px",
       color: "white",
       textAlign: "left"
     };

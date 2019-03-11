@@ -6,7 +6,7 @@ import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
 
 const header = {
   position: "relative",
-  left: "480px",
+  left: "380px",
   color: "white"
 };
 
@@ -400,6 +400,9 @@ class TeirData extends Component {
             margin:'0 auto',
             overflow:'hidden',
             marginBottom:'20px',
+            marginTop:'30px',
+            border:'none',
+            boxShadow:'none'
            
            
           },
@@ -407,7 +410,8 @@ class TeirData extends Component {
             '27':{
               boxShadow:'none',
               overflowX:'hidden',
-              marginBottom:'30px'
+              marginBottom:'30px',
+              border:'none'
             
             }
           }

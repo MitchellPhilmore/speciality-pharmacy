@@ -8,6 +8,7 @@ import ProTier from "../components/ProTier";
 import Loader from "../components/Loaders";
 import TierData from "../components/tierData";
 import { Paper, Grid } from "@material-ui/core";
+import {Carousel} from 'react-responsive-carousel'
 
 const styles = theme => ({
   root: {
@@ -89,6 +90,9 @@ class Info extends Component {
               <BasicTier/>
 
               {/* <Grid item xs={2} /> */}
+              {/* <Carousel>
+              <div><Tier/></div>
+              </Carousel> */}
               <Grid item xs={3}>
                 <Tier
                   className={classes.card}

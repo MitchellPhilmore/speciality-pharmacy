@@ -13,7 +13,7 @@ const styles = theme => ({
   },
   header: {
     position: "relative",
-    left: "480px",
+    left: "380px",
     color: "white"
   }
 });

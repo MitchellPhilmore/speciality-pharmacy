@@ -199,6 +199,16 @@ class BasicTier extends Component {
           root: {
             color: "white"
           }
+        },
+        MuiInputBase:{
+          root:{
+            color:'white',
+            fontSize:'40px',
+            textAlign:'right',
+            position:'absolute',
+            left:'40%',
+            fontFamily: 'Pathway Gothic One, sans-serif'
+          }
         }
       }
     });
@@ -208,7 +218,8 @@ class BasicTier extends Component {
       position: "relative",
       left: "380px",
       color: "white",
-      textAlign: "left"
+      textAlign: "left",
+      fontFamily: 'Pathway Gothic One, sans-serif'
     };
 
     return (

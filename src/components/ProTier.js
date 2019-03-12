@@ -10,7 +10,8 @@ const styles = theme => ({
   header: {
     position: "relative",
     left: "380px",
-    color: "white"
+    color: "white",
+    fontFamily: 'Pathway Gothic One, sans-serif'
   }
 });
 
@@ -340,6 +341,16 @@ class ProTier extends Component {
             padding: "30px",
             width: "5px",
             maxWidth: "200px"
+          }
+        },
+        MuiInputBase:{
+          root:{
+            color:'white',
+            fontSize:'40px',
+            textAlign:'right',
+            position:'absolute',
+            left:'40%',
+            fontFamily: 'Pathway Gothic One, sans-serif'
           }
         }
       }

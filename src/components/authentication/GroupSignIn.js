@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
 import {
   Button,
   CssBaseline,
@@ -41,19 +42,21 @@ const styles = theme => ({
   },
   submit: {
     marginTop: theme.spacing.unit * 3,
-    backgroundColor: "#424242"
+    // backgroundColor: "#424242"
   },
   iconStyle: {
     fontSize: "80px",
     color: "#616161"
   },
   linkStyle: {
-    color: "white"
+    color: "#424242",
+    textDecoration:'none'
   }
 });
 
 function GroupSignIn(props) {
   const { classes } = props;
+
   return (
     <div>
       <Navbar
@@ -70,13 +73,32 @@ function GroupSignIn(props) {
           </Typography>
 
           <form className={classes.form}>
+          <FormControl margin="normal" required fullWidth>
+              <InputLabel htmlFor="email">Email</InputLabel>
+              <Input
+                id="email"
+                name="email"
+                autoComplete="email"
+                autoFocus
+              />
+            </FormControl>
+
+            <FormControl margin="normal" required fullWidth>
+              <InputLabel htmlFor="password">Password</InputLabel>
+              <Input
+                name="password"
+                type="password"
+                id="password"
+                autoComplete="current-password"
+              />
+            </FormControl>
             <FormControl margin="normal" required fullWidth>
               <InputLabel htmlFor="text">Group Name</InputLabel>
               <Input id="groupname" name="groupname" autoFocus />
             </FormControl>
 
             <FormControl margin="normal" required fullWidth>
-              <InputLabel htmlFor="password">Password</InputLabel>
+              <InputLabel htmlFor="password">Group password</InputLabel>
               <Input
                 name="password"
                 type="password"
@@ -89,7 +111,7 @@ function GroupSignIn(props) {
             <Button
               type="submit"
               fullWidth
-              variant="contained"
+              variant="outlined"
               className={classes.submit}
             >
               <Link

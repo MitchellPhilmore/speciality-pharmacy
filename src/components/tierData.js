@@ -7,7 +7,8 @@ import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
 const header = {
   position: "relative",
   left: "380px",
-  color: "white"
+  color: "white",
+  fontFamily: 'Pathway Gothic One, sans-serif'
 };
 
 const linkColumn = {
@@ -362,6 +363,7 @@ const options = {
   download: false,
   checkbox: false,
   pagination: false,
+  search:false,
   elevation: 4,
   reponsive: "stacked",
   onRowClick(rowData) {

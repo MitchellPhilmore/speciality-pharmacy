@@ -42,16 +42,23 @@ const styles = theme => ({
   },
   submit: {
     marginTop: theme.spacing.unit * 3,
-    backgroundColor: "#424242"
+    // backgroundColor: "#424242"
+    
   },
   iconStyle: {
     fontSize: "80px",
     color: "#616161"
   },
   linkStyle: {
-    color: "white"
+    color:'#424242',
+    textDecoration:'none',
+    
+  },
+  signin:{
+    fontFamily: 'Pathway Gothic One, sans-serif'
   }
 });
+
 
 function SignIn(props) {
   const { classes } = props;
@@ -66,16 +73,16 @@ function SignIn(props) {
         <CssBaseline />
         <Paper className={classes.paper}>
           <Icon className={classes.iconStyle}>person_pin</Icon>
-          <Typography component="h1" variant="h5">
+          <Typography  className={classes.signin} component="h1" variant="h5">
             SIGN IN
           </Typography>
 
           <form className={classes.form}>
             <FormControl margin="normal" required fullWidth>
-              <InputLabel htmlFor="email">Username</InputLabel>
+              <InputLabel htmlFor="email">Email</InputLabel>
               <Input
-                id="username"
-                name="username"
+                id="email"
+                name="email"
                 autoComplete="email"
                 autoFocus
               />
@@ -95,11 +102,11 @@ function SignIn(props) {
             <Link to="/info">Not a member? Join now</Link>
             <br />
             <br />
-            <Link to="/group">Group member? Login here</Link>
+            <Link to="/group">Signing in as a group member for the first time? Login here</Link>
             <Button
               type="submit"
               fullWidth
-              variant="contained"
+              variant="outlined"
               className={classes.submit}
             >
               <Link

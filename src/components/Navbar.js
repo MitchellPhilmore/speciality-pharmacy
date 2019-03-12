@@ -21,7 +21,8 @@ const styles = {
   },
   grow: {
     flexGrow: 1,
-    position: "fixed"
+    position: "fixed",
+    fontFamily: 'Pathway Gothic One, sans-serif'
   },
   menuButton: {
     marginLeft: -12,
@@ -43,7 +44,10 @@ const styles = {
     left: "25%",
     margin: "20px",
     top: "0",
-    textAlign: "center"
+    textAlign: "center",
+    fontFamily: 'Pathway Gothic One, sans-serif',
+  
+    
   },
 
   small: {
@@ -138,11 +142,9 @@ class ButtonAppBar extends Component {
             )}
 
             <br />
-                
-                  <Link className={classes.links} to="info">
-                    {this.props.info}
-                  </Link>
-               
+                  <Button size="small" href="/info" className={classes.links}>
+                       {this.props.info}
+                  </Button>
 
             <Link className={classes.links} to="/">
               <Icon className={classes.icon}>account_circle</Icon>

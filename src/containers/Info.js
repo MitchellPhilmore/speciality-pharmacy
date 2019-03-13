@@ -8,7 +8,7 @@ import ProTier from "../components/ProTier";
 import Loader from "../components/Loaders";
 import TierData from "../components/tierData";
 import { Paper, Grid } from "@material-ui/core";
-import {Carousel} from 'react-responsive-carousel'
+
 
 const styles = theme => ({
   root: {
@@ -28,6 +28,15 @@ const styles = theme => ({
   }
 });
 
+let settings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1
+};
+
+ 
 class Info extends Component {
   constructor(props) {
     super(props);
@@ -88,11 +97,7 @@ class Info extends Component {
               <br />
               <br />
               <BasicTier/>
-
-              {/* <Grid item xs={2} /> */}
-              {/* <Carousel>
-              <div><Tier/></div>
-              </Carousel> */}
+              
               <Grid item xs={3}>
                 <Tier
                   className={classes.card}
@@ -103,6 +108,7 @@ class Info extends Component {
                   tierType="Single"
                 />
               </Grid>
+           
               {/* <Grid item xs={2} /> */}
               <Grid item xs={3}>
                 <Tier
@@ -177,7 +183,9 @@ class Info extends Component {
                   tierType="Multiple Users"
                 />
               </Grid>
+             
             </Grid>
+          
           )}
         </Grid>
 

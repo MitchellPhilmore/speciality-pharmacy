@@ -55,7 +55,8 @@ const styles = theme => ({
     
   },
   signin:{
-    fontFamily: 'Pathway Gothic One, sans-serif'
+    fontFamily: 'Pathway Gothic One, sans-serif',
+    textDecoration:'none'
   }
 });
 
@@ -99,10 +100,10 @@ function SignIn(props) {
             </FormControl>
             <br />
             <br />
-            <Link to="/info">Not a member? Join now</Link>
+            <Link className={classes.signin} to="/info">Not a member? Join now</Link>
             <br />
             <br />
-            <Link to="/group">Signing in as a group member for the first time? Login here</Link>
+            <Link className={classes.signin} to="/group">Signing in as a group member for the first time? Login here</Link>
             <Button
               type="submit"
               fullWidth

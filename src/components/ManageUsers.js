@@ -55,6 +55,10 @@ const emails = [
 const groupPasswords = ["test1234", "password123", "test567"];
 const yearsOfExperience = ["20", "12", "3"];
 
+let color = {
+  background:'black'
+}
+
 function randomSeed(seed = 123456789) {
   let mW = seed;
   let mZ = 987654321;
@@ -226,6 +230,7 @@ export default class ManageUsers extends React.PureComponent {
               showAddCommand={!addedRows.length}
               showEditCommand
               showDeleteCommand
+             
             />
           </Grid>
         </Paper>

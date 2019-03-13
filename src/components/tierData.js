@@ -431,7 +431,15 @@ class TeirData extends Component {
             padding: "5px",
            
           }
+        },
+        MUIDataTableHeadCell:{
+          root:{
+              fontSize:'19px',
+              fontFamily: 'Pathway Gothic One, sans-serif'
+            }
+          
         }
+        
       }
     });
 

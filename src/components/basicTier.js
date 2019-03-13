@@ -209,6 +209,13 @@ class BasicTier extends Component {
             left:'40%',
             fontFamily: 'Pathway Gothic One, sans-serif'
           }
+        },
+        MUIDataTableHeadCell:{
+          root:{
+              fontSize:'19px',
+              fontFamily: 'Pathway Gothic One, sans-serif'
+            }
+          
         }
       }
     });

@@ -38,7 +38,7 @@ const styles = {
 
   links: {
     color: "white",
-    fontSize: "20px",
+    fontSize: "25px",
     position: "relative",
     textDecoration: "none",
     left: "25%",
@@ -48,6 +48,10 @@ const styles = {
     fontFamily: 'Pathway Gothic One, sans-serif',
   
     
+  },
+  dashBoardItems:{
+     fontFamily: 'Pathway Gothic One, sans-serif',
+     color:'white'
   },
 
   small: {
@@ -65,7 +69,7 @@ const styles = {
   admin: {
     color: "white",
     textDecoration: "none",
-    fontSize: "150%",
+    fontSize: "100%",
     margin: "10px"
   }
 };
@@ -109,24 +113,37 @@ class ButtonAppBar extends Component {
                     color="inherit"
                     className={classes.navItems}
                   >
-                    {`Subscription Level: ${this.props.subscription}`}
+                   
 
                     <Grid item={6}>
-                      {`Subscription Status: ${
-                        this.props.remainingSubscriptionTime
-                      } remaining\n`}
+                   
                       <br />
                       <br />
-                      <Link
-                        className={classes.admin}
-                        to={{
-                          pathname: "/manageusers",
-                          state: { manageUsers: "Manage Users" }
-                        }}
-                        component={ManageUsers}
-                      >
-                        User Maintainence
-                      </Link>
+
+                      <Button size="small" href="/manageusers" className={classes.links}>
+                     Manage Users
+                    
+                      
+                  </Button>
+                      <Button size="small" href="/manageusers" className={classes.links}>
+                     
+                      Subscription Level: {this.props.subscription}
+                      
+                  </Button>
+
+                      <Button size="small" href="/manageusers" className={classes.links}>
+                     
+                      Subscription Status:
+                        {this.props.remainingSubscriptionTime}
+                  
+                      
+                  </Button>
+
+                  <Button size="small" href="/info" className={classes.links}>
+                       {this.props.info}
+                  </Button>
+
+                     
                     </Grid>
 
                     <Grid>
@@ -142,9 +159,7 @@ class ButtonAppBar extends Component {
             )}
 
             <br />
-                  <Button size="small" href="/info" className={classes.links}>
-                       {this.props.info}
-                  </Button>
+                
 
             <Link className={classes.links} to="/">
               <Icon className={classes.icon}>account_circle</Icon>

@@ -352,6 +352,13 @@ class ProTier extends Component {
             left:'40%',
             fontFamily: 'Pathway Gothic One, sans-serif'
           }
+        },
+        MUIDataTableHeadCell:{
+          root:{
+              fontSize:'15px',
+              fontFamily: 'Pathway Gothic One, sans-serif'
+            }
+          
         }
       }
     });

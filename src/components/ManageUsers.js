@@ -2,6 +2,7 @@ import * as React from "react";
 import Paper from "@material-ui/core/Paper";
 import { EditingState } from "@devexpress/dx-react-grid";
 import NavBar from "./Navbar";
+import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
 import {
   Grid,
   Table,
@@ -193,6 +194,48 @@ export default class ManageUsers extends React.PureComponent {
     this.setState({ rows });
   }
 
+
+
+  getMuiTheme = () =>
+  createMuiTheme({
+    overrides: {
+      MuiTableHead:{
+      root:{
+        
+        background: "#424242",
+        color: "white"
+        
+        }
+    
+      },
+      TableHeaderCell:{
+        container:{
+          color:'white',
+          fontFamily: 'Pathway Gothic One, sans-serif'
+        }
+      },
+      MuiButton:{
+        label:{
+          color:'gray',
+          fontFamily: 'Pathway Gothic One, sans-serif'
+        }
+      },
+      MuiTableCell:{
+        root:{
+          fontFamily: 'Pathway Gothic One, sans-serif'
+        }
+      },
+      TableContainer:{
+        root:{
+          maxWidth:'95vw',
+          margin:'0 auto',
+          marginBottom:'50px'
+        }
+      }
+   
+    }
+  });
+
   render() {
     const {
       rows,
@@ -212,6 +255,9 @@ export default class ManageUsers extends React.PureComponent {
           username="Mitch"
           edit="Explorer"
         />
+        <br/>
+        <br/>
+        <MuiThemeProvider theme={this.getMuiTheme()}>
         <Paper>
           <Grid rows={rows} columns={columns} getRowId={getRowId}>
             <EditingState
@@ -224,7 +270,7 @@ export default class ManageUsers extends React.PureComponent {
               onCommitChanges={this.commitChanges}
             />
             <Table columnExtensions={tableColumnExtensions} />
-            <TableHeaderRow />
+            <TableHeaderRow/>
             <TableEditRow />
             <TableEditColumn
               showAddCommand={!addedRows.length}
@@ -234,6 +280,7 @@ export default class ManageUsers extends React.PureComponent {
             />
           </Grid>
         </Paper>
+        </MuiThemeProvider>
       </div>
     );
   }

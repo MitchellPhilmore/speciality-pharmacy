@@ -338,9 +338,11 @@ class ProTier extends Component {
 
         MUIDataTableBodyCell: {
           root: {
-            padding: "30px",
+            padding: "20px",
             width: "5px",
-            maxWidth: "200px"
+            maxWidth: "200px",
+            fontFamily: 'Pathway Gothic One, sans-serif',
+            fontSize:'110%'
           }
         },
         MuiInputBase:{

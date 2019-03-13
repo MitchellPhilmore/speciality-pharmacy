@@ -12,7 +12,9 @@ const header = {
 };
 
 const linkColumn = {
-  width: "500%"
+  fontFamily: 'Pathway Gothic One, sans-serif',
+  fontSize:'110%',
+  textDecoration:'none'
 };
 const columns = [
   {
@@ -102,6 +104,7 @@ const data = [
   {
     access: (
       <Link
+      style={linkColumn}
         to={{
           pathname: "/acquire",
           state: {
@@ -126,6 +129,7 @@ const data = [
   {
     access: (
       <Link
+      style={linkColumn}
         to={{
           pathname: "/acquire",
           state: {
@@ -150,6 +154,7 @@ const data = [
   {
     access: (
       <Link
+      style={linkColumn}
         to={{
           pathname: "/acquire",
           state: {
@@ -174,6 +179,7 @@ const data = [
   {
     access: (
       <Link
+      style={linkColumn}
         to={{
           pathname: "/acquire",
           state: {
@@ -198,6 +204,7 @@ const data = [
   {
     access: (
       <Link
+      style={linkColumn}
         to={{
           pathname: "/acquire",
           state: {
@@ -221,6 +228,7 @@ const data = [
   {
     access: (
       <Link
+      style={linkColumn}
         to={{
           pathname: "/acquire",
           state: {
@@ -244,6 +252,7 @@ const data = [
   {
     access: (
       <Link
+      style={linkColumn}
         to={{
           pathname: "/acquire",
           state: {
@@ -267,6 +276,7 @@ const data = [
   {
     access: (
       <Link
+      style={linkColumn}
         to={{
           pathname: "/acquire",
           state: {
@@ -290,6 +300,7 @@ const data = [
   {
     access: (
       <Link
+      style={linkColumn}
         to={{
           pathname: "/acquire",
           state: {
@@ -313,6 +324,7 @@ const data = [
   {
     access: (
       <Link
+      style={linkColumn}
         to={{
           pathname: "/acquire",
           state: {
@@ -336,6 +348,7 @@ const data = [
   {
     access: (
       <Link
+      style={linkColumn}
         to={{
           pathname: "/acquire",
           state: {
@@ -429,6 +442,8 @@ class TeirData extends Component {
         MUIDataTableBodyCell: {
           root: {
             padding: "5px",
+            fontFamily: 'Pathway Gothic One, sans-serif',
+            fontSize:'110%'
            
           }
         },

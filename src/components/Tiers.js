@@ -36,11 +36,11 @@ const styles = theme => ({
     backgroundColor: "#616161"
   },
   links: {
-    color: "#ffff",
+    color: "#424242",
     textDecoration: "none",
     fontSize: "125%"
   },
-  btn: { backgroundColor: "#424242" }
+  // btn: { backgroundColor: "#424242" }
 });
 
 class Teir extends Component {
@@ -72,7 +72,7 @@ class Teir extends Component {
           <Button
             type="submit"
             fullWidth
-            variant="contained"
+            variant="outlined"
             className={classes.btn}
           >
             <Link

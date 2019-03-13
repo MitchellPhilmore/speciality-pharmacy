@@ -30,7 +30,8 @@ const styles = theme => ({
   },
   inputs: {
     width: "315px",
-    margin: "10px"
+    margin: "10px",
+    fontFamily: 'Pathway Gothic One, sans-serif'
   },
   registrationForm: {
     width: "60%",
@@ -44,7 +45,8 @@ const styles = theme => ({
     margin: "5px"
   },
   legend: {
-    fontSize: "200%"
+    fontSize: "200%",
+    fontFamily: 'Pathway Gothic One, sans-serif'
   },
   addUserBtn: {
     backgroundColor: "lightgray",
@@ -68,7 +70,9 @@ const styles = theme => ({
     width: "100%",
     opacity: "0.5",
     borderTop: "3px solid gray",
-    borderBottom: "3px solid gray"
+    borderBottom: "3px solid gray",
+    fontFamily: 'Pathway Gothic One, sans-serif',
+    fontSize:'150%'
   }
 });
 
@@ -315,11 +319,11 @@ class RegistrationForm extends Component {
 
               <Button
                 className={classes.submitBtn}
-                variant="raised"
+                variant="outlined"
                 type="submit"
               >
                 <Icon>send</Icon>
-                Submit
+                  Submit
               </Button>
             </fieldset>
           </MaterialUIForm>

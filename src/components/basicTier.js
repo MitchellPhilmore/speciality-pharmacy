@@ -192,7 +192,9 @@ class BasicTier extends Component {
 
         MUIDataTableBodyCell: {
           root: {
-            padding: "10px"
+            padding: "10px",
+            fontFamily: 'Pathway Gothic One, sans-serif',
+            fontSize:'110%'
           }
         },
         MuiTypography: {

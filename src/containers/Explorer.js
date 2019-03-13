@@ -450,7 +450,17 @@ const tableContainer = {
           maxWidth: "200px",
           marginLeft:'50px'
         }
-      }
+      },
+      MuiInputBase:{
+        root:{
+          color:'white',
+          fontSize:'40px',
+          textAlign:'right',
+          position:'absolute',
+          left:'40%',
+          fontFamily: 'Pathway Gothic One, sans-serif'
+        }
+      },
     }
   });
 

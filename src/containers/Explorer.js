@@ -14,7 +14,8 @@ const styles = theme => ({
   header: {
     position: "relative",
     left: "380px",
-    color: "white"
+    color: "white",
+    fontFamily: 'Pathway Gothic One, sans-serif'
   }
 });
 
@@ -479,7 +480,7 @@ const tableContainer = {
               variant="h4"
               gutterBottom
             >
-              Sample: Pro Tier
+              Pharmacy Database
             </Typography>
           }
           data={data}

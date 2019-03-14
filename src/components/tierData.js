@@ -30,7 +30,7 @@ const columns = [
     label: "Duration",
     options: {
       filter: true,
-      sort: false
+      sort: true
     }
   },
   {
@@ -38,7 +38,7 @@ const columns = [
     label: "User Type",
     options: {
       filter: true,
-      sort: false
+      sort: true
     }
   },
   {
@@ -46,7 +46,7 @@ const columns = [
     label: "Number Of Records",
     options: {
       filter: true,
-      sort: false
+      sort: true
     }
   },
   {
@@ -54,7 +54,7 @@ const columns = [
     label: "Cost",
     options: {
       filter: true,
-      sort: false
+      sort: true
     }
   },
   {
@@ -62,7 +62,7 @@ const columns = [
     label: "Re-newable",
     options: {
       filter: true,
-      sort: false
+      sort: true
     }
   },
   {
@@ -70,7 +70,7 @@ const columns = [
     label: "Trial",
     options: {
       filter: true,
-      sort: false
+      sort: true
     }
   }
 ];
@@ -376,7 +376,7 @@ const options = {
   download: false,
   checkbox: false,
   pagination: false,
-  search:false,
+  search:true,
   elevation: 4,
   reponsive: "stacked",
   onRowClick(rowData) {
@@ -453,6 +453,30 @@ class TeirData extends Component {
               fontFamily: 'Pathway Gothic One, sans-serif'
             }
           
+        },
+        MuiInputBase:{
+          root:{
+            color:'lightgray',
+            fontSize:'20px',
+            textAlign:'right',
+            position:'absolute',
+            left:'18%',
+            fontFamily: 'Pathway Gothic One, sans-serif',
+            width:'160px'
+          }
+        },
+        MUIDataTableFilter:{
+          root:{
+            width:'350px',
+            maxWidth:'350px'
+          }
+        },
+        MuiSelect:{
+          select:{
+            position:'relative',
+            left:'5px',
+            padding:'0'
+          }
         }
         
       }

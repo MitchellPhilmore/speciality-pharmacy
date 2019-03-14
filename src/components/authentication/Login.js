@@ -86,6 +86,7 @@ function SignIn(props) {
                 name="email"
                 autoComplete="email"
                 autoFocus
+                className={classes.loggedIn}
               />
             </FormControl>
 

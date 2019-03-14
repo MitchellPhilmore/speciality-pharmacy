@@ -25,6 +25,10 @@ const styles = theme => ({
   },
   navBar: {
     width: "100%"
+  },
+  carousel:{
+    overflowX: 'auto',
+      whiteSpace: 'nowrap'
   }
 });
 
@@ -183,8 +187,9 @@ class Info extends Component {
                   tierType="Multiple Users"
                 />
               </Grid>
-             
+              
             </Grid>
+          
           
           )}
         </Grid>

@@ -429,7 +429,7 @@ const tableContainer = {
         root: {
           background: "#424242",
           color: "white",
-
+          fontFamily: 'Pathway Gothic One, sans-serif'
         },
        
      
@@ -445,11 +445,19 @@ const tableContainer = {
 
       MUIDataTableBodyCell: {
         root: {
-          padding: "30px",
+          padding: "20px",
           width: "5px",
           maxWidth: "200px",
-          marginLeft:'50px'
+          fontFamily: 'Pathway Gothic One, sans-serif',
+          fontSize:'110%'
         }
+      },
+      MUIDataTableHeadCell:{
+        root:{
+            fontSize:'15px',
+            fontFamily: 'Pathway Gothic One, sans-serif'
+          }
+        
       },
       MuiInputBase:{
         root:{

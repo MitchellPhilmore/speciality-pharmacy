@@ -23,7 +23,7 @@ const columns = [
     label: "URL",
     options: {
       filter: true,
-      sort: false
+      sort: true
     }
   },
   {
@@ -31,7 +31,7 @@ const columns = [
     label: "Street Address",
     options: {
       filter: true,
-      sort: false
+      sort: true
     }
   },
   {
@@ -39,7 +39,7 @@ const columns = [
     label: "City",
     options: {
       filter: true,
-      sort: false
+      sort: true
     }
   },
   {
@@ -47,7 +47,7 @@ const columns = [
     label: "State",
     options: {
       filter: true,
-      sort: false
+      sort: true
     }
   },
 
@@ -56,7 +56,7 @@ const columns = [
     label: "Zip",
     options: {
       filter: true,
-      sort: false
+      sort: true
     }
   },
   {
@@ -64,7 +64,7 @@ const columns = [
     label: "Phone",
     options: {
       filter: true,
-      sort: false
+      sort: true
     }
   },
   {
@@ -72,7 +72,7 @@ const columns = [
     label: "Conditions",
     options: {
       filter: true,
-      sort: false
+      sort: true
     }
   },
   {
@@ -80,7 +80,7 @@ const columns = [
     label: "Company Type",
     options: {
       filter: true,
-      sort: false
+      sort: true
     }
   }
 ];
@@ -89,8 +89,8 @@ const data = [
   {
     pharmacyName: "Tiobias Harris Pharmacy",
     URL: "tobias-harris.com",
-    streetAddress: "123 Main Street",
-    zip: "19145",
+    streetAddress: "223 Main Street",
+    zip: "19144",
     city: "Philadelphia",
     state: "PA",
     phone: "215-555-5555",
@@ -100,23 +100,23 @@ const data = [
   {
     pharmacyName: "Tiobias Harris Pharmacy",
     URL: "tobias-harris.com",
-    streetAddress: "123 Main Street",
-    zip: "19145",
-    city: "Philadelphia",
-    state: "PA",
-    phone: "215-555-5555",
-    conditions: "Tobias Harris Conditions",
-    companyType: "Tobia Harris Pharmacy"
+    streetAddress: "323 Main Street",
+    zip: "2088",
+    city: "Cherry Hill",
+    state: "NJ",
+    phone: "215-555-3333",
+    conditions: " Harris Conditions",
+    companyType: "Kobe Harris Pharmacy"
   },
   {
-    pharmacyName: "Tiobias Harris Pharmacy",
+    pharmacyName: "Tony's Pharmacy",
     URL: "tobias-harris.com",
-    streetAddress: "123 Main Street",
+    streetAddress: "523 Main Street",
     zip: "19145",
     city: "Philadelphia",
     state: "PA",
     phone: "215-555-5555",
-    conditions: "Tobias Harris Conditions",
+    conditions: "Tommy Conditions",
     companyType: "Tobia Harris Pharmacy"
   },
   {
@@ -192,7 +192,7 @@ class BasicTier extends Component {
 
         MUIDataTableBodyCell: {
           root: {
-            padding: "10px",
+            padding: "5px",
             fontFamily: 'Pathway Gothic One, sans-serif',
             fontSize:'110%'
           }
@@ -204,12 +204,13 @@ class BasicTier extends Component {
         },
         MuiInputBase:{
           root:{
-            color:'white',
-            fontSize:'40px',
+            color:'lightgray',
+            fontSize:'20px',
             textAlign:'right',
             position:'absolute',
-            left:'40%',
-            fontFamily: 'Pathway Gothic One, sans-serif'
+            left:'18%',
+            fontFamily: 'Pathway Gothic One, sans-serif',
+            width:'160px'
           }
         },
         MUIDataTableHeadCell:{
@@ -218,7 +219,24 @@ class BasicTier extends Component {
               fontFamily: 'Pathway Gothic One, sans-serif'
             }
           
+        },
+        MUIDataTableFilter:{
+          root:{
+            width:'550px',
+            maxWidth:'550px',
+            height:'350px',
+            overflowX:'scroll'
+
+          }
+        },
+        MuiInputLabel:{
+          root:{
+            fontSize:'15px',
+            position:'relative',
+            left:'30px'
+          }
         }
+       
       }
     });
 

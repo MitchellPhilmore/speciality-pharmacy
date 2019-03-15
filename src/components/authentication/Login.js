@@ -110,6 +110,7 @@ function SignIn(props) {
               fullWidth
               variant="outlined"
               className={classes.submit}
+              href="/explorer"
             >
               <Link
                 className={classes.linkStyle}

@@ -110,6 +110,7 @@ function GroupSignIn(props) {
             <br />
             <Button
               type="submit"
+              href="/explorer"
               fullWidth
               variant="outlined"
               className={classes.submit}

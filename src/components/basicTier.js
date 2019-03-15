@@ -8,7 +8,7 @@ import {
   MuiThemeProvider,
   withStyles
 } from "@material-ui/core/styles";
-
+ 
 const columns = [
   {
     name: "pharmacyName",
@@ -175,7 +175,7 @@ class BasicTier extends Component {
         },
         MuiPaper:{
           root:{
-            maxWidth:'80vw',
+            maxWidth:'82vw',
             margin:'0 auto',
             overflow:'hidden',
             overflowY:'hidden',
@@ -194,7 +194,7 @@ class BasicTier extends Component {
           root: {
             padding: "5px",
             fontFamily: 'Pathway Gothic One, sans-serif',
-            fontSize:'110%'
+            fontSize:'90%'
           }
         },
         MuiTypography: {
@@ -215,7 +215,7 @@ class BasicTier extends Component {
         },
         MUIDataTableHeadCell:{
           root:{
-              fontSize:'19px',
+              fontSize:'15px',
               fontFamily: 'Pathway Gothic One, sans-serif'
             }
           

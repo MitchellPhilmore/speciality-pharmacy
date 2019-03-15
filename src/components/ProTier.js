@@ -342,7 +342,7 @@ class ProTier extends Component {
             width: "5px",
             maxWidth: "200px",
             fontFamily: 'Pathway Gothic One, sans-serif',
-            fontSize:'110%'
+            fontSize:'90%'
           }
         },
         MuiInputBase:{

@@ -417,16 +417,23 @@ class TeirData extends Component {
             marginBottom:'20px',
             marginTop:'30px',
             border:'none',
-            boxShadow:'none'
+            boxShadow:'none',
+            background: '#f5f5f5',
+            "913":{
+              background:'#f5f5f5'
+            }
+
            
            
           },
-          elevation2:{
-            '27':{
+         
+          elevation4:{
+            '919':{
               boxShadow:'none',
               overflowX:'hidden',
               marginBottom:'30px',
-              border:'none'
+              border:'none',
+              
             
             }
           }
@@ -443,13 +450,13 @@ class TeirData extends Component {
           root: {
             padding: "5px",
             fontFamily: 'Pathway Gothic One, sans-serif',
-            fontSize:'110%'
+            fontSize:'90%'
            
           }
         },
         MUIDataTableHeadCell:{
           root:{
-              fontSize:'19px',
+              fontSize:'15px',
               fontFamily: 'Pathway Gothic One, sans-serif'
             }
           

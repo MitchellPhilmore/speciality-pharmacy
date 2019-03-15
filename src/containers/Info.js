@@ -26,9 +26,8 @@ const styles = theme => ({
   navBar: {
     width: "100%"
   },
-  carousel:{
-    overflowX: 'auto',
-      whiteSpace: 'nowrap'
+  tierContainer:{
+   background:'#f5f5f5 '
   }
 });
 
@@ -69,7 +68,9 @@ class Info extends Component {
     return (
       <div>
         <Navbar className={classes.navBar} name="Detailed Info and Plans" />
+        <div>
         <Paper className={classes.root}>
+        
           <TierData />
           <br />
         </Paper>
@@ -194,8 +195,9 @@ class Info extends Component {
           )}
         </Grid>
 
-        <div />
-      </div>
+        </div>
+    </div>
+      
     );
   }
 }

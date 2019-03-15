@@ -35,7 +35,7 @@ const columns = [
     label: "URL",
     options: {
       filter: true,
-      sort: false
+      sort: true
     }
   },
   {
@@ -43,7 +43,7 @@ const columns = [
     label: "Street Address",
     options: {
       filter: true,
-      sort: false
+      sort: true
     }
   },
   {
@@ -51,7 +51,7 @@ const columns = [
     label: "City",
     options: {
       filter: true,
-      sort: false
+      sort: true
     }
   },
   {
@@ -59,7 +59,7 @@ const columns = [
     label: "State",
     options: {
       filter: true,
-      sort: false
+      sort: true
     }
   },
 
@@ -68,7 +68,7 @@ const columns = [
     label: "Zip",
     options: {
       filter: true,
-      sort: false
+      sort: true
     }
   },
   {
@@ -76,7 +76,7 @@ const columns = [
     label: "Phone",
     options: {
       filter: true,
-      sort: false
+      sort: true
     }
   },
   {
@@ -84,7 +84,7 @@ const columns = [
     label: "Conditions",
     options: {
       filter: true,
-      sort: false
+      sort: true
     }
   },
   {
@@ -92,7 +92,7 @@ const columns = [
     label: "Company Type",
     options: {
       filter: true,
-      sort: false
+      sort: true
     }
   },
   {
@@ -100,7 +100,7 @@ const columns = [
     label: "Pharmacy Contact",
     options: {
       filter: true,
-      sort: false
+      sort: true
     }
   },
   {
@@ -108,7 +108,7 @@ const columns = [
     label: "Contact Email",
     options: {
       filter: true,
-      sort: false
+      sort: true
     }
   },
 
@@ -117,7 +117,7 @@ const columns = [
     label: "Accreditation",
     options: {
       filter: true,
-      sort: false
+      sort: true
     }
   },
 
@@ -126,7 +126,7 @@ const columns = [
     label: "Owner/Independent",
     options: {
       filter: true,
-      sort: false
+      sort: true
     }
   },
   {
@@ -134,7 +134,7 @@ const columns = [
     label: "Patient Services",
     options: {
       filter: true,
-      sort: false
+      sort: true
     }
   },
   {
@@ -142,7 +142,7 @@ const columns = [
     label: "Payer Services",
     options: {
       filter: true,
-      sort: false
+      sort:true
     }
   },
   {
@@ -150,7 +150,7 @@ const columns = [
     label: "Pharma Services",
     options: {
       filter: true,
-      sort: false
+      sort: true
     }
   },
   {
@@ -158,7 +158,7 @@ const columns = [
     label: "Locations",
     options: {
       filter: true,
-      sort: false
+      sort: true
     }
   },
   {
@@ -166,7 +166,7 @@ const columns = [
     label: "Limted Distribution Drugs",
     options: {
       filter: true,
-      sort: false
+      sort: true
     }
   }
 ];
@@ -363,11 +363,10 @@ const data = [
 ];
 
 const options = {
-  filterType: "checkbox",
-  pagination: false,
+  pagination: true,
   print: false,
-  pagination: false,
-  download: false
+  download: false,
+  selectableRows: false,
 };
 
 const centerLoader = {
@@ -445,11 +444,11 @@ const tableContainer = {
 
       MUIDataTableBodyCell: {
         root: {
-          padding: "20px",
+          padding: "10px",
           width: "5px",
           maxWidth: "200px",
           fontFamily: 'Pathway Gothic One, sans-serif',
-          fontSize:'110%'
+          fontSize:'90%'
         }
       },
       MUIDataTableHeadCell:{
@@ -461,14 +460,29 @@ const tableContainer = {
       },
       MuiInputBase:{
         root:{
-          color:'white',
-          fontSize:'40px',
+          color:'lightgray',
+          fontSize:'20px',
           textAlign:'right',
           position:'absolute',
-          left:'40%',
-          fontFamily: 'Pathway Gothic One, sans-serif'
+          left:'18%',
+          fontFamily: 'Pathway Gothic One, sans-serif',
+          width:'160px'
         }
       },
+      MUIDataTableFilter:{
+        root:{
+          width:'350px',
+          maxWidth:'350px',
+          height:'350px',
+        }
+      },
+      MuiSelect:{
+        select:{
+          position:'relative',
+          left:'5px',
+          padding:'0'
+        }
+      }
     }
   });
 

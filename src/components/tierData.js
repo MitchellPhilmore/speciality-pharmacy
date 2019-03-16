@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 import { Typography, withStyles } from "@material-ui/core";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import MUIDataTable from "mui-datatables";
-import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
+import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles"
+
+
+
 
 const header = {
   position: "relative",
@@ -14,6 +17,7 @@ const header = {
 const linkColumn = {
   fontFamily: 'Pathway Gothic One, sans-serif',
   fontSize:'110%',
+  width:'700px',
   textDecoration:'none'
 };
 const columns = [
@@ -370,19 +374,7 @@ const data = [
     trial: "No"
   }
 ];
-const options = {
-  selectableRows: false,
-  print: false,
-  download: false,
-  checkbox: false,
-  pagination: false,
-  search:true,
-  elevation: 4,
-  reponsive: "stacked",
-  onRowClick(rowData) {
-    console.log(rowData);
-  }
-};
+
 
 const styles = {
   action: {
@@ -393,6 +385,11 @@ const styles = {
 class TeirData extends Component {
   constructor(props) {
     super(props);
+ this.state = {
+   test:''
+ }
+    
+
   }
 
   //Style themes
@@ -490,9 +487,26 @@ class TeirData extends Component {
     });
 
   render() {
+ 
     const { classes } = this.props;
+
+    const options = {
+      selectableRows: false,
+      print: false,
+      download: false,
+      checkbox: false,
+      pagination: false,
+      search:true,
+      elevation: 4,
+      reponsive: "stacked",
+      onRowClick(rowData) {
+       
+    
+    }
+    }
     return (
       <MuiThemeProvider theme={this.getMuiTheme()}>
+ 
         <MUIDataTable
           title={
             <Typography style={header} component="h3" variant="h3" gutterBottom>
@@ -503,6 +517,7 @@ class TeirData extends Component {
           columns={columns}
           options={options}
         />
+      
       </MuiThemeProvider>
     );
   }

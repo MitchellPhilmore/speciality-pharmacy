@@ -405,21 +405,24 @@ const tableContainer = {
     overrides: {
       MUIDataTable:{
         root:{
-          // width:'1000px'
+         width:'200px'
         }
     
       },
+   
       MuiPaper:{
         root:{
-          maxWidth:'80vw',
-          marginLeft:'100px',
+          maxWidth:'82vw',
+          margin:'0 auto',
           overflowX:'scroll',
-          marginBottom:'50px'
+          marginBottom:'50px',
+          position: 'relative'
+       
         },
         elevation2:{
           '27':{
             boxShadow:'none',
-            overflowX:'hidden',
+            // overflowX:'hidden',
           
           }
         }
@@ -428,8 +431,10 @@ const tableContainer = {
         root: {
           background: "#424242",
           color: "white",
-          fontFamily: 'Pathway Gothic One, sans-serif'
-        },
+         width:'4000px'
+          
+
+       },
        
      
         actions: {
@@ -444,19 +449,12 @@ const tableContainer = {
 
       MUIDataTableBodyCell: {
         root: {
-          padding: "10px",
+          padding: "5px",
           width: "5px",
           maxWidth: "200px",
           fontFamily: 'Pathway Gothic One, sans-serif',
           fontSize:'90%'
         }
-      },
-      MUIDataTableHeadCell:{
-        root:{
-            fontSize:'15px',
-            fontFamily: 'Pathway Gothic One, sans-serif'
-          }
-        
       },
       MuiInputBase:{
         root:{
@@ -469,18 +467,33 @@ const tableContainer = {
           width:'160px'
         }
       },
+      MUIDataTableHeadCell:{
+        root:{
+            fontSize:'15px',
+            fontFamily: 'Pathway Gothic One, sans-serif',
+            
+          }
+        
+      },
       MUIDataTableFilter:{
         root:{
-          width:'350px',
-          maxWidth:'350px',
+          width:'550px',
+          maxWidth:'550px',
           height:'350px',
+          overflowX:'scroll'
+
         }
       },
-      MuiSelect:{
-        select:{
+      MuiInputLabel:{
+        root:{
+          fontSize:'15px',
           position:'relative',
-          left:'5px',
-          padding:'0'
+          left:'30px'
+        }
+      },
+      MuiTypography:{
+        root:{
+          width:'1000px'
         }
       }
     }

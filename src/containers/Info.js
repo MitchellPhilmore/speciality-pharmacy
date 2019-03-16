@@ -46,7 +46,8 @@ class Info extends Component {
 
     this.state = {
       //Turned off loader
-      isLoading: false
+      isLoading: false,
+      toInfoPage:false
     };
   }
 

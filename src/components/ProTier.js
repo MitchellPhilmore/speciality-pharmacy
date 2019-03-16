@@ -276,7 +276,7 @@ const options = {
   selectableRows: false,
   print: false,
   pagination: false,
-  fixedHeader: true,
+  // fixedHeader: true,
   download: false,
   checkbox: false,
   reponsive: "stacked",
@@ -300,21 +300,24 @@ class ProTier extends Component {
       overrides: {
         MUIDataTable:{
           root:{
-            // width:'1000px'
+           width:'200px'
           }
       
         },
+     
         MuiPaper:{
           root:{
-            maxWidth:'80vw',
+            maxWidth:'82vw',
             margin:'0 auto',
             overflowX:'scroll',
-            marginBottom:'50px'
+            marginBottom:'50px',
+            position: 'relative'
+         
           },
           elevation2:{
             '27':{
               boxShadow:'none',
-              overflowX:'hidden',
+              // overflowX:'hidden',
             
             }
           }
@@ -322,8 +325,11 @@ class ProTier extends Component {
         MUIDataTableToolbar: {
           root: {
             background: "#424242",
-            color: "white"
-          },
+            color: "white",
+           width:'4000px'
+            
+  
+         },
          
        
           actions: {
@@ -359,7 +365,8 @@ class ProTier extends Component {
         MUIDataTableHeadCell:{
           root:{
               fontSize:'15px',
-              fontFamily: 'Pathway Gothic One, sans-serif'
+              fontFamily: 'Pathway Gothic One, sans-serif',
+              
             }
           
         },
@@ -377,6 +384,11 @@ class ProTier extends Component {
             fontSize:'15px',
             position:'relative',
             left:'30px'
+          }
+        },
+        MuiTypography:{
+          root:{
+            width:'1000px'
           }
         }
        

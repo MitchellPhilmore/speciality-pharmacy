@@ -208,6 +208,12 @@ export default class ManageUsers extends React.PureComponent {
         }
     
       },
+      MuiPaper:{
+        root:{
+         background:'lightgray'
+        }
+       
+        },
       TableHeaderCell:{
         container:{
           color:'white',
@@ -246,6 +252,9 @@ export default class ManageUsers extends React.PureComponent {
       addedRows
     } = this.state;
 
+    let containerStyle = {
+      background: 'rgba(189, 189, 189, 0.3)'
+    }
     return (
       <div>
         <NavBar
@@ -253,7 +262,7 @@ export default class ManageUsers extends React.PureComponent {
           subscription="Pro"
           loggedIn={true}
           username="Mitch"
-          edit="Explorer"
+          // edit="Explorer"
         />
         <br/>
         <br/>

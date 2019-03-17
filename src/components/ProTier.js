@@ -312,8 +312,8 @@ class ProTier extends Component {
             margin:'0 auto',
             overflowX:'scroll',
             marginBottom:'50px',
-            position:'relative'
-            
+            position:'relative',
+            marginTop:'2px'
          
           },
           

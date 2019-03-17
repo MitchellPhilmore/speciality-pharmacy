@@ -325,12 +325,7 @@ class ProTier extends Component {
             }
           }
         },
-        MuiInput:{
-            underline:{
-             width:'30%'
-             
-            }
-          },
+        
         MUIDataTableToolbar: {
           root: {
             background: "#424242",

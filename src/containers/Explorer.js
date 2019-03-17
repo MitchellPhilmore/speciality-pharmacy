@@ -471,12 +471,7 @@ const tableContainer = {
         },
         
       },
-      MuiInput:{
-        underline:{
-         width:'40%'
-         
-        }
-      },
+     
       MUIDataTableHeadCell:{
         root:{
             fontSize:'15px',

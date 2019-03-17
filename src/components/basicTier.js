@@ -180,7 +180,7 @@ class BasicTier extends Component {
             overflow:'hidden',
             overflowY:'hidden',
             marginTop:'50px',
-            marginBottom:'50px'
+            marginBottom:'50px',
           }
         },
         MuiSvgIcon: {

@@ -21,7 +21,7 @@ const styles = {
   },
   grow: {
     flexGrow: 1,
-    position: "fixed",
+    // position: "fixed",
     fontFamily: 'Pathway Gothic One, sans-serif'
   },
   menuButton: {
@@ -61,7 +61,7 @@ const styles = {
   navItems: {
     color: "white",
     textDecoration: "none",
-    position: "fixed",
+    // position: "fixed",
     right: "25%",
     top: "0",
     fontSize: "80%"

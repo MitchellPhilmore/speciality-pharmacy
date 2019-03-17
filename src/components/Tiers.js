@@ -13,14 +13,19 @@ import pricingTiers from "../pricingTiers";
 const styles = theme => ({
   card: {
     maxWidth: 400,
-    boxShadow: "10px 10px 5px grey"
+    boxShadow: "10px 10px 5px lightgray",
+    fontFamily: 'Pathway Gothic One, sans-serif',
+  },
+  container:{
+    background:'white'
   },
   media: {
     height: 0,
     paddingTop: "56.25%" // 16:9
   },
   actions: {
-    display: "flex"
+    display: "flex",
+    fontFamily: 'Pathway Gothic One, sans-serif',
   },
   expand: {
     transform: "rotate(0deg)",
@@ -33,13 +38,18 @@ const styles = theme => ({
     transform: "rotate(180deg)"
   },
   avatar: {
-    backgroundColor: "#616161"
+    backgroundColor: "#424242",
+    fontFamily: 'Pathway Gothic One, sans-serif',
   },
   links: {
     color: "#424242",
     textDecoration: "none",
-    fontSize: "125%"
+    fontSize: "125%",
+    fontFamily: 'Pathway Gothic One, sans-serif',
   },
+  descriptFonts:{
+    fontFamily: 'Pathway Gothic One, sans-serif'
+  }
   // btn: { backgroundColor: "#424242" }
 });
 
@@ -48,6 +58,7 @@ class Teir extends Component {
     const { classes, name, avatar, cost, duration, tierType } = this.props;
 
     return (
+      <div className={classes.container}>
       <Card className={classes.card}>
         <CardHeader
           avatar={
@@ -56,13 +67,13 @@ class Teir extends Component {
             </Avatar>
           }
           title={
-            <Typography gutterBottom variant="h5" component="h2">
+            <Typography className={classes.descriptFonts} gutterBottom variant="h5" component="h2">
               {name}
             </Typography>
           }
         />
         <CardContent>
-          <Typography component="p">
+          <Typography  className={classes.descriptFonts} component="p">
             <h6>Try for {duration}</h6>
             <h1>$ {cost}</h1>
             {pricingTiers.pro}
@@ -92,6 +103,7 @@ class Teir extends Component {
           </Button>
         </CardActions>
       </Card>
+      </div>
     );
   }
 }

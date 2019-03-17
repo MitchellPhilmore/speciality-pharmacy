@@ -300,7 +300,8 @@ class ProTier extends Component {
       overrides: {
         MUIDataTable:{
           root:{
-           width:'200px'
+           width:'200px',
+         
           }
       
         },
@@ -311,9 +312,11 @@ class ProTier extends Component {
             margin:'0 auto',
             overflowX:'scroll',
             marginBottom:'50px',
-            position: 'relative'
+            position:'relative'
+            
          
           },
+          
           elevation2:{
             '27':{
               boxShadow:'none',
@@ -322,11 +325,18 @@ class ProTier extends Component {
             }
           }
         },
+        MuiInput:{
+            underline:{
+             width:'30%'
+             
+            }
+          },
         MUIDataTableToolbar: {
           root: {
             background: "#424242",
             color: "white",
-           width:'4000px'
+           width:'2200px',
+          position:'relative'
             
   
          },
@@ -354,12 +364,12 @@ class ProTier extends Component {
         MuiInputBase:{
           root:{
             color:'lightgray',
-            fontSize:'20px',
+            fontSize:'18px',
             textAlign:'right',
             position:'absolute',
-            left:'18%',
+            left:'8%',
             fontFamily: 'Pathway Gothic One, sans-serif',
-            width:'160px'
+             width:'10px'
           }
         },
         MUIDataTableHeadCell:{
@@ -383,12 +393,13 @@ class ProTier extends Component {
           root:{
             fontSize:'15px',
             position:'relative',
-            left:'30px'
+            left:'20px'
           }
         },
         MuiTypography:{
           root:{
-            width:'1000px'
+             width:'1000px',
+         
           }
         }
        

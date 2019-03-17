@@ -28,8 +28,15 @@ const styles = theme => ({
   },
   tierContainer:{
    background:'#f5f5f5 '
+  },
+  containerBackground:{
+    color:'red'
   }
 });
+
+let containerStyle = {
+  background: 'rgba(189, 189, 189, 0.3)'
+}
 
 let settings = {
   dots: true,
@@ -66,17 +73,21 @@ class Info extends Component {
       width: "80%",
       margin: "0 auto"
     };
+    const containerColor = {
+      background:'white'
+    }
     return (
       <div>
         <Navbar className={classes.navBar} name="Detailed Info and Plans" />
-        <div>
-        <Paper className={classes.root}>
+      
+         
+        <Paper style={containerStyle} className={classes.root}>
         
           <TierData />
           <br />
         </Paper>
 
-        <Grid container spacing={24}>
+        <Grid style={containerStyle}  container spacing={24}>
           {this.state.isLoading ? (
             <Grid item xs={12}>
               <div style={loaderStyle}>
@@ -97,14 +108,16 @@ class Info extends Component {
               </div>
             </Grid>
           ) : (
-            <Grid container spacing={24}>
+            <Grid  container spacing={24}>
+             
               <br />
               <br />
               <br />
               <br />
               <BasicTier/>
               
-              <Grid item xs={3}>
+             
+              <Grid style={containerColor} item xs={3}>
                 <Tier
                   className={classes.card}
                   cost={100}
@@ -116,7 +129,7 @@ class Info extends Component {
               </Grid>
            
               {/* <Grid item xs={2} /> */}
-              <Grid item xs={3}>
+              <Grid style={containerColor} item xs={3}>
                 <Tier
                   className={classes.card}
                   cost={149}
@@ -128,7 +141,7 @@ class Info extends Component {
               </Grid>
 
               {/* <Grid item xs={2} /> */}
-              <Grid item xs={3}>
+              <Grid style={containerColor} item xs={3}>
                 <Tier
                   className={classes.card}
                   cost={500}
@@ -139,7 +152,7 @@ class Info extends Component {
                 />
               </Grid>
               {/* <Grid item xs={2}/> */}
-              <Grid item xs={3}>
+              <Grid style={containerColor}  item xs={3}>
                 <Tier
                   className={classes.card}
                   cost={1000}
@@ -149,7 +162,7 @@ class Info extends Component {
                   teirType="Single"
                 />
               </Grid>
-              <Grid item xs={3}>
+              <Grid style={containerColor}  item xs={3}>
                 <Tier
                   className={classes.card}
                   cost={1250}
@@ -159,7 +172,7 @@ class Info extends Component {
                   tierType="Single"
                 />
               </Grid>
-              <Grid item xs={3}>
+              <Grid style={containerColor}  item xs={3}>
                 <Tier
                   className={classes.card}
                   cost={3500}
@@ -169,7 +182,7 @@ class Info extends Component {
                   tierType="Single"
                 />
               </Grid>
-              <Grid item xs={3}>
+              <Grid style={containerColor}  item xs={3}>
                 <Tier
                   className={classes.card}
                   cost={250}
@@ -179,7 +192,7 @@ class Info extends Component {
                   tierType="Multiple Users"
                 />
               </Grid>
-              <Grid item xs={3}>
+              <Grid style={containerColor}  item xs={3}>
                 <Tier
                   className={classes.card}
                   cost={750}
@@ -197,7 +210,7 @@ class Info extends Component {
         </Grid>
 
         </div>
-    </div>
+    
       
     );
   }

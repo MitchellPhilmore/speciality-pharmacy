@@ -415,9 +415,9 @@ class TeirData extends Component {
             marginTop:'30px',
             border:'none',
             boxShadow:'none',
-            background: '#f5f5f5',
+            
             "913":{
-              background:'#f5f5f5'
+            
             }
 
            
@@ -430,6 +430,7 @@ class TeirData extends Component {
               overflowX:'hidden',
               marginBottom:'30px',
               border:'none',
+              
               
             
             }
@@ -481,7 +482,8 @@ class TeirData extends Component {
             left:'5px',
             padding:'0'
           }
-        }
+        },
+       
         
       }
     });

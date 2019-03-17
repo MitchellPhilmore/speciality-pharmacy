@@ -405,7 +405,8 @@ const tableContainer = {
     overrides: {
       MUIDataTable:{
         root:{
-         width:'200px'
+         width:'200px',
+       
         }
     
       },
@@ -416,7 +417,8 @@ const tableContainer = {
           margin:'0 auto',
           overflowX:'scroll',
           marginBottom:'50px',
-          position: 'relative'
+          position:'relative'
+          
        
         },
         elevation2:{
@@ -431,7 +433,8 @@ const tableContainer = {
         root: {
           background: "#424242",
           color: "white",
-         width:'4000px'
+         width:'2200px',
+        position:'relative'
           
 
        },
@@ -459,12 +462,19 @@ const tableContainer = {
       MuiInputBase:{
         root:{
           color:'lightgray',
-          fontSize:'20px',
+          fontSize:'18px',
           textAlign:'right',
           position:'absolute',
-          left:'18%',
+          left:'8%',
           fontFamily: 'Pathway Gothic One, sans-serif',
-          width:'160px'
+           width:'100px'
+        },
+        
+      },
+      MuiInput:{
+        underline:{
+         width:'40%'
+         
         }
       },
       MUIDataTableHeadCell:{
@@ -488,12 +498,13 @@ const tableContainer = {
         root:{
           fontSize:'15px',
           position:'relative',
-          left:'30px'
+          left:'20px'
         }
       },
       MuiTypography:{
         root:{
-          width:'1000px'
+           width:'1000px',
+       
         }
       }
     }
@@ -501,6 +512,10 @@ const tableContainer = {
 
   render() {
     let { classes } = this.props;
+    let containerStyle = {
+      background: 'rgba(189, 189, 189, 0.3)'
+    }
+
     return (
       this.state.isLoading ? (
         <div style={centerLoader}>
@@ -517,6 +532,7 @@ const tableContainer = {
           <br/>
           <br/>
       <MuiThemeProvider theme={this.getMuiTheme()}>
+      <div style={containerStyle}>
         <MUIDataTable
           title={
             <Typography
@@ -532,7 +548,9 @@ const tableContainer = {
           columns={columns}
           options={options}
         />
+        </div>
       </MuiThemeProvider>
+
       </div>
     )
     )

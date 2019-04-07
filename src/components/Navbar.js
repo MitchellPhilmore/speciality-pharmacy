@@ -49,6 +49,15 @@ const styles = {
   
     
   },
+  home: {
+    color: "white",
+    fontSize: "18px",
+    textDecoration: "none",
+    margin: "20px",
+    fontFamily: 'Pathway Gothic One, sans-serif',
+  
+    
+  },
   dashBoardItems:{
      fontFamily: 'Pathway Gothic One, sans-serif',
      color:'white'
@@ -98,7 +107,12 @@ class ButtonAppBar extends Component {
             <br />
 
             <Typography variant="h6" color="inherit" className={classes.grow}>
-              Speciality Pharmacy Database
+             <Link className={classes.home} to="/"><span>Speciality Pharmacy Database</span></Link> 
+             
+             
+             
+             
+            
             </Typography>
 
             <Typography variant="h6" color="inherit" className={classes.grow}>
@@ -107,6 +121,8 @@ class ButtonAppBar extends Component {
 
             {this.props.loggedIn ? (
               <Grid container>
+
+              
                 <Grid item={12}>
                   <Typography
                     variant="h5"

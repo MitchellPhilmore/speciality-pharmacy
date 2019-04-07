@@ -115,94 +115,11 @@ class Info extends Component {
               <br />
               <br />
               <BasicTier/>
-              
+              <br/>
+              <Grid item xs={3}/>
+              <Tier/>
              
-              <Grid style={containerColor} item xs={3}>
-                <Tier
-                  className={classes.card}
-                  cost={100}
-                  avatar="Basic"
-                  name="Basic"
-                  duration="7 Days"
-                  tierType="Single"
-                />
-              </Grid>
-           
-              {/* <Grid item xs={2} /> */}
-              <Grid style={containerColor} item xs={3}>
-                <Tier
-                  className={classes.card}
-                  cost={149}
-                  avatar="Pro"
-                  name="Pro"
-                  duration="7 Days"
-                  tierType="Single"
-                />
-              </Grid>
-
-              {/* <Grid item xs={2} /> */}
-              <Grid style={containerColor} item xs={3}>
-                <Tier
-                  className={classes.card}
-                  cost={500}
-                  avatar="Basic"
-                  name="Basic"
-                  duration="1 Month"
-                  tierType="Single"
-                />
-              </Grid>
-              {/* <Grid item xs={2}/> */}
-              <Grid style={containerColor}  item xs={3}>
-                <Tier
-                  className={classes.card}
-                  cost={1000}
-                  avatar="Pro"
-                  name="Pro"
-                  duration="1 Month"
-                  teirType="Single"
-                />
-              </Grid>
-              <Grid style={containerColor}  item xs={3}>
-                <Tier
-                  className={classes.card}
-                  cost={1250}
-                  avatar="Basic"
-                  name="Basic"
-                  duration="12 Months"
-                  tierType="Single"
-                />
-              </Grid>
-              <Grid style={containerColor}  item xs={3}>
-                <Tier
-                  className={classes.card}
-                  cost={3500}
-                  avatar="Pro"
-                  name="Pro"
-                  duration="12 Months"
-                  tierType="Single"
-                />
-              </Grid>
-              <Grid style={containerColor}  item xs={3}>
-                <Tier
-                  className={classes.card}
-                  cost={250}
-                  avatar="Basic"
-                  name="Basic Multi-Users"
-                  duration="7 Days"
-                  tierType="Multiple Users"
-                />
-              </Grid>
-              <Grid style={containerColor}  item xs={3}>
-                <Tier
-                  className={classes.card}
-                  cost={750}
-                  avatar="Pro"
-                  name="Pro Multi-Users"
-                  duration="7 Days"
-                  tierType="Multiple Users"
-                />
-              </Grid>
-              
+             
             </Grid>
           
           

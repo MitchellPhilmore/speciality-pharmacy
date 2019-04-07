@@ -26,7 +26,8 @@ const styles = theme => ({
   submitBtn: {
     position: "relative",
     left: "15%",
-    width: "500px"
+    width: "500px",
+    fontFamily: 'Pathway Gothic One, sans-serif'
   },
   inputs: {
     width: "315px",
@@ -49,8 +50,9 @@ const styles = theme => ({
     fontFamily: 'Pathway Gothic One, sans-serif'
   },
   addUserBtn: {
-    backgroundColor: "lightgray",
-    textAlign: "center"
+    backgroundColor: "#fff",
+    textAlign: "center",
+    fontFamily: 'Pathway Gothic One, sans-serif'
   },
   addIcon: {
     fontSize: "20px",
@@ -289,7 +291,7 @@ class RegistrationForm extends Component {
               <br />
               <br />
               {this.state.subscription.userType === "Multi" ? (
-                <Button variant="outlined" size="large" color="primary" onClick={this.addUser} className={classes.addUserBtn}>
+                <Button color="inherit" variant="outlined" size="large" onClick={this.addUser} className={classes.addUserBtn}>
                   <Icon className={classes.addIcon}>group_add</Icon>
                   Add Users
                 </Button>

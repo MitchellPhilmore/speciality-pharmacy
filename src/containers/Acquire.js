@@ -75,6 +75,10 @@ const styles = theme => ({
     borderBottom: "3px solid gray",
     fontFamily: 'Pathway Gothic One, sans-serif',
     fontSize:'150%'
+  },
+  buttonPosition:{
+    position:'absoulte',
+    bottom:0
   }
 });
 
@@ -291,7 +295,7 @@ class RegistrationForm extends Component {
               <br />
               <br />
               {this.state.subscription.userType === "Multi" ? (
-                <Button color="inherit" variant="outlined" size="large" onClick={this.addUser} className={classes.addUserBtn}>
+                <Button color="inherit" variant="outlined" size="large" onClick={this.addUser} className={classes.addUserBtn} className={classes.buttonPosition}>
                   <Icon className={classes.addIcon}>group_add</Icon>
                   Add Users
                 </Button>
@@ -300,8 +304,13 @@ class RegistrationForm extends Component {
               )}
               {this.state.addUser === true ? (
                   <div>
+                  
                     {this.state.userCount.map(user=>user)}
                    
+                    <Button color="inherit" variant="outlined" size="large" onClick={this.addUser} className={classes.addUserBtn} className={classes.buttonPosition}>
+                  <Icon className={classes.addIcon}>group_add</Icon>
+                  Add Users
+                </Button>
                 
                 </div>
                 

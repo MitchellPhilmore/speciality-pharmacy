@@ -396,7 +396,14 @@ class ProTier extends Component {
              width:'1000px',
          
           }
+        },
+        MUIDataTableViewCol:{
+          root:{
+            width:'180px',
+            height:'270px'
+          }
         }
+        
        
       }
     });

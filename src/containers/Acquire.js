@@ -49,6 +49,12 @@ const styles = theme => ({
     fontSize: "200%",
     fontFamily: 'Pathway Gothic One, sans-serif'
   },
+  center:{
+    fontFamily: 'Pathway Gothic One, sans-serif',
+    textAlign:'center',
+    color:'gray'
+
+  },
   addUserBtn: {
     backgroundColor: "#fff",
     textAlign: "center",
@@ -76,9 +82,9 @@ const styles = theme => ({
     fontFamily: 'Pathway Gothic One, sans-serif',
     fontSize:'150%'
   },
-  buttonPosition:{
-    position:'absoulte',
-    bottom:0
+  removeBtn:{
+    display:'none'
+    
   }
 });
 
@@ -89,6 +95,7 @@ class RegistrationForm extends Component {
     this.state = {
       tierName: "",
       price: "",
+      clicked:false,
       subscription: {
         duration: "",
         cost: 0,
@@ -124,9 +131,10 @@ class RegistrationForm extends Component {
   addUser = () => {
     this.setState({
       addUser: true,
-      userCount:[...this.state.userCount,<AddGroupMember/>]
+      userCount:[...this.state.userCount,<AddGroupMember/>],
+      clicked:true
     });
-
+  
     
   };
 
@@ -291,11 +299,14 @@ class RegistrationForm extends Component {
             onChange={this.inputChange}
           />
         </Grid>
+    
               </Grid>
+             
+
               <br />
               <br />
               {this.state.subscription.userType === "Multi" ? (
-                <Button color="inherit" variant="outlined" size="large" onClick={this.addUser} className={classes.addUserBtn} className={classes.buttonPosition}>
+                <Button color="inherit" variant="outlined" size="large" onClick={this.addUser} className={this.state.clicked?classes.removeBtn:classes.addUserBtn}>
                   <Icon className={classes.addIcon}>group_add</Icon>
                   Add Users
                 </Button>
@@ -307,7 +318,7 @@ class RegistrationForm extends Component {
                   
                     {this.state.userCount.map(user=>user)}
                    
-                    <Button color="inherit" variant="outlined" size="large" onClick={this.addUser} className={classes.addUserBtn} className={classes.buttonPosition}>
+                    <Button color="inherit" variant="outlined" size="large" onClick={this.addUser} className={classes.addUserBtn}>
                   <Icon className={classes.addIcon}>group_add</Icon>
                   Add Users
                 </Button>
@@ -317,6 +328,55 @@ class RegistrationForm extends Component {
               ) : (
               false
               )}
+               <hr className={classes.hr}/>
+              <h3 className={classes.center}>Billing information</h3>
+
+                 <TextField
+                    className={classes.inputs}
+                    label="Name"
+                    type="text"
+                    name="Name"
+                    value=""
+                    data-validators="isRequired"
+                    onChange={this.customInputHandler}
+                  />
+
+              <TextField
+                    className={classes.inputs}
+                    label="Street"
+                    type="text"
+                    name="Street"
+                    value=""
+                    data-validators="isRequired"
+                    onChange={this.customInputHandler}
+                  />
+              <TextField
+                    className={classes.inputs}
+                    label="City"
+                    type="text"
+                    name="City"
+                    value=""
+                    data-validators="isRequired"
+                    onChange={this.customInputHandler}
+                  />
+              <TextField
+                    className={classes.inputs}
+                    label="State"
+                    type="text"
+                    name="State"
+                    value=""
+                    data-validators="isRequired"
+                    onChange={this.customInputHandler}
+                  />
+              <TextField
+                    className={classes.inputs}
+                    label="Zip"
+                    type="text"
+                    name="Zip"
+                    value=""
+                    data-validators="isRequired"
+                    onChange={this.customInputHandler}
+                  />
 
               <br />
               <br />

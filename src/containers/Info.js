@@ -7,7 +7,7 @@ import BasicTier from "../components/basicTier";
 import ProTier from "../components/ProTier";
 import Loader from "../components/Loaders";
 import TierData from "../components/tierData";
-import { Paper, Grid } from "@material-ui/core";
+import { Paper, Grid,Button, TextField  } from "@material-ui/core";
 
 
 const styles = theme => ({
@@ -31,6 +31,9 @@ const styles = theme => ({
   },
   containerBackground:{
     color:'red'
+  },
+  inputs:{
+    margin:'10px'
   }
 });
 
@@ -82,7 +85,18 @@ class Info extends Component {
       
          
         <Paper style={containerStyle} className={classes.root}>
+
+        <Grid container>
+        <Grid item xs={2}/>
+            <TextField className={classes.inputs} label="Conditions"></TextField>
+            <TextField className={classes.inputs} label="City"></TextField>
+            <TextField className={classes.inputs} label="Pharmacy Name"></TextField>
+
+            <Button className={classes.inputs}  color="inherit" variant="outlined" mini={true}>Find</Button>
+            <Button className={classes.inputs} color="inherit" variant="outlined" size="small">Match All</Button>
         
+        </Grid>
+       
           <TierData />
           <br />
         </Paper>

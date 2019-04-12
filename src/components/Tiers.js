@@ -181,7 +181,8 @@ const styles = theme => ({
     height: "500px",
     fontFamily: "'Pathway Gothic One', sans-serif",
     borderRadius: "6px",
-    backgroundColor: "#f5fafd",
+    color:'white',
+    backgroundColor: "#424242",
     border: "1px solid lightgray",
     margin:'0 auto'
   },

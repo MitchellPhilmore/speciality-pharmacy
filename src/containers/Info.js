@@ -8,6 +8,7 @@ import ProTier from "../components/ProTier";
 import Loader from "../components/Loaders";
 import TierData from "../components/tierData";
 import { Paper, Grid,Button, TextField  } from "@material-ui/core";
+import MaterialUIForm from "react-material-ui-form";
 
 
 const styles = theme => ({
@@ -33,7 +34,8 @@ const styles = theme => ({
     color:'red'
   },
   inputs:{
-    margin:'10px'
+    margin:'10px',
+    fontFamily: 'Pathway Gothic One, sans-serif',
   }
 });
 
@@ -88,13 +90,20 @@ class Info extends Component {
 
         <Grid container>
         <Grid item xs={2}/>
+        <MaterialUIForm>
+        <fieldset>
+          <legend>
+              Search
+         </legend>
             <TextField className={classes.inputs} label="Conditions"></TextField>
             <TextField className={classes.inputs} label="City"></TextField>
             <TextField className={classes.inputs} label="Pharmacy Name"></TextField>
 
             <Button className={classes.inputs}  color="inherit" variant="outlined" mini={true}>Find</Button>
             <Button className={classes.inputs} color="inherit" variant="outlined" size="small">Match All</Button>
-        
+
+            </fieldset>
+        </MaterialUIForm>
         </Grid>
        
           <TierData />

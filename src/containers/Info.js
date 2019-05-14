@@ -28,10 +28,15 @@ const styles = theme => ({
     width: "100%"
   },
   tierContainer:{
-   background:'#f5f5f5 '
+   background:'white'
   },
   containerBackground:{
     color:'red'
+  },
+  fieldset:{
+      position:'relative',
+      left:'80px'
+      
   },
   inputs:{
     margin:'10px',
@@ -40,7 +45,7 @@ const styles = theme => ({
 });
 
 let containerStyle = {
-  background: 'rgba(189, 189, 189, 0.3)'
+  background: 'white'
 }
 
 let settings = {
@@ -90,8 +95,8 @@ class Info extends Component {
 
         <Grid container>
         <Grid item xs={2}/>
-        <MaterialUIForm>
-        <fieldset>
+        <MaterialUIForm >
+        <fieldset className={classes.fieldset}>
           <legend>
               Search
          </legend>

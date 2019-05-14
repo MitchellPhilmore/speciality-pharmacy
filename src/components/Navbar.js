@@ -106,14 +106,9 @@ class ButtonAppBar extends Component {
             <br />
             <br />
 
-            <Typography variant="h6" color="inherit" className={classes.grow}>
-             <Link className={classes.home} to="/"><span>Speciality Pharmacy Database</span></Link> 
-             
-             
-             
-             
             
-            </Typography>
+             <Link className={classes.home} to="/"><span>Speciality Pharmacy</span></Link> 
+             
 
             <Typography variant="h6" color="inherit" className={classes.grow}>
               {this.props.manageUsers}

@@ -6,12 +6,12 @@ import { Flex, Box, Text, Heading } from "rebass";
 
 
 
-let clientKey = ''
-let apiLoginId = ''
+let clientKey = '8bgSN76A4'
+let apiLoginId = '6y28Uk4gPa7TL584'
 
-type State = {
-  status: "paid" | "unpaid" | ["failure", string[]];
-};
+// const  State = {
+//   status: "paid" | "unpaid" | ["failure"
+// };
 
 const Button = styled.button({
   "&:hover": { cursor: "pointer" },
@@ -26,7 +26,7 @@ const ErrorComponent = (props: {
   errors: string[];
   onBackButtonClick: () => void;
 }) => (
-  <div>
+   <div>
     <Text fontSize={3} fontWeight={"500"} mb={3}>
       Failed to process payment
     </Text>
@@ -55,6 +55,7 @@ class ReactAuthorizeForm extends Component<{}, State> {
   onSuccessHandler = (response: any) => {
     // Process API response on your backend...
     this.setState({ status: ["failure", []] });
+    console.log('Success!!')
   };
 
   render() {
@@ -70,7 +71,7 @@ class ReactAuthorizeForm extends Component<{}, State> {
             environment="sandbox"
             onError={this.onErrorHandler}
             onSuccess={this.onSuccessHandler}
-            amount={0}
+            amount={70}
             component={<FormComponent style={{background:'white'}} />}
             clientKey={clientKey}
             apiLoginId={apiLoginId}

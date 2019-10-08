@@ -6,8 +6,6 @@ import { Flex, Box, Text, Heading } from "rebass";
 
 
 
-let clientKey = '8bgSN76A4'
-let apiLoginId = '6y28Uk4gPa7TL584'
 
 // const  State = {
 //   status: "paid" | "unpaid" | ["failure"
@@ -59,6 +57,9 @@ class ReactAuthorizeForm extends Component<{}, State> {
   };
 
   render() {
+    
+let clientKey = '8bgSN76A4'
+let apiLoginId = '6y28Uk4gPa7TL584'
     return (
       <Box className="App" p={3}>
         <Header />

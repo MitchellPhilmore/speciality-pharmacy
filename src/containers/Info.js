@@ -41,6 +41,14 @@ const styles = theme => ({
   inputs:{
     margin:'10px',
     fontFamily: 'Pathway Gothic One, sans-serif',
+    color:"wheat"
+  },
+  searchBtns:{
+    margin:'10px',
+    fontFamily: 'Pathway Gothic One, sans-serif',
+    color:"wheat",
+    background:"#2f4c6e"
+  
   }
 });
 
@@ -104,8 +112,8 @@ class Info extends Component {
             <TextField className={classes.inputs} label="City"></TextField>
             <TextField className={classes.inputs} label="Pharmacy Name"></TextField>
 
-            <Button className={classes.inputs}  color="inherit" variant="outlined" mini={true}>Find</Button>
-            <Button className={classes.inputs} color="inherit" variant="outlined" size="small">Match All</Button>
+            <Button className={classes.searchBtns}  variant="outlined" mini={true}>Find</Button>
+            <Button className={classes.searchBtns} color="inherit" variant="outlined" size="small">Match All</Button>
 
             </fieldset>
         </MaterialUIForm>

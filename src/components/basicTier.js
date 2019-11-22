@@ -164,9 +164,17 @@ class BasicTier extends Component {
   getMuiTheme = () =>
     createMuiTheme({
       overrides: {
+        MUIDataTable:{
+          root:{
+           width:'200px',
+         
+          }
+      
+        },
+     
         MUIDataTableToolbar: {
           root: {
-            background: "#424242",
+            background: "#2f4c6e",
             color: "white"
           },
           actions: {
@@ -175,12 +183,13 @@ class BasicTier extends Component {
         },
         MuiPaper:{
           root:{
-            maxWidth:'82vw',
+            maxWidth:'92vw',
             margin:'0 auto',
             overflow:'hidden',
             overflowY:'hidden',
             marginTop:'50px',
             marginBottom:'50px',
+            width:"80vw"
           }
         },
         MuiSvgIcon: {
@@ -242,8 +251,8 @@ class BasicTier extends Component {
 
   render() {
     const header = {
-      position: "relative",
-      left: "380px",
+      display:"flex",
+      justifyContent:"center",
       color: "white",
       textAlign: "left",
       fontFamily: 'Pathway Gothic One, sans-serif'

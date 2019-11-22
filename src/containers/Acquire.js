@@ -27,7 +27,9 @@ const styles = theme => ({
     position: "relative",
     left: "15%",
     width: "500px",
-    fontFamily: 'Pathway Gothic One, sans-serif'
+    fontFamily: 'Pathway Gothic One, sans-serif',
+    backgroundColor:"#2f4c6e",
+    color:"#fff"
   },
   inputs: {
     width: "315px",

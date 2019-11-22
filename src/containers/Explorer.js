@@ -431,7 +431,7 @@ const tableContainer = {
       },
       MUIDataTableToolbar: {
         root: {
-          background: "#424242",
+          background:" #2f4c6e",
           color: "white",
          width:'2200px',
         position:'relative'

@@ -1,4 +1,3 @@
-
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
@@ -10,7 +9,7 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import tierDatas from './TierDatas'
+import tierDatas from "./TierDatas";
 import { Link } from "react-router-dom";
 
 const styles = theme => ({
@@ -23,14 +22,19 @@ const styles = theme => ({
   },
   header: {
     textAlign: "center",
-    fontFamily: "'Pathway Gothic One', sans-serif"
+    marginRight: "10px",
+    fontFamily: "'Pathway Gothic One', sans-serif",
+    fontSize:"40px",
+    letterSpacing:"3px",
   },
   center: {
     textAlign: "right",
     fontFamily: "'Pathway Gothic One', sans-serif",
-    position:'relative',
-    left:'30px'
-  
+    left: "30px",
+    fontSize:"34px",
+    display:"flex",
+    justifyContent:"center",
+    
   },
   control: {
     padding: theme.spacing.unit * 2
@@ -66,65 +70,62 @@ const styles = theme => ({
   },
   container: {
     width: "85vw",
-    height: "500px",
+    height: "80vh",
     fontFamily: "'Pathway Gothic One', sans-serif",
     borderRadius: "6px",
-    color:'white',
-    backgroundColor: "#424242",
+    color: "white",
+    backgroundColor: "#2f4c6e",
     border: "1px solid lightgray",
-    margin:'0 auto'
+    margin: "0 auto"
   },
   links: {
-        color: "#424242",
-        textDecoration: "none",
-        fontSize: "125%",
-        fontFamily: 'Pathway Gothic One, sans-serif',
-      },
+    color: "#424242",
+    textDecoration: "none",
+    fontSize: "125%",
+    fontFamily: "Pathway Gothic One, sans-serif"
+  }
 });
-
-
 
 class PricingCards extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      annual:false,
-      monthly:false,
-      weekly:true
-    }
+      annual: false,
+      monthly: false,
+      weekly: true
+    };
   }
 
-  showTier = (e)=>{
- 
-    switch(e.target.textContent){
-      case 'Weekly': this.setState({
-        weekly:true,
-        monthly:false,
-        annual:false
-    })
-    break;
-    case 'Monthly': this.setState({
-      weekly:false,
-      monthly:true,
-      annual:false
-  })
-  break;
+  showTier = e => {
+    switch (e.target.textContent) {
+      case "Weekly":
+        this.setState({
+          weekly: true,
+          monthly: false,
+          annual: false
+        });
+        break;
+      case "Monthly":
+        this.setState({
+          weekly: false,
+          monthly: true,
+          annual: false
+        });
+        break;
 
-     case 'Annually': this.setState({
-    weekly:false,
-    monthly:false,
-    annual:true
-})
-  
+      case "Annually":
+        this.setState({
+          weekly: false,
+          monthly: false,
+          annual: true
+        });
     }
-  }
-
+  };
 
   render() {
     let { classes } = this.props;
     return (
-      
       <div className={classes.container}>
         <h2 className={classes.header}>Pricing</h2>
         <Grid container>
@@ -138,10 +139,9 @@ class PricingCards extends Component {
             color="inherit"
             variant="outlined"
             fullwidth
-            type='Weekly'
-            onClick = {(e)=>{
-              this.showTier(e)
-            
+            type="Weekly"
+            onClick={e => {
+              this.showTier(e);
             }}
           >
             Weekly
@@ -153,9 +153,8 @@ class PricingCards extends Component {
             variant="outlined"
             fullwidth
             type="Monthly"
-            onClick = {(e)=>{
-              this.showTier(e)
-            
+            onClick={e => {
+              this.showTier(e);
             }}
           >
             Monthly
@@ -166,9 +165,8 @@ class PricingCards extends Component {
             color="inherit"
             variant="outlined"
             fullwidth
-            onClick = {(e)=>{
-              this.showTier(e)
-            
+            onClick={e => {
+              this.showTier(e);
             }}
           >
             Annually
@@ -176,181 +174,181 @@ class PricingCards extends Component {
         </Grid>
 
         <Grid container spacing={12}>
-                
-                {
-                  this.state.weekly ? 
-                  tierDatas[0].map((card,i)=>{
-                  return(
-                    <Grid className={classes.Rectangle} item xs={3}>
-                    <Card className={classes.card}>
-                    <CardActionArea>
-                      <CardContent>
-                        <Typography
-                          className={classes.free}
-                          gutterBottom
-                          variant="h5"
-                          component="h2"
-                        >
-                          {card.title}
-                        </Typography>
-      
-                        <Typography component="p">
-                          {" "}
-                          <h3>${card.price}</h3>
-                          <small className={classes.Free}>Try for 7 days</small>
-                        </Typography>
-                        <br />
-                        <Typography className={classes.Free} component="p">
-                          {card.description}
-                        </Typography>
-                      </CardContent>
-                    </CardActionArea>
-                    <CardActions>
-                      <Grid item xs={1} />
-                      <Button
-                        className={classes.Free}
-                        color="inherit"
-                        variant="outlined"
-                        fullwidth
-                      >
-                            <Link
-                  className={classes.links}
-                  to={{
-                    pathname: "/acquire",
-                    state: {
-                      tierName: card.title,
-                      cost: card.price,
-                      duration: card.duration,
-                      userType: card.type === "Multi" ?'Multi':'Single',
-                }
-              }}
-            >
-              Sign up for {card.title}
-            </Link>
-                        
-                      </Button>
-                    </CardActions>
-                  </Card>
-                  </Grid>
-                  )
-
-                }) :
-                this.state.monthly ? 
-                tierDatas[1].map((card,i)=>{
-                return(
+          {this.state.weekly
+            ? tierDatas[0].map((card, i) => {
+                return (
                   <Grid className={classes.Rectangle} item xs={3}>
-                  <Card className={classes.card}>
-                  <CardActionArea>
-                    <CardContent>
-                      <Typography
-                        className={classes.free}
-                        gutterBottom
-                        variant="h5"
-                        component="h2"
-                      >
-                        {card.title}
-                      </Typography>
-    
-                      <Typography component="p">
-                        {" "}
-                        <h3>${card.price}</h3>
-                        <small className={classes.Free}>{card.duration}</small>
-                      </Typography>
-                      <br />
-                      <Typography className={classes.Free} component="p">
-                        {card.description}
-                      </Typography>
-                    </CardContent>
-                  </CardActionArea>
-                  <CardActions>
-                    <Grid item xs={1} />
-                    <Button
-                      className={classes.Free}
-                      color="inherit"
-                      variant="outlined"
-                      fullwidth
-                    >
-                 <Link
-                  className={classes.links}
-                   to={{
-                       pathname: "/acquire",
-                        state: {
-                        tierName: card.title,
-                        cost: card.price,
-                        duration: card.duration,
-                        userType: card.type === "Multi" ?'Multi':'Single',
-                }
-              }}
-            >
-              Sign up for {card.title}
-            </Link>
-                    
-                      
-                    </Button>
-                  </CardActions>
-                </Card>
-                </Grid>
-                )
+                    <Card className={classes.card}>
+                      <CardActionArea>
+                        <CardContent>
+                          <Typography
+                            className={classes.free}
+                            gutterBottom
+                            variant="h5"
+                            component="h2"
+                          >
+                            {card.title}
+                          </Typography>
 
-              }):
-              this.state.annual ? 
-              tierDatas[2].map((card,i)=>{
-              return(
-                <Grid className={classes.Rectangle} item xs={3}>
-                <Card className={classes.card}>
-                <CardActionArea>
-                  <CardContent>
-                    <Typography
-                      className={classes.free}
-                      gutterBottom
-                      variant="h5"
-                      component="h2" >
-                      {card.title}
-                    </Typography>
-  
-                    <Typography component="p">
-                      {" "}
-                      <h3>${card.price}</h3>
-                      <small className={classes.Free}>{card.duration}</small>
-                    </Typography>
-                    <br />
-                    <Typography className={classes.Free} component="p">
-                      {card.description}
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-                <CardActions>
-                  <Grid item xs={1} />
-                  <Button
-                    className={classes.Free}
-                    color="inherit"
-                    variant="outlined"
-                    fullwidth
+                          <Typography component="p">
+                            {" "}
+                            <h3>${card.price}</h3>
+                            <small className={classes.Free}>
+                              Try for 7 days
+                            </small>
+                          </Typography>
+                          <br />
+                          <Typography className={classes.Free} component="p">
+                            {card.description}
+                          </Typography>
+                        </CardContent>
+                      </CardActionArea>
+                      <CardActions>
+                        <Grid item xs={1} />
+                        <Button
+                          className={classes.Free}
+                          color="inherit"
+                          variant="outlined"
+                          fullwidth
+                        >
+                          <Link
+                            className={classes.links}
+                            to={{
+                              pathname: "/acquire",
+                              state: {
+                                tierName: card.title,
+                                cost: card.price,
+                                duration: card.duration,
+                                userType:
+                                  card.type === "Multi" ? "Multi" : "Single"
+                              }
+                            }}
+                          >
+                            Sign up for {card.title}
+                          </Link>
+                        </Button>
+                      </CardActions>
+                    </Card>
+                  </Grid>
+                );
+              })
+            : this.state.monthly
+            ? tierDatas[1].map((card, i) => {
+                return (
+                  <Grid className={classes.Rectangle} item xs={3}>
+                    <Card className={classes.card}>
+                      <CardActionArea>
+                        <CardContent>
+                          <Typography
+                            className={classes.free}
+                            gutterBottom
+                            variant="h5"
+                            component="h2"
+                          >
+                            {card.title}
+                          </Typography>
 
-                  >
-                    <Link
-              className={classes.links}
-              to={{
-                pathname: "/acquire",
-                state: {
-                  tierName: card.title,
-                  cost: card.price,
-                  duration: card.duration,
-                  userType: card.type === "Multi" ?'Multi':'Single',
-                }
-              }}
-            >
-              Sign up for {card.title}
-            </Link>
-                  </Button>
-                </CardActions>
-              </Card>
-              </Grid>
-              )
+                          <Typography component="p">
+                            {" "}
+                            <h3>${card.price}</h3>
+                            <small className={classes.Free}>
+                              {card.duration}
+                            </small>
+                          </Typography>
+                          <br />
+                          <Typography className={classes.Free} component="p">
+                            {card.description}
+                          </Typography>
+                        </CardContent>
+                      </CardActionArea>
+                      <CardActions>
+                        <Grid item xs={1} />
+                        <Button
+                          className={classes.Free}
+                          color="inherit"
+                          variant="outlined"
+                          fullwidth
+                        >
+                          <Link
+                            className={classes.links}
+                            to={{
+                              pathname: "/acquire",
+                              state: {
+                                tierName: card.title,
+                                cost: card.price,
+                                duration: card.duration,
+                                userType:
+                                  card.type === "Multi" ? "Multi" : "Single"
+                              }
+                            }}
+                          >
+                            Sign up for {card.title}
+                          </Link>
+                        </Button>
+                      </CardActions>
+                    </Card>
+                  </Grid>
+                );
+              })
+            : this.state.annual
+            ? tierDatas[2].map((card, i) => {
+                return (
+                  <Grid className={classes.Rectangle} item xs={3}>
+                    <Card className={classes.card}>
+                      <CardActionArea>
+                        <CardContent>
+                          <Typography
+                            className={classes.free}
+                            gutterBottom
+                            variant="h5"
+                            component="h2"
+                          >
+                            {card.title}
+                          </Typography>
 
-            }):false 
-             }
-           
+                          <Typography component="p">
+                            {" "}
+                            <h3>${card.price}</h3>
+                            <small className={classes.Free}>
+                              {card.duration}
+                            </small>
+                          </Typography>
+                          <br />
+                          <Typography className={classes.Free} component="p">
+                            {card.description}
+                          </Typography>
+                        </CardContent>
+                      </CardActionArea>
+                      <CardActions>
+                        <Grid item xs={1} />
+                        <Button
+                          className={classes.Free}
+                          color="inherit"
+                          variant="outlined"
+                          fullwidth
+                        >
+                          <Link
+                            className={classes.links}
+                            to={{
+                              pathname: "/acquire",
+                              state: {
+                                tierName: card.title,
+                                cost: card.price,
+                                duration: card.duration,
+                                userType:
+                                  card.type === "Multi" ? "Multi" : "Single"
+                              }
+                            }}
+                          >
+                            Sign up for {card.title}
+                          </Link>
+                        </Button>
+                      </CardActions>
+                    </Card>
+                  </Grid>
+                );
+              })
+            : false}
         </Grid>
       </div>
     );

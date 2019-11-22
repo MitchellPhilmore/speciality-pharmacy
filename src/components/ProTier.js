@@ -8,8 +8,8 @@ const styles = theme => ({
     color: "red"
   },
   header: {
-    position: "relative",
-    left: "380px",
+    display:"flex",
+    justifyContent:"center",
     color: "white",
     fontFamily: 'Pathway Gothic One, sans-serif'
   }
@@ -300,7 +300,7 @@ class ProTier extends Component {
       overrides: {
         MUIDataTable:{
           root:{
-           width:'200px',
+           width:'650px',
          
           }
       
@@ -328,7 +328,7 @@ class ProTier extends Component {
         
         MUIDataTableToolbar: {
           root: {
-            background: "#424242",
+            background:" #2f4c6e",
             color: "white",
            width:'2200px',
           position:'relative'

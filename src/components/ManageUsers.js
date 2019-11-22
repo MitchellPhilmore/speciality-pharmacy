@@ -202,7 +202,7 @@ export default class ManageUsers extends React.PureComponent {
       MuiTableHead:{
       root:{
         
-        background: "#424242",
+        background: "#2f4c6e",
         color: "white"
         
         }
@@ -228,7 +228,8 @@ export default class ManageUsers extends React.PureComponent {
       },
       MuiTableCell:{
         root:{
-          fontFamily: 'Pathway Gothic One, sans-serif'
+          fontFamily: 'Pathway Gothic One, sans-serif',
+          
         }
       },
       TableContainer:{

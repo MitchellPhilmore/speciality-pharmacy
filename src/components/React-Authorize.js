@@ -57,7 +57,7 @@ class ReactAuthorizeForm extends Component<{}, State> {
   };
 
   render() {
-    
+    //Testing
 let clientKey = '8bgSN76A4'
 let apiLoginId = '6y28Uk4gPa7TL584'
     return (

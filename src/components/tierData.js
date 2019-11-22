@@ -8,8 +8,8 @@ import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles"
 
 
 const header = {
-  position: "relative",
-  left: "380px",
+  display:"flex",
+  justifyContent:"center",
   color: "white",
   fontFamily: 'Pathway Gothic One, sans-serif'
 };
@@ -398,7 +398,7 @@ class TeirData extends Component {
       overrides: {
         MUIDataTableToolbar: {
           root: {
-            background: "#424242",
+            background: "#2f4c6e",
             color: "white",
             width:'100%'
           },

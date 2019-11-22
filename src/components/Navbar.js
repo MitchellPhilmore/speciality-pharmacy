@@ -13,6 +13,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Info from "../containers/Info";
 import Icon from "@material-ui/core/Icon";
 import ManageUsers from "./ManageUsers";
+import logo from '../logo.jpg'
 
 const styles = {
   root: {
@@ -32,7 +33,7 @@ const styles = {
     fontSize: "200%"
   },
   nav: {
-    backgroundColor: "#424242",
+    backgroundColor: "#2f4c6e",
     width: "100%"
   },
 
@@ -107,7 +108,7 @@ class ButtonAppBar extends Component {
             <br />
 
             
-             <Link className={classes.home} to="/"><span>Speciality Pharmacy</span></Link> 
+             <Link className={classes.home} to="/"><span><img style={{height:"30px",width:"30px"}} src={logo}></img>Speciality Pharmacy</span></Link> 
              
 
             <Typography variant="h6" color="inherit" className={classes.grow}>
@@ -132,7 +133,7 @@ class ButtonAppBar extends Component {
                       <br />
 
                       <Button size="small" href="/manageusers" className={classes.links}>
-                     Manage Users
+                        Manage Users
                     
                       
                   </Button>

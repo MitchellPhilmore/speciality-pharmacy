@@ -13,7 +13,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Info from "../containers/Info";
 import Icon from "@material-ui/core/Icon";
 import ManageUsers from "./ManageUsers";
-import logo from '../logo.jpg'
+import logo from '../logo2.png'
 
 const styles = {
   root: {
@@ -108,7 +108,7 @@ class ButtonAppBar extends Component {
             <br />
 
             
-             <Link className={classes.home} to="/"><span><img style={{height:"30px",width:"30px"}} src={logo}></img>Speciality Pharmacy</span></Link> 
+             <Link className={classes.home} to="/"><span><img style={{height:"30px",width:"30px",margin:"5px"}} src={logo}></img>Speciality Pharmacy</span></Link> 
              
 
             <Typography variant="h6" color="inherit" className={classes.grow}>

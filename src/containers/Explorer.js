@@ -515,7 +515,7 @@ const tableContainer = {
   render() {
     let { classes } = this.props;
     let containerStyle = {
-      background: 'rgba(189, 189, 189, 0.3)'
+      background: 'white'
     }
 
     return (

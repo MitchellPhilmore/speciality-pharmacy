@@ -1,37 +1,37 @@
-import React, { Component } from 'react';
-import Login from './components/authentication/Login';
+import React from 'react';
+import Login from './Components/authentication/Login';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import ButtonAppBar from './components/Navbar'
-import Info from './containers/Info'
-import Acquire from './containers/Acquire'
-import Explorer from './containers/Explorer'
+import ButtonAppBar from './Components/Navbar'
+import Info from './Pages/Info/'
+import Acquire from './Pages/Acquire/'
+import Explorer from './Pages/Explorer/'
 import AppContext from  './AppData'
-import ManageUsers from './components/ManageUsers'
-import GroupLogin from './components/authentication/GroupSignIn'
+import ManageUsers from './Pages/ManageUsers'
+import GroupLogin from './Components/authentication/GroupSignIn'
 import CSS from './App.css'
+import {StateProvider} from './Store'
 
-class App extends Component {
-  static contextType = AppContext
+const App = () => {
 
-  componentDidMount(){
-    console.log(this.context)
-  }
-  render() {
-    return (
-      <Router>
-          <div className="App">
-        
-            <Route exact path="/" component={Login} />
-            <Route exact path="/group" component={GroupLogin} />
-            <Route exact path="/info" component={Info}/>
-            <Route exact path="/acquire" component={Acquire}/>
-            <Route exact path="/explorer" component={Explorer}/>
-            <Route exact path="/manageusers" component={ManageUsers}/>
-          </div>
+  
+  return (
+    <StateProvider>
+        <Router>
+            <div className="App">
+          
+              <Route exact path="/" component={Login} />
+              <Route exact path="/group" component={GroupLogin} />
+              <Route exact path="/info" component={Info}/>
+              <Route exact path="/acquire" component={Acquire}/>
+              <Route exact path="/explorer" component={Explorer}/>
+              <Route exact path="/manageusers" component={ManageUsers}/>
+            </div>
 
-      </Router>
-    );
-  }
+        </Router>
+    </StateProvider>
+  );
 }
+
+
 
 export default App;

@@ -1,100 +1,26 @@
-import React, { Component } from "react";
-import Navbar from "../components/Navbar";
+import React, {useContext,useEffect} from "react";
+import Navbar from "../../Components/Navbar";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
-import Tier from "../components/Tiers";
-import BasicTier from "../components/basicTier";
-import ProTier from "../components/ProTier";
-import Loader from "../components/Loaders";
-import TierData from "../components/tierData";
+import Tier from "../../Components/Tiers/";
+import BasicTier from "../../Components/basicTier";
+import ProTier from "../../Components/ProTier";
+import Loader from "../../Components/Loaders";
+import TierData from "../../Components/tierData";
 import { Paper, Grid,Button, TextField  } from "@material-ui/core";
 import MaterialUIForm from "react-material-ui-form";
+import {styles,settings,containerStyle,loaderStyle,containerColor} from './styles'
+import {store} from '../../Store/'
 
 
-const styles = theme => ({
-  root: {
-    width: "100%",
-    marginTop: theme.spacing.unit * 3,
-    overflowX: "auto"
-  },
-
-  table: {
-    minWidth: 700
-  },
-  bold: {
-    fontWeight: "bold"
-  },
-  navBar: {
-    width: "100%"
-  },
-  tierContainer:{
-   background:'white'
-  },
-  containerBackground:{
-    color:'red'
-  },
-  fieldset:{
-      position:'relative',
-      left:'80px'
-      
-  },
-  inputs:{
-    margin:'10px',
-    fontFamily: 'Pathway Gothic One, sans-serif',
-    color:"wheat"
-  },
-  searchBtns:{
-    margin:'10px',
-    fontFamily: 'Pathway Gothic One, sans-serif',
-    color:"wheat",
-    background:"#2f4c6e"
-  
-  }
-});
-
-let containerStyle = {
-  background: 'white'
-}
-
-let settings = {
-  dots: true,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 1,
-  slidesToScroll: 1
-};
-
- 
-class Info extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      //Turned off loader
-      isLoading: false,
-      toInfoPage:false
-    };
-  }
-
-  isLoading = () => {
-    this.setState({
-      isLoading: false
-    });
-  };
-  componentWillMount() {
-    setTimeout(this.isLoading, 4000);
-  }
-
-  render() {
-    const { classes } = this.props;
-    const loaderStyle = {
-      width: "80%",
-      margin: "0 auto"
-    };
-    const containerColor = {
-      background:'white'
-    }
-    return (
+const Info = props => {
+   const GlobalContext = useContext(store)
+   const {state,dispatch} = GlobalContext
+   const {classes} = props
+    useEffect(()=>{
+        console.log(state)
+    },[])
+   return (
       <div>
         <Navbar className={classes.navBar} name="Detailed Info and Plans" />
       
@@ -124,7 +50,7 @@ class Info extends Component {
         </Paper>
 
         <Grid style={containerStyle}  container spacing={24}>
-          {this.state.isLoading ? (
+          {state.isLoading ? (
             <Grid item xs={12}>
               <div style={loaderStyle}>
                 <Loader />
@@ -137,7 +63,7 @@ class Info extends Component {
           <br />
       
 
-          {this.state.isLoading ? (
+          {state.isLoading ? (
             <Grid container>
               <div style={loaderStyle}>
                 <Loader />
@@ -166,7 +92,6 @@ class Info extends Component {
     
       
     );
-  }
 }
 
 Info.propTypes = {

@@ -1,197 +1,67 @@
-import React, { Component } from "react";
+import React, { useRef,useEffect,useContext } from "react";
 import JssProvider from "react-jss/lib/JssProvider";
 import MaterialUIForm from "react-material-ui-form";
-import Navbar from "../components/Navbar";
+import Navbar from "../../Components/Navbar";
 import Grid from "@material-ui/core/Grid";
 import Icon from "@material-ui/core/Icon";
 import { FormComponent, FormContainer } from "react-authorize-net";
-import AddGroupMember from "../components/AddGroupMember";
-import ReactAuthorizeForm from "../components/React-Authorize.js";
+import AddGroupMember from "../../Components/AddGroupMember";
+import ReactAuthorizeForm from "../../Components/React-Authorize.js";
 //Material UI Components
 import { withStyles, Button, TextField } from "@material-ui/core";
-import { EditorFormatLineSpacing } from "material-ui/svg-icons";
+import {store} from '../../Store/'
+import {styles} from './styles'
+import './style.css'
 
-const styles = theme => ({
-  root: {
-    display: "flex",
-    flexWrap: "wrap"
-  },
-  formControl: {
-    margin: theme.spacing.unit,
-    minWidth: 120
-  },
-  selectEmpty: {
-    marginTop: theme.spacing.unit * 2
-  },
-  submitBtn: {
-    position: "relative",
-    left: "15%",
-    width: "500px",
-    fontFamily: 'Pathway Gothic One, sans-serif',
-    backgroundColor:"#2f4c6e",
-    color:"#fff"
-  },
-  inputs: {
-    width: "315px",
-    margin: "10px",
-    fontFamily: 'Pathway Gothic One, sans-serif'
-  },
-  registrationForm: {
-    width: "60%",
-    margin: "0 auto"
-  },
-  icon: {
-    color: "gray",
-    fontSize: "90%",
-    position: "relative",
-    top: "25px",
-    margin: "5px"
-  },
-  legend: {
-    fontSize: "200%",
-    fontFamily: 'Pathway Gothic One, sans-serif'
-  },
-  center:{
-    fontFamily: 'Pathway Gothic One, sans-serif',
-    textAlign:'center',
-    color:'gray'
 
-  },
-  addUserBtn: {
-    backgroundColor: "#fff",
-    textAlign: "center",
-    fontFamily: 'Pathway Gothic One, sans-serif'
-  },
-  addIcon: {
-    fontSize: "20px",
-    margin: "5px"
-  },
-  hr: {
-    height: "2px",
-    border: "none",
-    color: "gray",
-    backgroundColor: "gray"
-  },
-  button: {
-    borderRadius: "50%"
-  },
-  description: {
-    textAlign: "center",
-    width: "100%",
-    opacity: "0.5",
-    borderTop: "3px solid gray",
-    borderBottom: "3px solid gray",
-    fontFamily: 'Pathway Gothic One, sans-serif',
-    fontSize:'150%'
-  },
-  removeBtn:{
-    display:'none'
-    
-  }
-});
-
-class RegistrationForm extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      tierName: "",
-      price: "",
-      clicked:false,
-      subscription: {
-        duration: "",
-        cost: 0,
-        userType: ""
-      },
-      addUser: false,
-      userCount:[]
-    };
-  }
-
-  componentDidMount() {
-    this.setState({
-      tierName: this.props.location.state.tierName,
-      price: this.props.location.state.cost,
-      subscription: {
-        duration: this.props.location.state.duration,
-        price: this.props.location.state.cost,
-        userType: this.props.location.state.userType
-      }
-    });
-    console.log(this.props.location.state.tierName);
-    console.log(this.props.location.state.cost);
-    console.log(this.props.location.state.duration);
-    console.log(this.props.location.state.userType);
-  }
-
-  submit = (values, pristineValues) => {
-    console.log(values);
-  };
-
-  customInputHandler = (value, { first, last, first1 }, event) => {};
-
-  addUser = () => {
-    this.setState({
-      addUser: true,
-      userCount:[...this.state.userCount,<AddGroupMember/>],
-      clicked:true
-    });
-  
-    
-  };
-
-  render() {
-    const { classes, pageInfo } = this.props;
-  
-    return (
-      <div>
-        <Navbar
-          name={this.props.location.state.duration + " " + "Subscription Basis"}
+const RegistrationForm = props => {
+    const GlobalState = useContext(store)
+    const {state} = GlobalState
+    const {classes} = props
+    const submit =()=>{}
+    const firstName = useRef('')
+    const lastName = useRef('')
+    const customInputHandler = ()=>{
+        const value = firstName.current.value
+        console.log(value)
+    }
+    const addUser = () => {}
+    console.log(state)
+   
+    return(
+        <div>
+           <Navbar
+          name={props.location.state.duration + " " + "Subscription Basis"}
         />
         <br />
 
         <JssProvider>
           <MaterialUIForm
             className={classes.registrationForm}
-            onSubmit={this.submit}
+            onSubmit={submit}
           >
             <fieldset>
               <legend className={classes.legend}>
-                {this.state.tierName} Registration
+                {state.tierName} Registration
               </legend>
               <div className={classes.description}>
                 <h4>Subscription Details</h4>
-                <h5>Tier: {this.state.tierName}</h5>
-                <h5>Duration: {this.props.location.state.duration}</h5>
-                <h5>User Type: {this.state.subscription.userType}</h5>
-                <h5>Price: $ {this.props.location.state.cost}</h5>
+                <h5>Tier: {state.tierName}</h5>
+                <h5>Duration: {state.duration}</h5>
+                <h5>User Type: {state.userType}</h5>
+                <h5>Price: $ {state.cost}</h5>
               </div>
 
               <Grid container>
                 <Grid item={6}>
                   <Icon className={classes.icon}>account_circle</Icon>
-                  <TextField
-                    className={classes.inputs}
-                    label="First Name"
-                    type="text"
-                    name="first"
-                    value=""
-                    fullWidth
-                    data-validators="isRequired"
-                    onChange={this.customInputHandler}
-                  />
+                  <input placeholder="First Name" onChange={customInputHandler} ref={firstName} />
+                  
                 </Grid>
                 <Grid item={6}>
                   <Icon className={classes.icon}>account_circle</Icon>
-                  <TextField
-                    className={classes.inputs}
-                    label="Last Name"
-                    type="text"
-                    name="last"
-                    value=""
-                    data-validators="isRequired"
-                    onChange={this.customInputHandler}
-                  />
+                  <input placeholder="Last Name" onChange={customInputHandler} ref={lastName} />
+                  
                 </Grid>
                 <br />
                 <br />
@@ -206,7 +76,7 @@ class RegistrationForm extends Component {
                     name="email"
                     value=""
                     data-validators="isRequired,isEmail"
-                    onChange={this.customInputHandler}
+                    onChange={customInputHandler}
                   />
                 </Grid>
                 <br />
@@ -221,7 +91,7 @@ class RegistrationForm extends Component {
                     name="userName"
                     value=""
                     data-validators="isRequired"
-                    onChange={this.customInputHandler}
+                    onChange={customInputHandler}
                   />
                 </Grid>
                 <br />
@@ -245,7 +115,7 @@ class RegistrationForm extends Component {
                       },
                       "isAlias"
                     ]}
-                    onChange={this.customInputHandler}
+                    onChange={customInputHandler}
                   />
                 </Grid>
                 <Grid item={6}>
@@ -265,7 +135,7 @@ class RegistrationForm extends Component {
                       },
                       "isAlias"
                     ]}
-                    onChange={this.customInputHandler}
+                    onChange={customInputHandler}
                   />
                 </Grid>
                 <Grid item={6}>
@@ -274,10 +144,10 @@ class RegistrationForm extends Component {
             label="Company Name"
             type="text"
             name="companyName1"
-            value={this.state.companyName1}
+            value={state.companyName1}
             data-validators="isRequired"
-            onChange={this.inputChange}
-          />
+           
+          /> 
         </Grid>
         <Grid item={6}>
           <TextField
@@ -285,9 +155,9 @@ class RegistrationForm extends Component {
             label="Job Title"
             type="text"
             name="jobTitle"
-            value={this.state.jobTitle}
+            value={state.jobTitle}
             data-validators="isRequired"
-            onChange={this.inputChange}
+            
           />
         </Grid>
         <Grid item={6}>
@@ -296,9 +166,9 @@ class RegistrationForm extends Component {
             label="Years Of Industry Experience"
             type="text"
             name="yoie"
-            value={this.state.yoie}
+            value={state.yoie}
             data-validators="isRequired"
-            onChange={this.inputChange}
+            
           />
         </Grid>
     
@@ -307,20 +177,20 @@ class RegistrationForm extends Component {
 
               <br />
               <br />
-              {this.state.subscription.userType === "Multi" ? (
-                <Button color="inherit" variant="outlined" size="large" onClick={this.addUser} className={this.state.clicked?classes.removeBtn:classes.addUserBtn}>
+              {state.subscription.userType === "Multi" ? (
+                <Button color="inherit" variant="outlined" size="large" onClick={addUser} className={state.clicked?classes.removeBtn:classes.addUserBtn}>
                   <Icon className={classes.addIcon}>group_add</Icon>
                   Add Users
                 </Button>
               ) : (
                 false
               )}
-              {this.state.addUser === true ? (
+              {/* {state.addUser === true ? (
                   <div>
                   
-                    {this.state.userCount.map(user=>user)}
+                    {state.userCount.map(user=>user)}
                    
-                    <Button color="inherit" variant="outlined" size="large" onClick={this.addUser} className={classes.addUserBtn}>
+                    <Button color="inherit" variant="outlined" size="large" onClick={addUser} className={classes.addUserBtn}>
                   <Icon className={classes.addIcon}>group_add</Icon>
                   Add Users
                 </Button>
@@ -329,7 +199,15 @@ class RegistrationForm extends Component {
                 
               ) : (
               false
-              )}
+              
+              )} */
+
+              console.log(state)
+              
+              
+              
+              
+              }
                <hr className={classes.hr}/>
               <h3 className={classes.center}>Billing information</h3>
 
@@ -340,7 +218,7 @@ class RegistrationForm extends Component {
                     name="Name"
                     value=""
                     data-validators="isRequired"
-                    onChange={this.customInputHandler}
+                    onChange={customInputHandler}
                   />
 
               <TextField
@@ -350,7 +228,7 @@ class RegistrationForm extends Component {
                     name="Street"
                     value=""
                     data-validators="isRequired"
-                    onChange={this.customInputHandler}
+                    onChange={customInputHandler}
                   />
               <TextField
                     className={classes.inputs}
@@ -359,16 +237,16 @@ class RegistrationForm extends Component {
                     name="City"
                     value=""
                     data-validators="isRequired"
-                    onChange={this.customInputHandler}
+                    onChange={customInputHandler}
                   />
               <TextField
                     className={classes.inputs}
-                    label="State"
+                    label="GlobalState"
                     type="text"
-                    name="State"
+                    name="GlobalState"
                     value=""
                     data-validators="isRequired"
-                    onChange={this.customInputHandler}
+                    onChange={customInputHandler}
                   />
               <TextField
                     className={classes.inputs}
@@ -377,16 +255,15 @@ class RegistrationForm extends Component {
                     name="Zip"
                     value=""
                     data-validators="isRequired"
-                    onChange={this.customInputHandler}
+                    onChange={customInputHandler}
                   />
 
               <br />
               <br />
               <FormContainer
                 environment="sandbox"
-                onError={this.onErrorHandler}
-                onSuccess={this.onSuccessHandler}
-                amount={this.state.price}
+               
+                // amount={this.GlobalState.price}
                 component={FormComponent}
               />
 
@@ -402,8 +279,8 @@ class RegistrationForm extends Component {
           </MaterialUIForm>
         </JssProvider>
       </div>
-    );
-  }
+    )
+ 
 }
 
 export default withStyles(styles)(RegistrationForm);

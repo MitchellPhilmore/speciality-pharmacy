@@ -10,9 +10,9 @@ import {
   Button
 } from "@material-ui/core";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Info from "../containers/Info";
+import Info from "../Pages/Info/";
 import Icon from "@material-ui/core/Icon";
-import ManageUsers from "./ManageUsers";
+import ManageUsers from "../Pages/ManageUsers";
 import logo from '../logo2.png'
 
 const styles = {

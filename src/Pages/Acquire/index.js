@@ -16,7 +16,7 @@ import './style.css'
 
 const RegistrationForm = props => {
     const GlobalState = useContext(store)
-    const {state} = GlobalState
+    const {state,dispatch} = GlobalState
     const {classes} = props
     const submit =()=>{}
     const firstName = useRef('')
@@ -25,13 +25,15 @@ const RegistrationForm = props => {
         const value = firstName.current.value
         console.log(value)
     }
-    const addUser = () => {}
-    console.log(state)
+    const addUser = () => {
+      dispatch({type:'ADD_USER'})
+    }
+    
    
     return(
         <div>
            <Navbar
-          name={props.location.state.duration + " " + "Subscription Basis"}
+          name={state.duration + " " + "Subscription Basis"}
         />
         <br />
 
@@ -49,7 +51,7 @@ const RegistrationForm = props => {
                 <h5>Tier: {state.tierName}</h5>
                 <h5>Duration: {state.duration}</h5>
                 <h5>User Type: {state.userType}</h5>
-                <h5>Price: $ {state.cost}</h5>
+                <h5>Price: $ {state.price}</h5>
               </div>
 
               <Grid container>
@@ -173,19 +175,19 @@ const RegistrationForm = props => {
         </Grid>
     
               </Grid>
-             
-
+            
               <br />
               <br />
-              {state.subscription.userType === "Multi" ? (
+              {state.userType === "MULTI (6 MAX)"? (
                 <Button color="inherit" variant="outlined" size="large" onClick={addUser} className={state.clicked?classes.removeBtn:classes.addUserBtn}>
                   <Icon className={classes.addIcon}>group_add</Icon>
                   Add Users
                 </Button>
-              ) : (
-                false
-              )}
-              {/* {state.addUser === true ? (
+              
+              ) : 
+                null
+              }
+              { state.addUser ? (
                   <div>
                   
                     {state.userCount.map(user=>user)}
@@ -200,14 +202,7 @@ const RegistrationForm = props => {
               ) : (
               false
               
-              )} */
-
-              console.log(state)
-              
-              
-              
-              
-              }
+              )}}
                <hr className={classes.hr}/>
               <h3 className={classes.center}>Billing information</h3>
 
@@ -241,9 +236,9 @@ const RegistrationForm = props => {
                   />
               <TextField
                     className={classes.inputs}
-                    label="GlobalState"
+                    label="state"
                     type="text"
-                    name="GlobalState"
+                    name="state"
                     value=""
                     data-validators="isRequired"
                     onChange={customInputHandler}
@@ -263,7 +258,7 @@ const RegistrationForm = props => {
               <FormContainer
                 environment="sandbox"
                
-                // amount={this.GlobalState.price}
+                amount={state.price}
                 component={FormComponent}
               />
 

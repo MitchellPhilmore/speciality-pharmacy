@@ -28,7 +28,6 @@ const PricingCards = props =>{
           }
 
       })
-
       return(
         <div className={classes.container}>
         <h2 className={classes.header}>Pricing</h2>
@@ -261,14 +260,18 @@ const PricingCards = props =>{
                       </CardActions>
                     </Card>
                   </Grid>
-                );
+                )
               })
             : false}
         </Grid>
       </div>
-    );
 
-}
+      )
+    }
+        
+      
+    
+    
 
 
 PricingCards.propTypes = {

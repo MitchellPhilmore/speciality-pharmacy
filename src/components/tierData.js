@@ -1,8 +1,9 @@
-import React, { Component } from "react";
+import React, {useContext } from "react";
 import { Typography, withStyles } from "@material-ui/core";
 import { Link, withRouter } from "react-router-dom";
 import MUIDataTable from "mui-datatables";
 import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles"
+import {store} from '../Store'
 
 
 
@@ -79,21 +80,27 @@ const columns = [
   }
 ];
 
-const data = [
+const generateData = () => {
+      const GlobalContext =  useContext(store)
+      const {state,dispatch} = GlobalContext
+      
+    return(
+      
+ [
   {
     access: (
       <Link
+        onClick={()=> dispatch({type:'UPDATE_TIER_SELECTION',
+        payload:{
+          tierName: "Basic",
+          price: "100",
+          userType: "Single",
+          duration: "7 Day"
+        }})}
+
         style={linkColumn}
-        to={{
-          pathname: "/acquire",
-          state: {
-            tierName: "Basic",
-            cost: "100",
-            userType: "Single",
-            duration: "7 Day"
-          }
-        }}
-      >
+
+        to={{ pathname: "/acquire"}}>
         Basic
       </Link>
     ),
@@ -108,17 +115,16 @@ const data = [
   {
     access: (
       <Link
+      onClick={()=> dispatch({type:'UPDATE_TIER_SELECTION',
+      payload:{
+        tierName: "Pro",
+        price: "149",
+        userType: "Single",
+        duration: "7 Day"
+      }})}
       style={linkColumn}
         to={{
-          pathname: "/acquire",
-          state: {
-            tierName: "Pro",
-            cost: "149",
-            userType: "Single",
-            duration: "7 Days"
-          }
-        }}
-      >
+          pathname: "/acquire"}}>
         Pro
       </Link>
     ),
@@ -133,17 +139,15 @@ const data = [
   {
     access: (
       <Link
+      onClick={()=> dispatch({type:'UPDATE_TIER_SELECTION',
+      payload:{
+        tierName: "Basic",
+        price: "500",
+        userType: "Single",
+        duration: "1 Month"
+      }})}
       style={linkColumn}
-        to={{
-          pathname: "/acquire",
-          state: {
-            tierName: "Basic",
-            cost: "500",
-            userType: "Single",
-            duration: "1 Month"
-          }
-        }}
-      >
+        to={{ pathname: "/acquire"}}>
         Basic
       </Link>
     ),
@@ -158,17 +162,16 @@ const data = [
   {
     access: (
       <Link
+      onClick={()=> dispatch({type:'UPDATE_TIER_SELECTION',
+      payload:{
+        tierName: 'PRO',
+        price: "1000",
+        userType: "Single",
+        duration: "1 Month"
+      }})}
       style={linkColumn}
         to={{
-          pathname: "/acquire",
-          state: {
-            tierName: "Pro",
-            cost: "1000",
-            userType: "Single",
-            duration: "1 Month"
-          }
-        }}
-      >
+          pathname: "/acquire" }}>
         Pro
       </Link>
     ),
@@ -183,17 +186,16 @@ const data = [
   {
     access: (
       <Link
+      onClick={()=> dispatch({type:'UPDATE_TIER_SELECTION',
+      payload:{
+        tierName: "Basic",
+        price: "1250",
+        userType: "Single",
+        duration: "12 Months"
+      }})}
       style={linkColumn}
         to={{
-          pathname: "/acquire",
-          state: {
-            tierName: "Basic",
-            cost: "1250",
-            userType: "Single",
-            duration: "12 Months"
-          }
-        }}
-      >
+          pathname: "/acquire" }}>
         Basic
       </Link>
     ),
@@ -208,17 +210,16 @@ const data = [
   {
     access: (
       <Link
+      onClick={()=> dispatch({type:'UPDATE_TIER_SELECTION',
+      payload:{
+        tierName: "PRO",
+        price: "3500",
+        userType: "Single",
+        duration: "12 Months"
+      }})}
       style={linkColumn}
         to={{
-          pathname: "/acquire",
-          state: {
-            tierName: "Pro",
-            cost: "3500",
-            userType: "Single",
-            duration: "12 Months"
-          }
-        }}
-      >
+          pathname: "/acquire"}} >
         Pro
       </Link>
     ),
@@ -232,17 +233,15 @@ const data = [
   {
     access: (
       <Link
+      onClick={()=> dispatch({type:'UPDATE_TIER_SELECTION',
+      payload:{
+        tierName: "Basic",
+        price: "250",
+        userType: "MULTI (6 MAX)",
+        duration: "7 Day"
+      }})}
       style={linkColumn}
-        to={{
-          pathname: "/acquire",
-          state: {
-            tierName: "Basic",
-            cost: "250",
-            userType: "Multi",
-            duration: "7 Day"
-          }
-        }}
-      >
+        to={{ pathname: "/acquire"}}>
         Basic
       </Link>
     ),
@@ -256,17 +255,15 @@ const data = [
   {
     access: (
       <Link
+      onClick={()=> dispatch({type:'UPDATE_TIER_SELECTION',
+      payload:{
+        tierName: "PRO",
+        price: "750",
+        userType: "MULTI",
+        duration: "7 Day"
+      }})}
       style={linkColumn}
-        to={{
-          pathname: "/acquire",
-          state: {
-            tierName: "Pro",
-            cost: "750",
-            userType: "Multi",
-            duration: "7 Day"
-          }
-        }}
-      >
+        to={{pathname: "/acquire"}}>
         Pro
       </Link>
     ),
@@ -280,17 +277,15 @@ const data = [
   {
     access: (
       <Link
+      onClick={()=> dispatch({type:'UPDATE_TIER_SELECTION',
+      payload:{
+        tierName: "Basic",
+        price: "1250",
+        userType: "MULTI",
+        duration: "1 Month"
+      }})}
       style={linkColumn}
-        to={{
-          pathname: "/acquire",
-          state: {
-            tierName: "Basic",
-            cost: "1250",
-            userType: "Multi",
-            duration: "1 Month"
-          }
-        }}
-      >
+        to={{ pathname: "/acquire"}}>
         Basic
       </Link>
     ),
@@ -304,16 +299,16 @@ const data = [
   {
     access: (
       <Link
+      onClick={()=> dispatch({type:'UPDATE_TIER_SELECTION',
+      payload:{
+        tierName: "PRO",
+        price: "2750",
+        userType: "MULTI",
+        duration: "1 Month"
+      }})}
       style={linkColumn}
         to={{
-          pathname: "/acquire",
-          state: {
-            tierName: "Pro",
-            cost: "2750",
-            userType: "Multi",
-            duration: "1 Month"
-          }
-        }}
+          pathname: "/acquire" }}
       >
         Pro
       </Link>
@@ -328,6 +323,13 @@ const data = [
   {
     access: (
       <Link
+      onClick={()=> dispatch({type:'UPDATE_TIER_SELECTION',
+      payload:{
+        tierName: "Basic",
+        price: "3500",
+        userType: "MULTI",
+        duration: "12 Months"
+      }})}
       style={linkColumn}
         to={{
           pathname: "/acquire",
@@ -352,16 +354,15 @@ const data = [
   {
     access: (
       <Link
+      onClick={()=> dispatch({type:'UPDATE_TIER_SELECTION',
+      payload:{
+        tierName: "PRO",
+        price: "11500",
+        userType: "MULTI",
+        duration: "12 Months"
+      }})}
       style={linkColumn}
-        to={{
-          pathname: "/acquire",
-          state: {
-            tierName: "Pro",
-            cost: "11500",
-            userType: "Multi",
-            duration: "12 Months"
-          }
-        }}
+        to={{ pathname: "/acquire"}}
       >
         Pro
       </Link>
@@ -373,7 +374,10 @@ const data = [
     renewable: "Yes",
     trial: "No"
   }
-];
+]
+
+    )
+}
 
 
 const styles = {
@@ -382,18 +386,9 @@ const styles = {
   }
 };
 
-class TeirData extends Component {
-  constructor(props) {
-    super(props);
- this.state = {
-   test:''
- }
-    
-
-  }
-
-  //Style themes
-  getMuiTheme = () =>
+const  TeirData = props =>{
+   //Style themes
+ const getMuiTheme = () =>
     createMuiTheme({
       overrides: {
         MUIDataTableToolbar: {
@@ -487,10 +482,8 @@ class TeirData extends Component {
         
       }
     });
-
-  render() {
  
-    const { classes } = this.props;
+    const { classes } = props;
 
     const options = {
       selectableRows: false,
@@ -505,9 +498,10 @@ class TeirData extends Component {
        
     
     }
-    }
+  }
+    
     return (
-      <MuiThemeProvider theme={this.getMuiTheme()}>
+      <MuiThemeProvider theme={getMuiTheme()}>
  
         <MUIDataTable
           title={
@@ -515,7 +509,7 @@ class TeirData extends Component {
               Tier Plans
             </Typography>
           }
-          data={data}
+          data={generateData()}
           columns={columns}
           options={options}
         />
@@ -523,6 +517,6 @@ class TeirData extends Component {
       </MuiThemeProvider>
     );
   }
-}
+
 
 export default withStyles(styles)(TeirData);

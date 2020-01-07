@@ -6,7 +6,7 @@ import Tier from "../../Components/Tiers/";
 import BasicTier from "../../Components/basicTier";
 import ProTier from "../../Components/ProTier";
 import Loader from "../../Components/Loaders";
-import TierData from "../../Components/tierData";
+import TierData from "../../Components/TierData";
 import { Paper, Grid,Button, TextField  } from "@material-ui/core";
 import MaterialUIForm from "react-material-ui-form";
 import {styles,settings,containerStyle,loaderStyle,containerColor} from './styles'

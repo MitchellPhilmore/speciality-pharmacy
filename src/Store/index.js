@@ -2,12 +2,12 @@ import React,{createContext,useReducer} from 'react'
 
 const initialState = 
 {
-    tierName: "",
-    price: "",
+    tierName: "Basic",
+    price: "100",
     clicked:false,
-    duration: "",
+    duration: "7 Days",
     cost: 0,
-    userType: "",
+    userType: "Single",
     addUser: false,
     userCount:[""],
     isLoading:false,
@@ -50,7 +50,9 @@ const StateProvider = ({children}) =>{
                     monthly:false,
                     annual:true
                 }
-            case 'UPDATE_USER_TIER': return [...state,action.payload]
+            case 'UPDATE_TIER_SELECTION': return action.payload
+
+            case 'ADD_USER': return true
             
             default: return state
         }

@@ -51,14 +51,20 @@ const styles = theme => ({
     fontSize: "80px",
     color: "#616161"
   },
+  linkSignin: {
+    color:'white',
+    textDecoration:'none',
+    
+  },
   linkStyle: {
-    color:'#424242',
+    color:'#616161',
     textDecoration:'none',
     
   },
   signin:{
     fontFamily: 'Pathway Gothic One, sans-serif',
-    textDecoration:'none'
+    textDecoration:'none',
+    color:'#616161'
   }
 });
 
@@ -115,7 +121,7 @@ function SignIn(props) {
               href="/explorer"
             >
               <Link
-                className={classes.linkStyle}
+                className={classes.linkSignin}
                 to={{
                   pathname: "/explorer",
                   state: {

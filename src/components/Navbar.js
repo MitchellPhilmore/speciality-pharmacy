@@ -7,34 +7,35 @@ import {
   Typography,
   IconButton,
   Grid,
-  Button
+  Button,
 } from "@material-ui/core";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Info from "../Pages/Info/";
 import Icon from "@material-ui/core/Icon";
 import ManageUsers from "../Pages/ManageUsers";
-import logo from '../logo2.png'
+import logo from "../pharmacy-logo.png";
 
 const styles = {
   root: {
     flexGrow: 1,
-    width: "300%"
+    width: "300%",
   },
   grow: {
     flexGrow: 1,
     // position: "fixed",
-    fontFamily: 'Pathway Gothic One, sans-serif'
+    fontFamily: "Pathway Gothic One, sans-serif",
   },
   menuButton: {
     marginLeft: -12,
-    marginRight: 20
+    marginRight: 20,
   },
   icon: {
-    fontSize: "200%"
+    fontSize: "200%",
   },
   nav: {
-    backgroundColor: "#2f4c6e",
-    width: "100%"
+    backgroundColor: '#537895',
+    backgroundImage:'linear-gradient(315deg, #537895 0%, #09203f 74%)',
+    width: "100%",
   },
 
   links: {
@@ -46,27 +47,23 @@ const styles = {
     margin: "20px",
     top: "0",
     textAlign: "center",
-    fontFamily: 'Pathway Gothic One, sans-serif',
-  
-    
+    fontFamily: "Pathway Gothic One, sans-serif",
   },
   home: {
     color: "white",
     fontSize: "18px",
     textDecoration: "none",
     margin: "20px",
-    fontFamily: 'Pathway Gothic One, sans-serif',
-  
-    
+    fontFamily: "Pathway Gothic One, sans-serif",
   },
-  dashBoardItems:{
-     fontFamily: 'Pathway Gothic One, sans-serif',
-     color:'white'
+  dashBoardItems: {
+    fontFamily: "Pathway Gothic One, sans-serif",
+    color: "white",
   },
 
   small: {
     lineHeight: "10%",
-    fontSize: "70%"
+    fontSize: "70%",
   },
   navItems: {
     color: "white",
@@ -74,13 +71,17 @@ const styles = {
     // position: "fixed",
     right: "25%",
     top: "0",
-    fontSize: "80%"
+    fontSize: "80%",
   },
   admin: {
     color: "white",
     textDecoration: "none",
     fontSize: "100%",
-    margin: "10px"
+    margin: "10px",
+  },
+  header:{
+    display:'flex',
+    alignItems:'center'
   }
 };
 
@@ -89,7 +90,7 @@ class ButtonAppBar extends Component {
     super(props);
 
     this.state = {
-      loggedIn: false
+      loggedIn: false,
     };
   }
 
@@ -107,9 +108,15 @@ class ButtonAppBar extends Component {
             <br />
             <br />
 
-            
-             <Link className={classes.home} to="/"><span><img style={{height:"30px",width:"30px",margin:"5px"}} src={logo}></img>Speciality Pharmacy</span></Link> 
-             
+            <Link className={classes.home} to="/">
+              <span className={classes.header}>
+                <img
+                  style={{ height: "30px", width: "30px", margin: "5px" }}
+                  src={logo}
+                ></img>
+                <h1>Speciality Pharmacy</h1>
+              </span>
+            </Link>
 
             <Typography variant="h6" color="inherit" className={classes.grow}>
               {this.props.manageUsers}
@@ -117,45 +124,47 @@ class ButtonAppBar extends Component {
 
             {this.props.loggedIn ? (
               <Grid container>
-
-              
                 <Grid item={12}>
                   <Typography
                     variant="h5"
                     color="inherit"
                     className={classes.navItems}
                   >
-                   
-
                     <Grid item={6}>
-                   
                       <br />
                       <br />
 
-                      <Button size="small" href="/manageusers" className={classes.links}>
+                      <Button
+                        size="small"
+                        href="/manageusers"
+                        className={classes.links}
+                      >
                         Manage Users
-                    
-                      
-                  </Button>
-                      <Button size="small" href="/manageusers" className={classes.links}>
-                     
-                      Subscription Level: {this.props.subscription}
-                      
-                  </Button>
+                      </Button>
+                      <Button
+                        size="small"
+                        href="/manageusers"
+                        className={classes.links}
+                      >
+                        Subscription Level: {this.props.subscription}
+                      </Button>
 
-                      <Button size="small" href="/manageusers" className={classes.links}>
-                     
-                      Subscription Status:
+                      <Button
+                        size="small"
+                        href="/manageusers"
+                        className={classes.links}
+                      >
+                        Subscription Status:
                         {this.props.remainingSubscriptionTime}
-                  
-                      
-                  </Button>
+                      </Button>
 
-                  <Button size="small" href="/info" className={classes.links}>
-                       {this.props.info}
-                  </Button>
-
-                     
+                      <Button
+                        size="small"
+                        href="/info"
+                        className={classes.links}
+                      >
+                        {this.props.info}
+                      </Button>
                     </Grid>
 
                     <Grid>
@@ -171,7 +180,6 @@ class ButtonAppBar extends Component {
             )}
 
             <br />
-                
 
             <Link className={classes.links} to="/">
               <Icon className={classes.icon}>account_circle</Icon>
@@ -187,7 +195,7 @@ class ButtonAppBar extends Component {
 }
 
 ButtonAppBar.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
 };
 
 export default withStyles(styles)(ButtonAppBar);

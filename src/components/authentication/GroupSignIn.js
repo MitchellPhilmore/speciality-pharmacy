@@ -10,12 +10,12 @@ import {
   Paper,
   Typography,
   withStyles,
-  Icon
+  Icon,
 } from "@material-ui/core";
 import Navbar from "../Navbar";
 import { Link } from "react-router-dom";
 
-const styles = theme => ({
+const styles = (theme) => ({
   main: {
     width: "auto",
     display: "block",
@@ -24,21 +24,22 @@ const styles = theme => ({
     [theme.breakpoints.up(400 + theme.spacing.unit * 3 * 2)]: {
       width: 400,
       marginLeft: "auto",
-      marginRight: "auto"
-    }
+      marginRight: "auto",
+    },
   },
   paper: {
     marginTop: theme.spacing.unit * 8,
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    padding: `${theme.spacing.unit * 2}px ${theme.spacing.unit * 3}px ${theme
-      .spacing.unit * 3}px`
+    padding: `${theme.spacing.unit * 2}px ${theme.spacing.unit * 3}px ${
+      theme.spacing.unit * 3
+    }px`,
   },
 
   form: {
     width: "100%",
-    marginTop: theme.spacing.unit
+    marginTop: theme.spacing.unit,
   },
   submit: {
     marginTop: theme.spacing.unit * 3,
@@ -46,18 +47,17 @@ const styles = theme => ({
   },
   iconStyle: {
     fontSize: "80px",
-    color: "#616161"
+    color: "#616161",
   },
   linkStyle: {
     color: "#424242",
-    textDecoration:'none'
-  }
+    textDecoration: "none",
+  },
 });
 
 function GroupSignIn(props) {
   const { classes } = props;
-   
-  
+
   return (
     <div>
       <Navbar
@@ -74,14 +74,9 @@ function GroupSignIn(props) {
           </Typography>
 
           <form className={classes.form}>
-          <FormControl margin="normal" required fullWidth>
+            <FormControl margin="normal" required fullWidth>
               <InputLabel htmlFor="email">Email</InputLabel>
-              <Input
-                id="email"
-                name="email"
-                autoComplete="email"
-                autoFocus
-              />
+              <Input id="email" name="email" autoComplete="email" autoFocus />
             </FormControl>
 
             <FormControl margin="normal" required fullWidth>
@@ -122,8 +117,8 @@ function GroupSignIn(props) {
                   pathname: "/explorer",
                   state: {
                     remainingSubscriptionTime: "21 Days",
-                    subscriptionLevel: "Pro"
-                  }
+                    subscriptionLevel: "Pro",
+                  },
                 }}
               >
                 {" "}
@@ -138,7 +133,7 @@ function GroupSignIn(props) {
 }
 
 GroupSignIn.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
 };
 
 export default withStyles(styles)(GroupSignIn);

@@ -3,16 +3,16 @@ import { Typography, withStyles, Grid } from "@material-ui/core";
 import MUIDataTable from "mui-datatables";
 import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
 
-const styles = theme => ({
+const styles = (theme) => ({
   pro: {
-    color: "red"
+    color: "red",
   },
   header: {
-    display:"flex",
-    justifyContent:"center",
+    display: "flex",
+    justifyContent: "center",
     color: "white",
-    fontFamily: 'Pathway Gothic One, sans-serif'
-  }
+    fontFamily: "Pathway Gothic One, sans-serif",
+  },
 });
 
 const columns = [
@@ -21,40 +21,40 @@ const columns = [
     label: "Pharmacy Name",
     options: {
       filter: true,
-      sort: true
-    }
+      sort: true,
+    },
   },
   {
     name: "URL",
     label: "URL",
     options: {
       filter: true,
-      sort: true
-    }
+      sort: true,
+    },
   },
   {
     name: "streetAddress",
     label: "Street Address",
     options: {
       filter: true,
-      sort: true
-    }
+      sort: true,
+    },
   },
   {
     name: "city",
     label: "City",
     options: {
       filter: true,
-      sort: true
-    }
+      sort: true,
+    },
   },
   {
     name: "state",
     label: "State",
     options: {
       filter: true,
-      sort: true
-    }
+      sort: true,
+    },
   },
 
   {
@@ -62,48 +62,48 @@ const columns = [
     label: "Zip",
     options: {
       filter: true,
-      sort: true
-    }
+      sort: true,
+    },
   },
   {
     name: "phone",
     label: "Phone",
     options: {
       filter: true,
-      sort: true
-    }
+      sort: true,
+    },
   },
   {
     name: "conditions",
     label: "Conditions",
     options: {
       filter: true,
-      sort: true
-    }
+      sort: true,
+    },
   },
   {
     name: "companyType",
     label: "Company Type",
     options: {
       filter: true,
-      sort: true
-    }
+      sort: true,
+    },
   },
   {
     name: "pharmacyContact",
     label: "Pharmacy Contact",
     options: {
       filter: true,
-      sort: true
-    }
+      sort: true,
+    },
   },
   {
     name: "contactEmail",
     label: "Contact Email",
     options: {
       filter: true,
-      sort: true
-    }
+      sort: true,
+    },
   },
 
   {
@@ -111,8 +111,8 @@ const columns = [
     label: "Accreditation",
     options: {
       filter: true,
-      sort: true
-    }
+      sort: true,
+    },
   },
 
   {
@@ -120,49 +120,49 @@ const columns = [
     label: "Owner/Independent",
     options: {
       filter: true,
-      sort: true
-    }
+      sort: true,
+    },
   },
   {
     name: "patientServices",
     label: "Patient Services",
     options: {
       filter: true,
-      sort: true
-    }
+      sort: true,
+    },
   },
   {
     name: "payerServices",
     label: "Payer Services",
     options: {
       filter: true,
-      sort: true
-    }
+      sort: true,
+    },
   },
   {
     name: "pharmaServices",
     label: "Pharma Services",
     options: {
       filter: true,
-      sort: true
-    }
+      sort: true,
+    },
   },
   {
     name: "locations",
     label: "Locations",
     options: {
       filter: true,
-      sort: true
-    }
+      sort: true,
+    },
   },
   {
     name: "limitedDistributionDrugs",
     label: "Limted Distribution Drugs",
     options: {
       filter: true,
-      sort: true
-    }
-  }
+      sort: true,
+    },
+  },
 ];
 
 const data = [
@@ -184,7 +184,7 @@ const data = [
     payerServices: "NA",
     pharmaServices: "NA",
     locations: "1233 Main Street",
-    limitedDistributionDrugs: "NA"
+    limitedDistributionDrugs: "NA",
   },
 
   {
@@ -205,7 +205,7 @@ const data = [
     payerServices: "NA",
     pharmaServices: "NA",
     locations: "1233 Main Street",
-    limitedDistributionDrugs: "NA"
+    limitedDistributionDrugs: "NA",
   },
 
   {
@@ -226,7 +226,7 @@ const data = [
     payerServices: "NA",
     pharmaServices: "NA",
     locations: "1233 Main Street",
-    limitedDistributionDrugs: "NA"
+    limitedDistributionDrugs: "NA",
   },
 
   {
@@ -247,7 +247,7 @@ const data = [
     payerServices: "NA",
     pharmaServices: "NA",
     locations: "1233 Main Street",
-    limitedDistributionDrugs: "NA"
+    limitedDistributionDrugs: "NA",
   },
 
   {
@@ -268,8 +268,8 @@ const data = [
     payerServices: "NA",
     pharmaServices: "NA",
     locations: "1233 Main Street",
-    limitedDistributionDrugs: "NA"
-  }
+    limitedDistributionDrugs: "NA",
+  },
 ];
 
 const options = {
@@ -282,12 +282,12 @@ const options = {
   reponsive: "stacked",
   onRowClick() {
     alert("works");
-  }
+  },
 };
 
 const tableContainer = {
   width: "3000px",
-  margin: "0 auto"
+  margin: "0 auto",
 };
 
 class ProTier extends Component {
@@ -298,53 +298,48 @@ class ProTier extends Component {
   getMuiTheme = () =>
     createMuiTheme({
       overrides: {
-        MUIDataTable:{
-          root:{
-           width:'650px',
-         
-          }
-      
-        },
-     
-        MuiPaper:{
-          root:{
-            maxWidth:'82vw',
-            margin:'0 auto',
-            overflowX:'scroll',
-            marginBottom:'50px',
-            position:'relative',
-            marginTop:'2px'
-         
+        MUIDataTable: {
+          root: {
+            width: "650px",
           },
-          
-          elevation2:{
-            '27':{
-              boxShadow:'none',
-              // overflowX:'hidden',
-            
-            }
-          }
         },
-        
+
+        MuiPaper: {
+          root: {
+            maxWidth: "82vw",
+            margin: "0 auto",
+            overflowX: "scroll",
+            marginBottom: "50px",
+            position: "relative",
+            marginTop: "2px",
+          },
+
+          elevation2: {
+            "27": {
+              boxShadow: "none",
+              // overflowX:'hidden',
+            },
+          },
+        },
+
         MUIDataTableToolbar: {
           root: {
-            background:" #2f4c6e",
+            backgroundColor: "#537895",
+            backgroundImage: "linear-gradient(315deg, #537895 0%, #09203f 74%)",
+            transition: "background-color 2s",
             color: "white",
-           width:'2200px',
-          position:'relative'
-            
-  
-         },
-         
-       
+            width: "2200px",
+            position: "relative",
+          },
+
           actions: {
-            position: "absolute"
-          }
+            position: "absolute",
+          },
         },
         MuiSvgIcon: {
           root: {
-            color: "white"
-          }
+            color: "white",
+          },
         },
 
         MUIDataTableBodyCell: {
@@ -352,60 +347,54 @@ class ProTier extends Component {
             padding: "5px",
             width: "5px",
             maxWidth: "200px",
-            fontFamily: 'Pathway Gothic One, sans-serif',
-            fontSize:'90%'
-          }
+            fontFamily: "Pathway Gothic One, sans-serif",
+            fontSize: "90%",
+          },
         },
-        MuiInputBase:{
-          root:{
-            color:'lightgray',
-            fontSize:'18px',
-            textAlign:'right',
-            position:'absolute',
-            left:'8%',
-            fontFamily: 'Pathway Gothic One, sans-serif',
-             width:'10px'
-          }
+        MuiInputBase: {
+          root: {
+            color: "lightgray",
+            fontSize: "18px",
+            textAlign: "right",
+            position: "absolute",
+            left: "8%",
+            fontFamily: "Pathway Gothic One, sans-serif",
+            width: "10px",
+          },
         },
-        MUIDataTableHeadCell:{
-          root:{
-              fontSize:'15px',
-              fontFamily: 'Pathway Gothic One, sans-serif',
-              
-            }
-          
+        MUIDataTableHeadCell: {
+          root: {
+            fontSize: "15px",
+            fontFamily: "Pathway Gothic One, sans-serif",
+          },
         },
-        MUIDataTableFilter:{
-          root:{
-            width:'550px',
-            maxWidth:'550px',
-            height:'350px',
-            overflowX:'scroll'
-
-          }
+        MUIDataTableFilter: {
+          root: {
+            width: "550px",
+            maxWidth: "550px",
+            height: "350px",
+            overflowX: "scroll",
+          },
         },
-        MuiInputLabel:{
-          root:{
-            fontSize:'15px',
-            position:'relative',
-            left:'20px'
-          }
+        MuiInputLabel: {
+          root: {
+            fontSize: "15px",
+            position: "relative",
+            left: "20px",
+          },
         },
-        MuiTypography:{
-          root:{
-             width:'1000px',
-         
-          }
+        MuiTypography: {
+          root: {
+            width: "1000px",
+          },
         },
-        MUIDataTableViewCol:{
-          root:{
-            width:'180px',
-            height:'270px'
-          }
-        }
-        
-       
-      }
+        MUIDataTableViewCol: {
+          root: {
+            width: "180px",
+            height: "270px",
+          },
+        },
+      },
     });
 
   render() {

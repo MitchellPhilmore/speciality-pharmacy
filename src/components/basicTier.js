@@ -1,54 +1,54 @@
 import React, { Component } from "react";
-import Navbar from "../Components/Navbar";
+import Navbar from "../components/Navbar";
 import { Typography } from "@material-ui/core";
 import MUIDataTable from "mui-datatables";
 import Loader from "./Loaders";
 import {
   createMuiTheme,
   MuiThemeProvider,
-  withStyles
+  withStyles,
 } from "@material-ui/core/styles";
- 
+
 const columns = [
   {
     name: "pharmacyName",
     label: "Pharmacy Name",
     options: {
       filter: true,
-      sort: true
-    }
+      sort: true,
+    },
   },
   {
     name: "URL",
     label: "URL",
     options: {
       filter: true,
-      sort: true
-    }
+      sort: true,
+    },
   },
   {
     name: "streetAddress",
     label: "Street Address",
     options: {
       filter: true,
-      sort: true
-    }
+      sort: true,
+    },
   },
   {
     name: "city",
     label: "City",
     options: {
       filter: true,
-      sort: true
-    }
+      sort: true,
+    },
   },
   {
     name: "state",
     label: "State",
     options: {
       filter: true,
-      sort: true
-    }
+      sort: true,
+    },
   },
 
   {
@@ -56,33 +56,33 @@ const columns = [
     label: "Zip",
     options: {
       filter: true,
-      sort: true
-    }
+      sort: true,
+    },
   },
   {
     name: "phone",
     label: "Phone",
     options: {
       filter: true,
-      sort: true
-    }
+      sort: true,
+    },
   },
   {
     name: "conditions",
     label: "Conditions",
     options: {
       filter: true,
-      sort: true
-    }
+      sort: true,
+    },
   },
   {
     name: "companyType",
     label: "Company Type",
     options: {
       filter: true,
-      sort: true
-    }
-  }
+      sort: true,
+    },
+  },
 ];
 
 const data = [
@@ -95,7 +95,7 @@ const data = [
     state: "PA",
     phone: "215-555-5555",
     conditions: "Tobias Harris Conditions",
-    companyType: "Tobia Harris Pharmacy"
+    companyType: "Tobia Harris Pharmacy",
   },
   {
     pharmacyName: "Tiobias Harris Pharmacy",
@@ -106,7 +106,7 @@ const data = [
     state: "NJ",
     phone: "215-555-3333",
     conditions: " Harris Conditions",
-    companyType: "Kobe Harris Pharmacy"
+    companyType: "Kobe Harris Pharmacy",
   },
   {
     pharmacyName: "Tony's Pharmacy",
@@ -117,7 +117,7 @@ const data = [
     state: "PA",
     phone: "215-555-5555",
     conditions: "Tommy Conditions",
-    companyType: "Tobia Harris Pharmacy"
+    companyType: "Tobia Harris Pharmacy",
   },
   {
     pharmacyName: "Reddick Pharmacy",
@@ -128,7 +128,7 @@ const data = [
     state: "PA",
     phone: "215-555-5555",
     conditions: "Tobias Harris Conditions",
-    companyType: "Tobia Harris Pharmacy"
+    companyType: "Tobia Harris Pharmacy",
   },
   {
     pharmacyName: "Simmons Pharmacy",
@@ -139,8 +139,8 @@ const data = [
     state: "PA",
     phone: "215-555-5555",
     conditions: "Tobias Harris Conditions",
-    companyType: "Tobia Harris Pharmacy"
-  }
+    companyType: "Tobia Harris Pharmacy",
+  },
 ];
 
 const options = {
@@ -152,7 +152,7 @@ const options = {
   responsive: "scroll",
   onRowClick() {
     alert("works");
-  }
+  },
 };
 
 class BasicTier extends Component {
@@ -164,98 +164,94 @@ class BasicTier extends Component {
   getMuiTheme = () =>
     createMuiTheme({
       overrides: {
-        MUIDataTable:{
-          root:{
-           width:'200px',
-         
-          }
-      
+        MUIDataTable: {
+          root: {
+            width: "200px",
+          },
         },
-     
+
         MUIDataTableToolbar: {
           root: {
-            background: "#2f4c6e",
-            color: "white"
+            backgroundColor: '#537895',
+            backgroundImage:'linear-gradient(315deg, #537895 0%, #09203f 74%)',
+            transition: 'background-color 2s',
+            color: "white",
           },
           actions: {
-            position: "absolute"
-          }
+            position: "absolute",
+          },
         },
-        MuiPaper:{
-          root:{
-            maxWidth:'92vw',
-            margin:'0 auto',
-            overflow:'hidden',
-            overflowY:'hidden',
-            marginTop:'50px',
-            marginBottom:'50px',
-            width:"80vw"
-          }
+        MuiPaper: {
+          root: {
+            maxWidth: "92vw",
+            margin: "0 auto",
+            overflow: "hidden",
+            overflowY: "hidden",
+            marginTop: "50px",
+            marginBottom: "50px",
+            width: "80vw",
+          },
         },
         MuiSvgIcon: {
           root: {
-            color: "white"
-          }
+            color: "white",
+          },
         },
-      
 
         MUIDataTableBodyCell: {
           root: {
             padding: "5px",
-            fontFamily: 'Pathway Gothic One, sans-serif',
-            fontSize:'90%'
-          }
+            fontFamily: "Pathway Gothic One, sans-serif",
+            fontSize: "90%",
+          },
         },
         MuiTypography: {
           root: {
-            color: "white"
-          }
+            color: "white",
+          },
         },
-        MuiInputBase:{
-          root:{
-            color:'lightgray',
-            fontSize:'20px',
-            textAlign:'right',
-            position:'absolute',
-            left:'18%',
-            fontFamily: 'Pathway Gothic One, sans-serif',
-            width:'160px'
-          }
+        MuiInputBase: {
+          root: {
+            color: "lightgray",
+            fontSize: "20px",
+            textAlign: "right",
+            position: "absolute",
+            left: "18%",
+            fontFamily: "Pathway Gothic One, sans-serif",
+            width: "160px",
+          },
         },
-        MUIDataTableHeadCell:{
-          root:{
-              fontSize:'15px',
-              fontFamily: 'Pathway Gothic One, sans-serif'
-            }
-          
+        MUIDataTableHeadCell: {
+          root: {
+            fontSize: "15px",
+            fontFamily: "Pathway Gothic One, sans-serif",
+          },
         },
-        MUIDataTableFilter:{
-          root:{
-            width:'550px',
-            maxWidth:'550px',
-            height:'350px',
-            overflowX:'scroll'
-
-          }
+        MUIDataTableFilter: {
+          root: {
+            width: "550px",
+            maxWidth: "550px",
+            height: "350px",
+            overflowX: "scroll",
+          },
         },
-        MuiInputLabel:{
-          root:{
-            fontSize:'15px',
-            position:'relative',
-            left:'30px'
-          }
-        }
-       
-      }
+        MuiInputLabel: {
+          root: {
+            fontSize: "15px",
+            position: "relative",
+            left: "30px",
+          },
+        },
+      },
     });
 
   render() {
     const header = {
-      display:"flex",
-      justifyContent:"center",
+      display: "flex",
+      justifyContent: "center",
       color: "white",
       textAlign: "left",
-      fontFamily: 'Pathway Gothic One, sans-serif'
+      fontFamily: "Pathway Gothic One, sans-serif",
     };
 
     return (

@@ -1,14 +1,14 @@
 import * as React from "react";
 import Paper from "@material-ui/core/Paper";
 import { EditingState } from "@devexpress/dx-react-grid";
-import NavBar from "../Components/Navbar";
+import NavBar from "../components/Navbar";
 import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
 import {
   Grid,
   Table,
   TableHeaderRow,
   TableEditRow,
-  TableEditColumn
+  TableEditColumn,
 } from "@devexpress/dx-react-grid-material-ui";
 
 //Data
@@ -21,7 +21,7 @@ const firstNames = [
   "Richard",
   "Thomas",
   "Paul",
-  "Mark"
+  "Mark",
 ];
 const lastNames = [
   "Smith",
@@ -35,14 +35,14 @@ const lastNames = [
   "Wilson",
   "Moore",
   "Taylor",
-  "Anderson"
+  "Anderson",
 ];
 const companyTitles = ["Pharmacy tech", "Pharmacist"];
 const groupNames = ["Lucky-Staff", "SP-Staff", "Radnor-Staff"];
 const companyNames = [
   "Lucky Pharmacy",
   "South Philadelphia Pharmacy",
-  "Radnor Pharmacy"
+  "Radnor Pharmacy",
 ];
 const emails = [
   "miker@gmail.com",
@@ -51,14 +51,14 @@ const emails = [
   "miker@gmail.com",
   "reggiemiller@yahoo.com",
   "jjreddick@hotmail.com",
-  "ojmayo@gmail.com"
+  "ojmayo@gmail.com",
 ];
 const groupPasswords = ["test1234", "password123", "test567"];
 const yearsOfExperience = ["20", "12", "3"];
 
 let color = {
-  background:'black'
-}
+  background: "black",
+};
 
 function randomSeed(seed = 123456789) {
   let mW = seed;
@@ -77,7 +77,7 @@ function randomSeed(seed = 123456789) {
 function generateRows({
   columnValues = defaultColumnValues,
   length,
-  random = randomSeed(329972281)
+  random = randomSeed(329972281),
 }) {
   const data = [];
   const columns = Object.keys(columnValues);
@@ -85,7 +85,7 @@ function generateRows({
   for (let i = 0; i < length; i += 1) {
     const record = {};
 
-    columns.forEach(column => {
+    columns.forEach((column) => {
       let values = columnValues[column];
 
       if (typeof values === "function") {
@@ -118,9 +118,9 @@ const defaultColumnValues = {
   companyNames,
   companyTitles,
   groupPasswords,
-  yearsOfExperience
+  yearsOfExperience,
 };
-const getRowId = row => row.id;
+const getRowId = (row) => row.id;
 
 export default class ManageUsers extends React.PureComponent {
   constructor(props) {
@@ -136,16 +136,16 @@ export default class ManageUsers extends React.PureComponent {
         { name: "companyTitles", title: "Company Title" },
         { name: "yearsOfExperience", title: "Years Of Experience" },
         { name: "groupNames", title: "Group Name" },
-        { name: "groupPasswords", title: "Group Password" }
+        { name: "groupPasswords", title: "Group Password" },
       ],
       tableColumnExtensions: [{ columnName: "id", width: 30 }],
       rows: generateRows({
         columnValues: { id: ({ index }) => index, ...defaultColumnValues },
-        length: 8
+        length: 8,
       }),
       editingRowIds: [],
       addedRows: [],
-      rowChanges: {}
+      rowChanges: {},
     };
 
     this.changeAddedRows = this.changeAddedRows.bind(this);
@@ -155,7 +155,7 @@ export default class ManageUsers extends React.PureComponent {
   }
 
   changeAddedRows(addedRows) {
-    const initialized = addedRows.map(row =>
+    const initialized = addedRows.map((row) =>
       Object.keys(row).length ? row : { city: "Tokio" }
     );
     this.setState({ addedRows: initialized });
@@ -178,70 +178,64 @@ export default class ManageUsers extends React.PureComponent {
         ...rows,
         ...added.map((row, index) => ({
           id: startingAddedId + index,
-          ...row
-        }))
+          ...row,
+        })),
       ];
     }
     if (changed) {
-      rows = rows.map(row =>
+      rows = rows.map((row) =>
         changed[row.id] ? { ...row, ...changed[row.id] } : row
       );
     }
     if (deleted) {
       const deletedSet = new Set(deleted);
-      rows = rows.filter(row => !deletedSet.has(row.id));
+      rows = rows.filter((row) => !deletedSet.has(row.id));
     }
     this.setState({ rows });
   }
 
-
-
   getMuiTheme = () =>
-  createMuiTheme({
-    overrides: {
-      MuiTableHead:{
-      root:{
-        
-        background: "#2f4c6e",
-        color: "white"
-        
-        }
-    
-      },
-      MuiPaper:{
-        root:{
-         background:'lightgray'
-        }
-       
+    createMuiTheme({
+      overrides: {
+        MuiTableHead: {
+          root: {
+            backgroundColor: "#537895",
+            backgroundImage: "linear-gradient(315deg, #537895 0%, #09203f 74%)",
+            transition: "background-color 2s",
+            color: "white",
+          },
         },
-      TableHeaderCell:{
-        container:{
-          color:'white',
-          fontFamily: 'Pathway Gothic One, sans-serif'
-        }
+        MuiPaper: {
+          root: {
+            background: "lightgray",
+          },
+        },
+        TableHeaderCell: {
+          container: {
+            color: "white",
+            fontFamily: "Pathway Gothic One, sans-serif",
+          },
+        },
+        MuiButton: {
+          label: {
+            color: "gray",
+            fontFamily: "Pathway Gothic One, sans-serif",
+          },
+        },
+        MuiTableCell: {
+          root: {
+            fontFamily: "Pathway Gothic One, sans-serif",
+          },
+        },
+        TableContainer: {
+          root: {
+            maxWidth: "95vw",
+            margin: "0 auto",
+            marginBottom: "50px",
+          },
+        },
       },
-      MuiButton:{
-        label:{
-          color:'gray',
-          fontFamily: 'Pathway Gothic One, sans-serif'
-        }
-      },
-      MuiTableCell:{
-        root:{
-          fontFamily: 'Pathway Gothic One, sans-serif',
-          
-        }
-      },
-      TableContainer:{
-        root:{
-          maxWidth:'95vw',
-          margin:'0 auto',
-          marginBottom:'50px'
-        }
-      }
-   
-    }
-  });
+    });
 
   render() {
     const {
@@ -250,12 +244,12 @@ export default class ManageUsers extends React.PureComponent {
       tableColumnExtensions,
       editingRowIds,
       rowChanges,
-      addedRows
+      addedRows,
     } = this.state;
 
     let containerStyle = {
-      background: 'rgba(189, 189, 189, 0.3)'
-    }
+      background: "rgba(189, 189, 189, 0.3)",
+    };
     return (
       <div>
         <NavBar
@@ -265,31 +259,30 @@ export default class ManageUsers extends React.PureComponent {
           username="Mitch"
           // edit="Explorer"
         />
-        <br/>
-        <br/>
+        <br />
+        <br />
         <MuiThemeProvider theme={this.getMuiTheme()}>
-        <Paper>
-          <Grid rows={rows} columns={columns} getRowId={getRowId}>
-            <EditingState
-              editingRowIds={editingRowIds}
-              onEditingRowIdsChange={this.changeEditingRowIds}
-              rowChanges={rowChanges}
-              onRowChangesChange={this.changeRowChanges}
-              addedRows={addedRows}
-              onAddedRowsChange={this.changeAddedRows}
-              onCommitChanges={this.commitChanges}
-            />
-            <Table columnExtensions={tableColumnExtensions} />
-            <TableHeaderRow/>
-            <TableEditRow />
-            <TableEditColumn
-              showAddCommand={!addedRows.length}
-              showEditCommand
-              showDeleteCommand
-             
-            />
-          </Grid>
-        </Paper>
+          <Paper>
+            <Grid rows={rows} columns={columns} getRowId={getRowId}>
+              <EditingState
+                editingRowIds={editingRowIds}
+                onEditingRowIdsChange={this.changeEditingRowIds}
+                rowChanges={rowChanges}
+                onRowChangesChange={this.changeRowChanges}
+                addedRows={addedRows}
+                onAddedRowsChange={this.changeAddedRows}
+                onCommitChanges={this.commitChanges}
+              />
+              <Table columnExtensions={tableColumnExtensions} />
+              <TableHeaderRow />
+              <TableEditRow />
+              <TableEditColumn
+                showAddCommand={!addedRows.length}
+                showEditCommand
+                showDeleteCommand
+              />
+            </Grid>
+          </Paper>
         </MuiThemeProvider>
       </div>
     );

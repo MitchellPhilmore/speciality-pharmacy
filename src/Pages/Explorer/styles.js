@@ -60,7 +60,9 @@ export const containerStyle = {
       },
       MUIDataTableToolbar: {
         root: {
-          background:" #2f4c6e",
+          backgroundColor: '#537895',
+          backgroundImage:'linear-gradient(315deg, #537895 0%, #09203f 74%)',
+          transition: 'background-color 2s',
           color: "white",
          width:'2200px',
         position:'relative'

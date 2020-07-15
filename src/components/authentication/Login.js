@@ -10,12 +10,11 @@ import {
   Typography,
   withStyles,
   Icon,
-
 } from "@material-ui/core";
 import Navbar from "../Navbar";
 import { Link } from "react-router-dom";
 
-const styles = theme => ({
+const styles = (theme) => ({
   main: {
     width: "auto",
     display: "block",
@@ -24,50 +23,47 @@ const styles = theme => ({
     [theme.breakpoints.up(400 + theme.spacing.unit * 3 * 2)]: {
       width: 400,
       marginLeft: "auto",
-      marginRight: "auto"
-    }
+      marginRight: "auto",
+    },
   },
   paper: {
     marginTop: theme.spacing.unit * 8,
     display: "flex",
     flexDirection: "column",
-    height:"500px",
+    height: "500px",
     alignItems: "center",
-    padding: `${theme.spacing.unit * 2}px ${theme.spacing.unit * 3}px ${theme
-      .spacing.unit * 3}px`
+    padding: `${theme.spacing.unit * 2}px ${theme.spacing.unit * 3}px ${
+      theme.spacing.unit * 3
+    }px`,
   },
 
   form: {
     width: "100%",
-    marginTop: theme.spacing.unit
+    marginTop: theme.spacing.unit,
   },
   submit: {
     marginTop: theme.spacing.unit * 9,
-     backgroundColor: "#2f4c6e",
-     color:"white"
-    
+    backgroundColor: "#2f4c6e",
+    color: "white",
   },
   iconStyle: {
     fontSize: "80px",
-    color: "#616161"
+    color: "#616161",
   },
   linkSignin: {
-    color:'white',
-    textDecoration:'none',
-    
+    color: "white",
+    textDecoration: "none",
   },
   linkStyle: {
-    color:'#616161',
-    textDecoration:'none',
-    
+    color: "#616161",
+    textDecoration: "none",
   },
-  signin:{
-    fontFamily: 'Pathway Gothic One, sans-serif',
-    textDecoration:'none',
-    color:'#616161'
-  }
+  signin: {
+    fontFamily: "Pathway Gothic One, sans-serif",
+    textDecoration: "none",
+    color: "#616161",
+  },
 });
-
 
 function SignIn(props) {
   const { classes } = props;
@@ -82,7 +78,7 @@ function SignIn(props) {
         <CssBaseline />
         <Paper className={classes.paper}>
           <Icon className={classes.iconStyle}>person_pin</Icon>
-          <Typography  className={classes.signin} component="h1" variant="h5">
+          <Typography className={classes.signin} component="h1" variant="h5">
             SIGN IN
           </Typography>
 
@@ -109,15 +105,20 @@ function SignIn(props) {
             </FormControl>
             <br />
             <br />
-            <Link className={classes.signin} to="/info">Not a member? Join now</Link>
+            <Link className={classes.signin} to="/info">
+              Not a member? Join now
+            </Link>
             <br />
             <br />
-            <Link className={classes.signin} to="/group">Signing in as a group member for the first time? Login here</Link>
+            <Link className={classes.signin} to="/group">
+              Signing in as a group member for the first time? Login here
+            </Link>
             <Button
               type="submit"
               fullWidth
               variant="outlined"
               className={classes.submit}
+              id="login-btn"
               href="/explorer"
             >
               <Link
@@ -126,8 +127,8 @@ function SignIn(props) {
                   pathname: "/explorer",
                   state: {
                     remainingSubscriptionTime: "21 Days",
-                    subscriptionLevel: "Pro"
-                  }
+                    subscriptionLevel: "Pro",
+                  },
                 }}
               >
                 {" "}
@@ -142,7 +143,7 @@ function SignIn(props) {
 }
 
 SignIn.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
 };
 
 export default withStyles(styles)(SignIn);

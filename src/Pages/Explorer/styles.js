@@ -1,84 +1,75 @@
 import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
 
-export const styles = theme => ({
-    pro: {
-      color: "red"
-    },
-    header: {
-      position: "relative",
-      left: "380px",
-      color: "white",
-      fontFamily: 'Pathway Gothic One, sans-serif'
-    }
-  });
-  
+export const styles = (theme) => ({
+  pro: {
+    color: "red",
+  },
+  header: {
+    position: "relative",
+    left: "380px",
+    color: "white",
+    fontFamily: "Pathway Gothic One, sans-serif",
+  },
+});
+
 export const centerLoader = {
-    width: "50%",
-    position: "absolute",
-    top: "50%",
-    left: "20%"
-  };
-  
-export  const tableContainer = {
-    width: "3000px",
-    margin: "0 auto"
-  };
+  width: "50%",
+  position: "absolute",
+  top: "40%",
+  left: "60%",
+  transform: "translate(-50%,0%)",
+};
+
+export const tableContainer = {
+  width: "3000px",
+  margin: "0 auto",
+};
 
 export const containerStyle = {
-    background: 'white'
-  }
+  background: "white",
+};
 
-
-  export  const  getMuiTheme = () =>
+export const getMuiTheme = () =>
   createMuiTheme({
     overrides: {
-      MUIDataTable:{
-        root:{
-         width:'200px',
-       
-        }
-    
-      },
-   
-      MuiPaper:{
-        root:{
-          maxWidth:'82vw',
-          margin:'0 auto',
-          overflowX:'scroll',
-          marginBottom:'50px',
-          position:'relative'
-          
-       
+      MUIDataTable: {
+        root: {
+          width: "200px",
         },
-        elevation2:{
-          '27':{
-            boxShadow:'none',
+      },
+
+      MuiPaper: {
+        root: {
+          maxWidth: "82vw",
+          margin: "0 auto",
+          overflowX: "scroll",
+          marginBottom: "50px",
+          position: "relative",
+        },
+        elevation2: {
+          "27": {
+            boxShadow: "none",
             // overflowX:'hidden',
-          
-          }
-        }
+          },
+        },
       },
       MUIDataTableToolbar: {
         root: {
-          backgroundColor: '#537895',
-          backgroundImage:'linear-gradient(315deg, #537895 0%, #09203f 74%)',
-          transition: 'background-color 2s',
+          backgroundColor: "#537895",
+          backgroundImage: "linear-gradient(315deg, #537895 0%, #09203f 74%)",
+          transition: "background-color 2s",
           color: "white",
-         width:'2200px',
-        position:'relative'
-          
-
-       },
-       
-     
+          width: "2200px",
+          position: "relative",
+        },
         actions: {
-          position: "absolute"
-        }
+          position: "absolute",
+        },
       },
       MuiSvgIcon: {
         root: {
-          color: "white"
-        }
+          color: "white",
+        },
       },
 
       MUIDataTableBodyCell: {
@@ -86,59 +77,53 @@ export const containerStyle = {
           padding: "5px",
           width: "5px",
           maxWidth: "200px",
-          fontFamily: 'Pathway Gothic One, sans-serif',
-          fontSize:'90%'
-        }
-      },
-      MuiInputBase:{
-        root:{
-          color:'lightgray',
-          fontSize:'18px',
-          textAlign:'right',
-          position:'absolute',
-          left:'8%',
-          fontFamily: 'Pathway Gothic One, sans-serif',
-           width:'100px'
+          fontFamily: "Pathway Gothic One, sans-serif",
+          fontSize: "90%",
         },
-        
       },
-     
-      MUIDataTableHeadCell:{
-        root:{
-            fontSize:'15px',
-            fontFamily: 'Pathway Gothic One, sans-serif',
-            
-          }
-        
+      MuiInputBase: {
+        root: {
+          color: "lightgray",
+          fontSize: "18px",
+          textAlign: "right",
+          position: "absolute",
+          left: "8%",
+          fontFamily: "Pathway Gothic One, sans-serif",
+          width: "100px",
+        },
       },
-      MUIDataTableFilter:{
-        root:{
-          width:'550px',
-          maxWidth:'550px',
-          height:'350px',
-          overflowX:'scroll'
 
-        }
+      MUIDataTableHeadCell: {
+        root: {
+          fontSize: "15px",
+          fontFamily: "Pathway Gothic One, sans-serif",
+        },
       },
-      MuiInputLabel:{
-        root:{
-          fontSize:'15px',
-          position:'relative',
-          left:'20px'
-        }
+      MUIDataTableFilter: {
+        root: {
+          width: "550px",
+          maxWidth: "550px",
+          height: "350px",
+          overflowX: "scroll",
+        },
       },
-      MuiTypography:{
-        root:{
-           width:'1000px',
-       
-        }
+      MuiInputLabel: {
+        root: {
+          fontSize: "15px",
+          position: "relative",
+          left: "20px",
+        },
       },
-      MUIDataTableViewCol:{
-        root:{
-          width:'180px',
-          height:'270px'
-        }
-      }
-      
-    }
+      MuiTypography: {
+        root: {
+          width: "1000px",
+        },
+      },
+      MUIDataTableViewCol: {
+        root: {
+          width: "180px",
+          height: "270px",
+        },
+      },
+    },
   });

@@ -44,5 +44,5 @@ body {
   transition: background-color 2s;
 }
 #login-btn:hover {
-background-color: #2f4c6e;
+  background-color: #2f4c6e;
 }

@@ -19,6 +19,16 @@ const initialState = {
   annual: false,
   monthly: false,
   weekly: true,
+  firstname:"",
+  lastname:"",
+  companyName:"",
+  jobTitle:"",
+  yearsOfExperience:"",
+  street:"",
+  city:"",
+  state:"",
+  zip:""
+ 
 };
 const store = createContext(initialState);
 const { Provider } = store;
@@ -27,7 +37,10 @@ const StateProvider = ({ children }) => {
   const [state, dispatch] = useReducer((state, action) => {
     switch (action.type) {
       case "LOAD_FORM_INFO":
-        return action.payload;
+        return {
+          lastname: "",
+          email: "",
+        };
       case "IS_LOADING":
         return action.payload;
       case "WEEKLY":
@@ -54,6 +67,12 @@ const StateProvider = ({ children }) => {
 
       case "ADD_USER":
         return true;
+
+      case "UPDATE_FORM":
+        return {
+          ...state,
+          [action.payload.name]:action.payload.value
+        }
 
       default:
         return state;

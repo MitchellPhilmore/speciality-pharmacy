@@ -1,4 +1,4 @@
-import React, { useRef,useEffect,useContext } from "react";
+import React, { useRef,useContext } from "react";
 import JssProvider from "react-jss/lib/JssProvider";
 import MaterialUIForm from "react-material-ui-form";
 import Navbar from "../../components/Navbar";
@@ -21,10 +21,12 @@ const RegistrationForm = props => {
     const submit =()=>{}
     const firstName = useRef('')
     const lastName = useRef('')
-    const customInputHandler = ()=>{
-        const value = firstName.current.value
-        console.log(value)
-    }
+    const customInputHandler = (event)=>{
+        dispatch({type:"UPDATE_FORM",payload:{name:event.target.name,value:event.target.value}})
+       
+        }
+       
+    
     const addUser = () => {
       dispatch({type:'ADD_USER'})
     }
@@ -57,17 +59,15 @@ const RegistrationForm = props => {
               <Grid container>
                 <Grid item={6}>
                   <Icon className={classes.icon}>account_circle</Icon>
-                  <input placeholder="First Name" onChange={customInputHandler} ref={firstName} />
+                  <TextField className={classes.inputs} name="firstname"  placeholder="First Name" onChange={customInputHandler} ref={firstName} />
                   
                 </Grid>
                 <Grid item={6}>
                   <Icon className={classes.icon}>account_circle</Icon>
-                  <input placeholder="Last Name" onChange={customInputHandler} ref={lastName} />
+                  <TextField className={classes.inputs} name="lastname" placeholder="Last Name" onChange={customInputHandler} ref={lastName} />
                   
                 </Grid>
-                <br />
-                <br />
-                <br />
+                
                 <Grid item={6}>
                   <Icon className={classes.icon}>mail</Icon>
 
@@ -76,9 +76,9 @@ const RegistrationForm = props => {
                     label="Email"
                     type="email"
                     name="email"
-                    value=""
+                    
                     data-validators="isRequired,isEmail"
-                    onChange={customInputHandler}
+                    onChange={(e)=>{customInputHandler(e)}}
                   />
                 </Grid>
                 <br />
@@ -202,7 +202,7 @@ const RegistrationForm = props => {
               ) : (
               false
               
-              )}}
+              )}
                <hr className={classes.hr}/>
               <h3 className={classes.center}>Billing information</h3>
 
@@ -267,7 +267,7 @@ const RegistrationForm = props => {
                 variant="outlined"
                 type="submit"
               >
-                <Icon>send</Icon>
+                <Icon className={classes.sendIcon}>send</Icon>
                   Submit
               </Button>
             </fieldset>

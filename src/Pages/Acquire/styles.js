@@ -7,21 +7,28 @@ export const styles = theme => ({
       margin: theme.spacing.unit,
       minWidth: 120
     },
+    sendIcon:{
+      marginRight:"25px"
+    },
     selectEmpty: {
       marginTop: theme.spacing.unit * 2
     },
     submitBtn: {
       position: "relative",
-      left: "15%",
-      width: "500px",
+      left: "35%",
+      width: "30%",
       fontFamily: 'Pathway Gothic One, sans-serif',
       backgroundColor:"#2f4c6e",
-      color:"#fff"
+      color:"#fff",
+      fontSize:"20px"
+
+     
     },
     inputs: {
-      width: "315px",
+      display:'flex',
       margin: "10px",
-      fontFamily: 'Pathway Gothic One, sans-serif'
+      fontFamily: 'Pathway Gothic One, sans-serif',
+      width:"700px"
     },
     registrationForm: {
       width: "60%",

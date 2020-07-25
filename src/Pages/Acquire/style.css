@@ -1,7 +1,7 @@
 input {
     height: 1.1875em;
     font: inherit;
-    width: 100%;
+    width: 80%;
     border: 0;
     padding: 20px;
     display: block;
@@ -9,5 +9,18 @@ input {
     -webkit-tap-highlight-color: transparent;
     outline: none;
     border-bottom: 1px solid gray;
-    margin-left:50px;
+}
+
+.iHNqDx {
+    background:white;
+    background-color:#537895;
+    background-image:linear-gradient(315deg, #537895 0%, #09203f 74%);
+}
+
+.hqMJi {
+    background-color:inherit;
+}
+
+.submit-btn{
+    font-size:2px;
 }

@@ -26,9 +26,10 @@ export const styles = theme => ({
         
     },
     inputs:{
-      margin:'10px',
+      margin:'20px',
       fontFamily: 'Pathway Gothic One, sans-serif',
-      color:"wheat"
+      color:"wheat",
+      width:"50%"
     },
     searchBtns:{
       margin:'10px',

@@ -15,8 +15,8 @@ export const styles = (theme) => ({
 export const centerLoader = {
   width: "50%",
   position: "absolute",
-  top: "40%",
-  left: "60%",
+  top: "30%",
+  left: "62vw",
   transform: "translate(-50%,0%)",
 };
 

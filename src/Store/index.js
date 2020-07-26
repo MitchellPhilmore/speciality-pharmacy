@@ -15,22 +15,21 @@ const initialState = {
   username: "",
   email: "",
   password: "",
-  passwordConfirm:"",
+  passwordConfirm: "",
   token: "",
   annual: false,
   monthly: false,
   weekly: true,
-  firstname:"",
-  lastname:"",
-  companyName:"",
-  jobTitle:"",
-  yearsOfExperience:"",
-  street:"",
-  city:"",
-  state:"",
-  zip:"",
-  nameOnCard:""
- 
+  firstname: "",
+  lastname: "",
+  companyName: "",
+  jobTitle: "",
+  yearsOfExperience: "",
+  street: "",
+  city: "",
+  state: "",
+  zip: "",
+  nameOnCard: "",
 };
 const store = createContext(initialState);
 const { Provider } = store;
@@ -44,7 +43,10 @@ const StateProvider = ({ children }) => {
           email: "",
         };
       case "IS_LOADING":
-        return action.payload;
+        return {
+          ...state,
+          isLoading: false,
+        };
       case "WEEKLY":
         return {
           weekly: true,
@@ -73,8 +75,8 @@ const StateProvider = ({ children }) => {
       case "UPDATE_FORM":
         return {
           ...state,
-          [action.payload.name]:action.payload.value
-        }
+          [action.payload.name]: action.payload.value,
+        };
 
       default:
         return state;

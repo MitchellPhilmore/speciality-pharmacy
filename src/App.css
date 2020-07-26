@@ -46,3 +46,12 @@ body {
 #login-btn:hover {
   background-color: #2f4c6e;
 }
+.RegistrationForm-submitBtn-2853 {
+  background-color: #537895;
+  background-image: linear-gradient(315deg, #537895 0%, #09203f 74%);
+}
+
+.RegistrationForm-submitBtn-2853:hover {
+  background-color: #537895;
+  background-image: linear-gradient(315deg, #537895 0%, #09203f 74%);
+}

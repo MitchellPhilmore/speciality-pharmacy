@@ -15,6 +15,7 @@ const initialState = {
   username: "",
   email: "",
   password: "",
+  passwordConfirm:"",
   token: "",
   annual: false,
   monthly: false,
@@ -27,7 +28,8 @@ const initialState = {
   street:"",
   city:"",
   state:"",
-  zip:""
+  zip:"",
+  nameOnCard:""
  
 };
 const store = createContext(initialState);

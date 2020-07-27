@@ -23,7 +23,7 @@ const Info = (props) => {
       <Navbar className={classes.navBar} name="Detailed Info and Plans" />
 
       <Paper style={containerStyle} className={classes.root}>
-        <Grid container>
+        {/* <Grid container>
           <Grid item xs={2} />
           <MaterialUIForm>
             <fieldset className={classes.fieldset}>
@@ -54,8 +54,8 @@ const Info = (props) => {
                 Match All
               </Button>
             </fieldset>
-          </MaterialUIForm>
-        </Grid>
+          </MaterialUIForm> */}
+        {/* </Grid> */}
 
         <TierData />
         <br />

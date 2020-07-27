@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState,useEffect } from "react";
 import PropTypes from "prop-types";
 import {
   Button,
@@ -13,59 +13,44 @@ import {
 } from "@material-ui/core";
 import Navbar from "../Navbar";
 import { Link } from "react-router-dom";
-
-const styles = (theme) => ({
-  main: {
-    width: "auto",
-    display: "block",
-    marginLeft: theme.spacing.unit * 3,
-    marginRight: theme.spacing.unit * 3,
-    [theme.breakpoints.up(400 + theme.spacing.unit * 3 * 2)]: {
-      width: 400,
-      marginLeft: "auto",
-      marginRight: "auto",
-    },
-  },
-  paper: {
-    marginTop: theme.spacing.unit * 8,
-    display: "flex",
-    flexDirection: "column",
-    height: "500px",
-    alignItems: "center",
-    padding: `${theme.spacing.unit * 2}px ${theme.spacing.unit * 3}px ${
-      theme.spacing.unit * 3
-    }px`,
-  },
-
-  form: {
-    width: "100%",
-    marginTop: theme.spacing.unit,
-  },
-  submit: {
-    marginTop: theme.spacing.unit * 9,
-    backgroundColor: "#2f4c6e",
-    color: "white",
-  },
-  iconStyle: {
-    fontSize: "80px",
-    color: "#616161",
-  },
-  linkSignin: {
-    color: "white",
-    textDecoration: "none",
-  },
-  linkStyle: {
-    color: "#616161",
-    textDecoration: "none",
-  },
-  signin: {
-    fontFamily: "Pathway Gothic One, sans-serif",
-    textDecoration: "none",
-    color: "#616161",
-  },
-});
+import fire from '../../firebase'
+import {styles} from './loginStyles'
+import firebase from "firebase/app";
+import "firebase/firestore";
+import "firebase/auth";
 
 function SignIn(props) {
+  const [user,setUser] = useState(null)
+  const [email,setEmail] = useState('')
+  const [password,setPassword] = useState('password');
+
+
+  const login = (e)=> {
+     e.preventDefault()
+     fire.auth().signInWithEmailAndPassword(email,password).then((u)=>{
+         setUser(u)
+     }).catch(error=>{
+        console.log(error)
+     })
+  }
+
+  const handleChange = (e) =>{
+    if( e.target.name === 'email'){
+      setEmail(e.target.value)
+      console.log(email)
+    }
+    if( e.target.name === 'password'){
+      setPassword(e.target.value)
+      console.log(password)
+    }
+     
+
+      
+  }
+
+  useEffect(()=>{
+  
+  },[])
   const { classes } = props;
   return (
     <div>
@@ -91,6 +76,7 @@ function SignIn(props) {
                 autoComplete="email"
                 autoFocus
                 className={classes.loggedIn}
+                onChange={handleChange}
               />
             </FormControl>
 
@@ -101,6 +87,7 @@ function SignIn(props) {
                 type="password"
                 id="password"
                 autoComplete="current-password"
+                onChange={handleChange}
               />
             </FormControl>
             <br />
@@ -119,16 +106,17 @@ function SignIn(props) {
               variant="outlined"
               className={classes.submit}
               id="login-btn"
-              href="/explorer"
+              // href="/explorer"
+              onClick={login}
             >
               <Link
                 className={classes.linkSignin}
                 to={{
-                  pathname: "/explorer",
-                  state: {
-                    remainingSubscriptionTime: "21 Days",
-                    subscriptionLevel: "Pro",
-                  },
+                   pathname: user ? "/explorer" : "/",
+                  // state: {
+                  //   remainingSubscriptionTime: "21 Days",
+                  //   subscriptionLevel: "Pro",
+                  // },
                 }}
               >
                 {" "}

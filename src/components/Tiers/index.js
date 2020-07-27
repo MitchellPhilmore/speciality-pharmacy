@@ -34,9 +34,8 @@ const PricingCards = (props) => {
     
   };
   return (
-    <div className={classes.container}>
-      <h2 className={classes.header}>Pricing</h2>
-      <Grid container>
+    <div className={classes.container}>z
+z   <Grid container>
         <Grid item xs={5} />
         <p className={classes.center}> Select your pricing tier</p>
         <Grid item xs={12} />

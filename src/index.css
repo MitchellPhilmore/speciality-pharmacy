@@ -49,3 +49,6 @@ body {
   width: 800px;
   text-align: right;
 }
+.MuiPaper-root-251{
+  overflow-x:hidden !important;
+}

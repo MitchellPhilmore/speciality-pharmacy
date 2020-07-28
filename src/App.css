@@ -55,3 +55,8 @@ body {
   background-color: #537895;
   background-image: linear-gradient(315deg, #537895 0%, #09203f 74%);
 }
+
+.MuiPaper-elevation4-257 {
+  overflow-x: hidden;
+}
+

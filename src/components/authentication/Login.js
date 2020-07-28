@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import {
   Button,
@@ -13,44 +13,42 @@ import {
 } from "@material-ui/core";
 import Navbar from "../Navbar";
 import { Link } from "react-router-dom";
-import fire from '../../firebase'
-import {styles} from './loginStyles'
+import fire from "../../firebase";
+import { styles } from "./loginStyles";
 import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
 
 function SignIn(props) {
-  const [user,setUser] = useState(null)
-  const [email,setEmail] = useState('')
-  const [password,setPassword] = useState('password');
+  const [user, setUser] = useState(null);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("password");
 
+  const login = (e) => {
+    e.preventDefault();
+    fire
+      .auth()
+      .signInWithEmailAndPassword(email, password)
+      .then((u) => {
+        setUser(u);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
-  const login = (e)=> {
-     e.preventDefault()
-     fire.auth().signInWithEmailAndPassword(email,password).then((u)=>{
-         setUser(u)
-     }).catch(error=>{
-        console.log(error)
-     })
-  }
-
-  const handleChange = (e) =>{
-    if( e.target.name === 'email'){
-      setEmail(e.target.value)
-      console.log(email)
+  const handleChange = (e) => {
+    if (e.target.name === "email") {
+      setEmail(e.target.value);
+      console.log(email);
     }
-    if( e.target.name === 'password'){
-      setPassword(e.target.value)
-      console.log(password)
+    if (e.target.name === "password") {
+      setPassword(e.target.value);
+      console.log(password);
     }
-     
+  };
 
-      
-  }
-
-  useEffect(()=>{
-  
-  },[])
+  useEffect(() => {}, []);
   const { classes } = props;
   return (
     <div>
@@ -112,11 +110,11 @@ function SignIn(props) {
               <Link
                 className={classes.linkSignin}
                 to={{
-                   pathname: user ? "/explorer" : "/",
-                  // state: {
-                  //   remainingSubscriptionTime: "21 Days",
-                  //   subscriptionLevel: "Pro",
-                  // },
+                  pathname: user ? "/explorer" : "/",
+                  state: {
+                    remainingSubscriptionTime: "21 Days",
+                    subscriptionLevel: "Pro",
+                  },
                 }}
               >
                 {" "}

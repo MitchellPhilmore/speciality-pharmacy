@@ -51,8 +51,6 @@ const RegistrationForm = (props) => {
     });
   };
   const customInputHandler = (event) => {
-    console.log(event.target.value);
-    console.log(state);
     dispatch({
       type: "UPDATE_FORM",
       payload: { name: event.target.name, value: event.target.value },
@@ -83,8 +81,8 @@ const RegistrationForm = (props) => {
             </div>
 
             <Grid container>
-              <Grid item={6}>
-                <Icon className={classes.icon}>account_circle</Icon>
+              <Grid className={classes.grid} item={6}>
+              <Icon className={classes.icon}>account_circle</Icon>
                 <TextField
                   className={classes.inputs}
                   name="firstname"
@@ -92,7 +90,7 @@ const RegistrationForm = (props) => {
                   onChange={customInputHandler}
                 />
               </Grid>
-              <Grid item={6}>
+              <Grid className={classes.grid} item={6}>
                 <Icon className={classes.icon}>account_circle</Icon>
                 <TextField
                   className={classes.inputs}
@@ -102,7 +100,7 @@ const RegistrationForm = (props) => {
                 />
               </Grid>
 
-              <Grid item={6}>
+              <Grid className={classes.grid} item={6}>
                 <Icon className={classes.icon}>mail</Icon>
 
                 <TextField
@@ -117,7 +115,7 @@ const RegistrationForm = (props) => {
               <br />
               <br />
               <br />
-              <Grid item={6}>
+              <Grid className={classes.grid} item={6}>
                 <Icon className={classes.icon}>account_circle</Icon>
                 <TextField
                   className={classes.inputs}
@@ -132,7 +130,7 @@ const RegistrationForm = (props) => {
               <br />
               <br />
 
-              <Grid item={6}>
+              <Grid className={classes.grid} item={6}>
                 <Icon className={classes.icon}>lock</Icon>
                 <TextField
                   className={classes.inputs}
@@ -151,7 +149,7 @@ const RegistrationForm = (props) => {
                   ]}
                 />
               </Grid>
-              <Grid item={6}>
+              <Grid className={classes.grid} item={6}>
                 <Icon className={classes.icon}>lock</Icon>
                 <TextField
                   className={classes.inputs}
@@ -170,7 +168,8 @@ const RegistrationForm = (props) => {
                   onChange={customInputHandler}
                 />
               </Grid>
-              <Grid item={6}>
+              <Grid className={classes.grid}  item={6}>
+              <Icon className={classes.icon}>apartment</Icon>
                 <TextField
                   className={classes.inputs}
                   label="Company Name"
@@ -180,7 +179,9 @@ const RegistrationForm = (props) => {
                   onChange={customInputHandler}
                 />
               </Grid>
-              <Grid item={6}>
+              <Grid className={classes.grid}  item={6}>
+                  <Icon className={classes.icon}>work</Icon>
+             
                 <TextField
                   className={classes.inputs}
                   label="Job Title"
@@ -190,13 +191,13 @@ const RegistrationForm = (props) => {
                   onChange={customInputHandler}
                 />
               </Grid>
-              <Grid item={6}>
+              <Grid className={classes.grid}  item={6}>
+              <Icon className={classes.icon}>work</Icon>
                 <TextField
                   className={classes.inputs}
                   label="Years Of Industry Experience"
                   type="text"
                   name="yearsOfExperience"
-                  value={state.yoie}
                   data-validators="isRequired"
                   onChange={customInputHandler}
                 />

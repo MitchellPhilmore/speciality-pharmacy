@@ -5,7 +5,7 @@ export const styles = (theme) => ({
   },
   formControl: {
     margin: theme.spacing.unit,
-    minWidth: 120,
+    minWidth: 100,
   },
   sendIcon: {
     marginRight: "25px",
@@ -29,8 +29,10 @@ export const styles = (theme) => ({
     width: "700px",
   },
   registrationForm: {
-    width: "60%",
-    margin: "0 auto",
+    width: "45%",
+    display: "flex",
+    position: "absolute",
+    left: "25vw",
   },
   icon: {
     color: "gray",
@@ -77,5 +79,8 @@ export const styles = (theme) => ({
   },
   removeBtn: {
     display: "none",
+  },
+  grid: {
+    display: "flex",
   },
 });

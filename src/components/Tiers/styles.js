@@ -54,7 +54,7 @@ export const styles = (theme) => ({
     fontFamily: "'Pathway Gothic One', sans-serif",
   },
   container: {
-    width: "85vw",
+    width: "80vw",
     height: "80vh",
     fontFamily: "'Pathway Gothic One', sans-serif",
     borderRadius: "6px",

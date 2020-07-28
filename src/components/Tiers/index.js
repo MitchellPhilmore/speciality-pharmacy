@@ -29,13 +29,13 @@ const PricingCards = (props) => {
       case "Annually":
         dispatch({ type: "ANNUAL" });
         break;
-      default: dispatch({type:'WEEKLY'})
+      default:
+        dispatch({ type: "WEEKLY" });
     }
-    
   };
   return (
-    <div className={classes.container}>z
-z   <Grid container>
+    <div className={classes.container}>
+      <Grid container>
         <Grid item xs={5} />
         <p className={classes.center}> Select your pricing tier</p>
         <Grid item xs={12} />

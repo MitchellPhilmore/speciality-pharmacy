@@ -301,6 +301,7 @@ class ProTier extends Component {
         MUIDataTable: {
           root: {
             width: "650px",
+            overflowX:"hidden"
           },
         },
 
@@ -308,14 +309,18 @@ class ProTier extends Component {
           root: {
             maxWidth: "80vw",
             margin: "0 auto",
-            overflowX: "scroll",
+            overflowX: "hidden",
             marginBottom: "50px",
             position: "relative",
             marginTop: "2px",
           },
+          paper: {
+            boxShadow: "none",
+            overflowX:'hidden',
+          },
 
           elevation2: {
-            "27": {
+            "": {
               boxShadow: "none",
               // overflowX:'hidden',
             },
@@ -330,7 +335,11 @@ class ProTier extends Component {
             color: "white",
             width: "2200px",
             position: "relative",
+            overlow:'hidden',
+           
+
           },
+
 
           actions: {
             position: "absolute",
@@ -402,9 +411,11 @@ class ProTier extends Component {
     return (
       <MuiThemeProvider theme={this.getMuiTheme()}>
         <MUIDataTable
+        style={{overlflow:"hidden"}}
+        className="table-paper"
           title={
             <Typography
-              className={classes.header}
+              className="test"
               component="h4"
               variant="h4"
               gutterBottom

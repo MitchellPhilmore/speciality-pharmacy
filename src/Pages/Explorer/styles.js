@@ -27,6 +27,7 @@ export const tableContainer = {
 
 export const containerStyle = {
   background: "white",
+  overflowX:'hidden'
 };
 
 export const getMuiTheme = () =>
@@ -42,7 +43,7 @@ export const getMuiTheme = () =>
         root: {
           maxWidth: "82vw",
           margin: "0 auto",
-          overflowX: "scroll",
+          overflowX: "hidden",
           marginBottom: "50px",
           position: "relative",
         },

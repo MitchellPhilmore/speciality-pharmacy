@@ -3,6 +3,8 @@ import { Typography, withStyles, Grid } from "@material-ui/core";
 import MUIDataTable from "mui-datatables";
 import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
 
+// TODO: REFACTOR
+
 const styles = (theme) => ({
   pro: {
     color: "red",
@@ -301,7 +303,7 @@ class ProTier extends Component {
         MUIDataTable: {
           root: {
             width: "650px",
-            overflowX:"hidden"
+            overflowX: "hidden",
           },
         },
 
@@ -316,7 +318,7 @@ class ProTier extends Component {
           },
           paper: {
             boxShadow: "none",
-            overflowX:'hidden',
+            overflowX: "hidden",
           },
 
           elevation2: {
@@ -335,11 +337,8 @@ class ProTier extends Component {
             color: "white",
             width: "2200px",
             position: "relative",
-            overlow:'hidden',
-           
-
+            overlow: "hidden",
           },
-
 
           actions: {
             position: "absolute",
@@ -411,11 +410,10 @@ class ProTier extends Component {
     return (
       <MuiThemeProvider theme={this.getMuiTheme()}>
         <MUIDataTable
-        style={{overlflow:"hidden"}}
-        className="table-paper"
+          style={{ overlflow: "hidden" }}
           title={
             <Typography
-              className="test"
+              className={classes.header}
               component="h4"
               variant="h4"
               gutterBottom

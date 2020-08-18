@@ -19,9 +19,11 @@ import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
 
+
 function SignIn(props) {
   const [user, setUser] = useState(null);
   const [email, setEmail] = useState("");
+  const [inputError, setInputError] = useState(false);
   const [password, setPassword] = useState("password");
 
   const login = (e) => {
@@ -33,18 +35,20 @@ function SignIn(props) {
         setUser(u);
       })
       .catch((error) => {
-        console.log(error);
+        setInputError(error);
+        setInputError(true);
       });
   };
 
   const handleChange = (e) => {
+    // Remove any previous errors
+    setInputError(false);
+
     if (e.target.name === "email") {
       setEmail(e.target.value);
-      console.log(email);
     }
     if (e.target.name === "password") {
       setPassword(e.target.value);
-      console.log(password);
     }
   };
 
@@ -67,25 +71,31 @@ function SignIn(props) {
 
           <form className={classes.form}>
             <FormControl margin="normal" required fullWidth>
-              <InputLabel htmlFor="email">Email</InputLabel>
+              <InputLabel error={inputError} htmlFor="email">
+                Email
+              </InputLabel>
               <Input
                 id="email"
                 name="email"
                 autoComplete="email"
                 autoFocus
-                className={classes.loggedIn}
+                className={classes.signin}
                 onChange={handleChange}
+                error={inputError}
               />
             </FormControl>
 
             <FormControl margin="normal" required fullWidth>
-              <InputLabel htmlFor="password">Password</InputLabel>
+              <InputLabel error={inputError} htmlFor="password">
+                Password
+              </InputLabel>
               <Input
                 name="password"
                 type="password"
                 id="password"
                 autoComplete="current-password"
                 onChange={handleChange}
+                error={inputError}
               />
             </FormControl>
             <br />

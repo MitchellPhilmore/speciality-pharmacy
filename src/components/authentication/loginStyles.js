@@ -29,6 +29,8 @@ export const styles = (theme) => ({
     marginTop: theme.spacing.unit * 9,
     backgroundColor: "#2f4c6e",
     color: "white",
+    "&:hover":{backgroundColor: "#0a2140",}
+    
   },
   iconStyle: {
     fontSize: "80px",
@@ -47,5 +49,6 @@ export const styles = (theme) => ({
     textDecoration: "none",
     color: "#616161",
   },
+
 
 });

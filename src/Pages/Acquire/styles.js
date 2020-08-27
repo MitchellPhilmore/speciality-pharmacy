@@ -21,6 +21,7 @@ export const styles = (theme) => ({
     backgroundColor: "#2f4c6e",
     color: "#fff",
     fontSize: "20px",
+    "&:hover":{backgroundColor: "#0a2140",}
   },
   inputs: {
     display: "flex",

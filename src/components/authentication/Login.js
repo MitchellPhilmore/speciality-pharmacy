@@ -79,7 +79,7 @@ function SignIn(props) {
                 name="email"
                 autoComplete="email"
                 autoFocus
-                className={classes.signin}
+                className={classes.login}
                 onChange={handleChange}
                 error={inputError}
               />

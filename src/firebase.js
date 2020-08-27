@@ -2,14 +2,14 @@ import firebase from "firebase/app";
 import firestore from "firebase/firestore";
 
 var firebaseConfig = {
-  apiKey: "AIzaSyBMw5sVA6qlPAj_F7ZNVQC3eEJYDzDoamI",
-  authDomain: "specialty-pharmacy.firebaseapp.com",
-  databaseURL: "https://specialty-pharmacy.firebaseio.com",
-  projectId: "specialty-pharmacy",
-  storageBucket: "specialty-pharmacy.appspot.com",
-  messagingSenderId: "512856087305",
-  appId: "1:512856087305:web:7078eb3dfbb4cabe9751d8",
-  measurementId: "G-QVQJ6MDKJH",
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  databaseURL: process.env.REACT_APP_DATABASE_URL,
+  projectId: process.env.PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
+  measurementId: process.env.REACT_APP_MEASUREMENT_ID,
 };
 // Initialize Firebase
 const fire = firebase.initializeApp(firebaseConfig);
